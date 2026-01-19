@@ -1,0 +1,129 @@
+Topic Covered
+
+Decision Making in C
+
+if statement
+
+if–else statement
+
+Relational operators
+
+Simple logic flow understanding
+
+1. What is Decision Making?
+
+Decision making is used to execute code based on a condition.
+
+In C, decision making is done using:
+
+if
+
+if–else
+
+2. IF Statement
+
+The if statement checks a condition.
+
+If the condition is true, the code inside if executes.
+
+If the condition is false, the code inside if is skipped.
+
+Syntax
+if (condition)
+{
+    // statements
+}
+
+3. IF–ELSE Statement
+
+Used when we want to execute one block if condition is true and another block if condition is false.
+
+Syntax
+if (condition)
+{
+    // true block
+}
+else
+{
+    // false block
+}
+
+4. Relational Operators Used
+
+Relational operators are used to compare two values.
+
+Operator	Meaning
+>	Greater than
+<	Less than
+>=	Greater than or equal
+<=	Less than or equal
+==	Equal to
+!=	Not equal
+5. Example – Comparing Two Numbers
+int a = 14;
+int b = 12;
+
+if (a > b)
+{
+    printf("a is greater than b");
+}
+else
+{
+    printf("a is less than or equal to b");
+}
+
+6. Simple Calculation Using IF
+int a = 14;
+int b = 12;
+int x;
+
+if (a < b)
+{
+    x = b - a;
+}
+else
+{
+    x = a - b;
+}
+
+printf("%d", x);
+
+7. Example – Sum Using IF Condition
+int i, sum, x;
+sum = 0;
+i = 0;
+
+if (i < 10)
+{
+    x = sum + i;
+    sum = x;
+}
+
+printf("%d", sum);
+
+8. Loop Logic Using IF and GOTO (Basic Understanding)
+int i, sum, x;
+i = 0;
+sum = 0;
+x = 0;
+
+loop:
+if (i < 10)
+{
+    x = sum + i;
+    sum = x;
+    i = i + 1;
+    goto loop;
+}
+
+printf("%d", sum);
+
+9. Key Learnings
+
+if checks conditions
+
+Conditions return true or false
+
+Relational operators are essential for decision making
+
+if–else helps control program flow
