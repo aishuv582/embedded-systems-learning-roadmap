@@ -1,0 +1,100 @@
+DAY 02 – NUMBER SYSTEMS & OPERATORS (EMBEDDED C BASICS)
+
+--------------------------------------------------
+Topics Covered
+--------------------------------------------------
+1. Number Systems
+2. LHS and RHS
+3. Operators in C
+4. Basic Program Concepts
+5. Handwritten Notes Reference
+
+--------------------------------------------------
+1. Number Systems
+--------------------------------------------------
+
+Binary Number System
+- Uses only 0 and 1
+- Base = 2
+- Computers understand only binary numbers
+- Example:
+  010000101100
+
+Decimal Number System
+- Numbers we use in daily life
+- Digits from 0 to 9
+- Base = 10
+
+Octal Number System
+- Digits from 0 to 7
+- Base = 8
+- Example:
+  010 (octal)
+
+Hexadecimal Number System
+- Digits from 0 to 9 and A to F
+- Base = 16
+- Used to represent large binary values easily
+
+--------------------------------------------------
+2. LHS and RHS
+--------------------------------------------------
+
+LHS – Left Hand Side
+RHS – Right Hand Side
+
+Example:
+a = b + 10;
+
+Here,
+- a is LHS
+- b + 10 is RHS
+
+--------------------------------------------------
+3. Operators in C
+--------------------------------------------------
+
+C language has many operators.
+Commonly, we use 5 main types:
+
+1. Arithmetic Operators
+   +  -  *  /
+
+2. Relational Operators
+   <  >  ==  !=  <=  >=
+
+3. Logical Operators
+   &&  ||  !
+
+4. Assignment Operator
+   =
+
+5. Bitwise Operators
+   &  |  ^
+
+--------------------------------------------------
+4. Basic Program Concepts
+--------------------------------------------------
+
+Declaration
+- Creating a variable
+
+Assignment
+- Giving a value to a variable
+
+Operator
+- Used to perform operations
+
+Decision
+- Used to make decisions using conditions
+
+
+
+--------------------------------------------------
+Learning Outcome
+--------------------------------------------------
+
+- Understood different number systems
+- Learned how LHS and RHS work
+- Gained basic knowledge of C operators
+- Built strong foundation for Embedded C programming
