@@ -1,7 +1,8 @@
 /*
 Program Name : arith.c
 Author       : Aishwarya V
-Description  : Program about getting a number from the user and add 2 to that number*/
+Description  : Program about getting a number from the user and add 2 to that number
+*/
 
 
 
