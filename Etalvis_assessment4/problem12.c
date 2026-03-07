@@ -1,5 +1,5 @@
  /*
-Program Name : loop program to Write a program to get a number from the user and print the sum of all digits
+Program Name : loop program to rite a program to get a number from user and print the reverse of that number.
 Author       : Aishwarya V
 problemstatement  : Write a program to get a number from user and print the reverse of that number.
 */
@@ -10,19 +10,19 @@ int main() 					//main function
 {
   
     
-    int x,sum=0;
+    int x,rev=0;
     printf("Enter a number");
     scanf("%d",&x);
     loop:
     if(x>0)
     
     {
-        sum=sum+x%10;
+        rev=rev*10+x%10;
         x=x/10;
-        					//logic for sum of digit
+        					//logic for reversing given input
         goto loop;
     }
-    printf("sum=%d",sum);
+    printf("rev=%d",rev);
 return 0;
 
 }
