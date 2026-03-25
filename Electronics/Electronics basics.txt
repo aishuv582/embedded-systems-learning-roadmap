@@ -1,0 +1,101 @@
+# ⚡ Basic Electronics – Fundamentals
+
+This repository contains basic electronics concepts that are essential for understanding embedded systems and circuit design.
+
+---
+
+## 🔹 What is Electronics?
+
+Electronics is the branch of engineering that deals with the study and application of electrical circuits involving active and passive components such as resistors, capacitors, diodes, and transistors.
+
+---
+
+## 🔹 Basic Electrical Quantities
+
+### 1. Voltage (V)
+
+* Voltage is the potential difference between two points.
+* Unit: Volts (V)
+
+### 2. Current (I)
+
+* Current is the flow of electric charge in a circuit.
+* Unit: Amperes (A)
+
+### 3. Resistance (R)
+
+* Resistance is the opposition to the flow of current.
+* Unit: Ohms (Ω)
+
+---
+
+## 🔹 Ohm’s Law
+
+Ohm’s Law defines the relationship between voltage, current, and resistance.
+
+Formula:
+V = I × R
+
+Where:
+
+* V = Voltage
+* I = Current
+* R = Resistance
+
+---
+
+## 🔹 Types of Components
+
+### Passive Components
+
+* Resistor
+* Capacitor
+* Inductor
+
+### Active Components
+
+* Diode
+* Transistor
+* Integrated Circuits (ICs)
+
+---
+
+## 🔹 Simple Example
+
+If a circuit has:
+
+* Voltage = 10V
+* Resistance = 5Ω
+
+Then:
+
+* Current = V / R = 2A
+
+---
+
+## 🔹 Applications of Basic Electronics
+
+* Circuit design
+* Embedded systems
+* Communication systems
+* Power systems
+
+---
+
+## 🔹 Why Learn Electronics?
+
+Electronics is the foundation for:
+
+* Embedded systems
+* Microcontrollers
+* Hardware design
+
+Understanding these basics helps in debugging circuits and building real-world projects.
+
+---
+
+## 🚀 Learning Goal
+
+To build a strong foundation in electronics for mastering embedded systems and real-time applications.
+
+---
