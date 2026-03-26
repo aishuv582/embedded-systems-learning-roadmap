@@ -1,0 +1,18 @@
+# Day 2 - Kirchhoff’s Current Law (KCL)
+
+## Definition
+Kirchhoff’s Current Law (KCL) states that the total current entering a node is equal to the total current leaving the node.
+
+## Formula
+Sum of incoming currents = Sum of outgoing currents
+
+## Example
+If 2A and 3A enter a node, then 5A must leave the node.
+
+## Key Point
+KCL is based on conservation of charge.
+
+## Applications
+- Circuit analysis
+- Nodal analysis
+- Embedded systems debugging
