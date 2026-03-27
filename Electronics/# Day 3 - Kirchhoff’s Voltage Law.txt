@@ -1,0 +1,20 @@
+# Day 3 - Kirchhoff’s Voltage Law (KVL)
+
+## Definition
+Kirchhoff’s Voltage Law states that the sum of all voltages in a closed loop is equal to zero.
+
+## Formula
+Sum of voltages = 0
+
+## Example
+Battery = 10V
+Voltage drops = 4V and 6V
+
+KVL:
+10 - 4 - 6 = 0
+
+## Key Points
+- Applies to closed circuits
+- Based on conservation of energy
+- Voltage rise is positive
+- Voltage drop is negative
