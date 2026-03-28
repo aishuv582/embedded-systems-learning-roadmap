@@ -1,0 +1,18 @@
+# Day 4 - Series Circuits
+
+## Definition
+A series circuit has only one path for current flow.
+
+## Rules
+- Current is same everywhere
+- Voltage divides
+- Resistance adds
+
+## Formula
+R = R1 + R2
+I = V / R
+
+## Example
+R1 = 2 ohm, R2 = 3 ohm
+Total R = 5 ohm
+Current = 2A
