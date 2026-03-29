@@ -1,0 +1,81 @@
+# 📘 Day 5: Series and Parallel Circuits
+
+## 🔹 Overview
+
+Today I learned about **Series and Parallel Circuits**, which are fundamental concepts in electronics used to understand how components are connected in a circuit.
+
+---
+
+## 🔸 1. Series Circuit
+
+### 👉 Definition:
+
+A series circuit is a circuit in which components are connected one after another in a single path.
+
+### 🔹 Key Characteristics:
+
+* Current is the **same** through all components
+* Voltage is **divided** across components
+
+### 🔹 Formulas:
+
+* Current:
+  I = I₁ = I₂ = I₃
+
+* Voltage:
+  V = V₁ + V₂ + V₃
+
+* Total Resistance:
+  R_total = R₁ + R₂ + R₃
+
+---
+
+## 🔸 2. Parallel Circuit
+
+### 👉 Definition:
+
+A parallel circuit is a circuit where components are connected across the same voltage source, providing multiple paths for current.
+
+### 🔹 Key Characteristics:
+
+* Voltage is the **same** across all branches
+* Current is **divided** among branches
+
+### 🔹 Formulas:
+
+* Voltage:
+  V = V₁ = V₂ = V₃
+
+* Current:
+  I = I₁ + I₂ + I₃
+
+* Total Resistance:
+  1/R_total = 1/R₁ + 1/R₂ + 1/R₃
+
+---
+
+## 🔸 Comparison Table
+
+| Feature    | Series Circuit | Parallel Circuit |
+| ---------- | -------------- | ---------------- |
+| Path       | Single         | Multiple         |
+| Current    | Same           | Divided          |
+| Voltage    | Divided        | Same             |
+| Resistance | Increases      | Decreases        |
+
+---
+
+## 🔸 Real-Life Examples
+
+* Series Circuit: Decorative lights
+* Parallel Circuit: Household wiring
+
+---
+
+
+
+## 🔹 Conclusion
+
+Understanding series and parallel circuits helps in analyzing and designing electrical systems. These concepts are essential for embedded systems and hardware development.
+
+
