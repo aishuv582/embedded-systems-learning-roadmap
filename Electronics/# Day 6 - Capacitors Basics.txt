@@ -1,0 +1,24 @@
+# Day 6 - Capacitors Basics
+
+## What is Capacitor?
+Stores electrical energy in electric field
+
+## Formula
+Q = C * V
+
+## Behavior
+- Initially acts as short circuit
+- After charging acts as open circuit
+
+## Types
+- Ceramic
+- Electrolytic
+- Tantalum
+
+## Capacitors in Circuits
+
+### Series
+1/C_total = 1/C1 + 1/C2
+
+### Parallel
+C_total = C1 + C2
