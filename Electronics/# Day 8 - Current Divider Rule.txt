@@ -1,0 +1,26 @@
+# Day 8 - Current Divider Rule
+
+## What is Current Divider Rule?
+The Current Divider Rule is used to find the current flowing through each resistor in a parallel circuit.
+
+## Formula
+For two resistors:
+I1 = I × (R2 / (R1 + R2))
+
+## Key Points
+- Current divides in parallel circuits
+- Lower resistance gets more current
+- Voltage is same across all branches
+
+## Example
+Given:
+R1 = 2Ω, R2 = 4Ω, Total current = 6A
+
+I1 = 6 × (4 / (2 + 4)) = 4A
+
+So,
+Current through R1 = 4A  
+Current through R2 = 2A
+
+## Conclusion
+Current Divider Rule helps analyze current distribution in parallel circuits.
