@@ -1,0 +1,21 @@
+# Day 9 - Power in Electrical Circuits
+
+## Definition
+Power is the rate at which electrical energy is consumed.
+
+## Formula
+P = V × I  
+P = I²R  
+P = V² / R  
+
+## Unit
+Watt (W)
+
+## Example
+V = 10V, I = 2A  
+P = 20W
+
+## Applications
+- Power rating of components
+- Battery usage
+- Circuit safety
