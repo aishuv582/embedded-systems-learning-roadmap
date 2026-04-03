@@ -1,0 +1,17 @@
+# Day 10 - Kirchhoff’s Laws Practice
+
+## Topics Covered:
+- KCL (Kirchhoff’s Current Law)
+- KVL (Kirchhoff’s Voltage Law)
+- Problem solving using KCL & KVL
+
+## Key Concepts:
+- Sum of currents at a node is zero
+- Sum of voltages in a loop is zero
+- Applied in circuit analysis
+
+## Practice:
+Solved problems on node and loop analysis
+
+## Next:
+Network Analysis Techniques
