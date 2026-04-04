@@ -1,0 +1,45 @@
+What is a Capacitor?
+
+A capacitor is an electronic component that stores electrical energy in the form of an electric field.
+
+It consists of:
+
+Two conductive plates
+A dielectric (insulating material) between them
+🧮 Formula
+C = Q / V
+
+Where:
+
+C = Capacitance (Farad)
+Q = Charge
+V = Voltage
+📏 Units
+Farad (F)
+Common Values:
+Microfarad (µF)
+Nanofarad (nF)
+Picofarad (pF)
+🔍 Types of Capacitors
+Ceramic Capacitor
+Electrolytic Capacitor (Polarized)
+Tantalum Capacitor
+Film Capacitor
+🔄 Working Principle
+🔸 Charging
+Stores electrical energy when connected to a voltage source
+Voltage increases gradually
+🔸 Discharging
+Releases stored energy when disconnected from the source
+💡 Key Concepts
+Blocks DC after fully charged
+Allows AC signals to pass
+Used for energy storage and filtering
+🛠️ Applications
+Power supply filtering
+Timing circuits
+Signal coupling and decoupling
+Used in chargers and electronic devices
+✅ Conclusion
+
+Capacitors play a crucial role in electronic circuits by storing energy, filtering signals, and stabilizing voltage.
