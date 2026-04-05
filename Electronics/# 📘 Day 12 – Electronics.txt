@@ -1,0 +1,103 @@
+# 📘 Day 12 – Electronics  
+## 🔹 Topic: Capacitance & Capacitors  
+
+---
+
+## 📌 What is Capacitance?
+
+Capacitance is the ability of a system to store electric charge.
+
+- Symbol: **C**  
+- Unit: **Farad (F)**  
+
+---
+
+## 📌 What is a Capacitor?
+
+A capacitor is a passive electronic component that stores electrical energy in the form of an electric field.
+
+### 🔧 Construction:
+- Two conducting plates  
+- One insulating material (dielectric) between them  
+
+---
+
+## 📐 Formula of Capacitance
+
+C = Q / V  
+
+Where:  
+- C = Capacitance  
+- Q = Charge  
+- V = Voltage  
+
+---
+
+## ⚡ Energy Stored in a Capacitor
+
+E = (1/2) C V²  
+
+- Energy is stored in the electric field between the plates  
+
+---
+
+## 🔄 Capacitors in Circuits
+
+### ➤ Capacitors in Series
+
+1 / C_total = 1 / C1 + 1 / C2 + ...  
+
+- Total capacitance decreases  
+
+---
+
+### ➤ Capacitors in Parallel
+
+C_total = C1 + C2 + ...  
+
+- Total capacitance increases  
+
+---
+
+## 🔄 Charging & Discharging
+
+- Charging: Capacitor stores energy when connected to a power source  
+- Discharging: Capacitor releases stored energy into the circuit  
+
+---
+
+## 🧠 Key Points
+
+- Capacitors oppose sudden changes in voltage  
+- Blocks DC after fully charged  
+- Allows AC signals to pass  
+- Stores energy in electric field  
+
+---
+
+## 🔌 Types of Capacitors
+
+- Ceramic Capacitor  
+- Electrolytic Capacitor  
+- Tantalum Capacitor  
+- Film Capacitor  
+
+---
+
+## 🚀 Applications
+
+- Power supply filtering  
+- Signal coupling and decoupling  
+- Timing circuits (RC circuits)  
+- Energy storage  
+
+---
+
+## ✅ Summary
+
+- Learned about capacitance and capacitors  
+- Understood formulas and working principle  
+- Studied series and parallel combinations  
+- Explored applications in circuits  
+
+---
