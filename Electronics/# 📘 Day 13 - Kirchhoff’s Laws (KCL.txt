@@ -1,0 +1,85 @@
+# 📘 Day 13 - Kirchhoff’s Laws (KCL & KVL)
+
+## 🔹 Overview
+Today I revised **Kirchhoff’s Laws**, which are essential for analyzing electrical circuits.
+
+---
+
+## 🔹 1. Kirchhoff’s Current Law (KCL)
+
+**Definition:**  
+The total current entering a node is equal to the total current leaving the node.
+
+**Formula:**
+Σ I(in) = Σ I(out)
+
+**Key Point:**  
+- Based on **conservation of charge**
+- Current cannot accumulate at a node
+
+**Example:**  
+If 3A and 2A enter a node, then 5A must leave.
+
+---
+
+## 🔹 2. Kirchhoff’s Voltage Law (KVL)
+
+**Definition:**  
+The sum of all voltages in a closed loop is equal to zero.
+
+**Formula:**
+Σ V = 0
+
+**Key Point:**  
+- Based on **conservation of energy**
+- Total voltage supplied = total voltage drop
+
+**Example:**  
+10V - 4V - 6V = 0 ✔️
+
+---
+
+## 🔹 3. Applications
+
+- Circuit analysis
+- Node voltage method
+- Loop current method
+- Embedded systems hardware design
+
+---
+
+## 🔹 4. Key Differences
+
+| KCL | KVL |
+|-----|-----|
+| Works at node | Works in loop |
+| Based on charge | Based on energy |
+| Deals with current | Deals with voltage |
+
+---
+
+## 🔹 5. Practice Question
+
+A node has:
+- Incoming current = 4A + 6A
+- Outgoing current = 5A + x
+
+Find x.
+
+**Solution:**  
+Total incoming = 10A  
+10 = 5 + x  
+x = 5A
+
+---
+
+## 🚀 Conclusion
+
+Kirchhoff’s Laws are fundamental tools for solving complex circuits and are widely used in electronics and embedded systems.
+
+---
+
+## 📅 Progress
+
+✔️ Day 13 Completed  
+🔜 Next: Superposition Theorem
