@@ -1,0 +1,62 @@
+# 📘 Day 14 - Superposition Theorem
+
+## 🔹 Overview
+Today I learned about the **Superposition Theorem**, which helps analyze circuits with multiple sources.
+
+---
+
+## 🔹 1. Superposition Theorem - Definition
+
+In a linear circuit with multiple independent sources, the total response (current or voltage) is the sum of the responses caused by each source acting alone.
+
+---
+
+## 🔹 2. Steps to Apply Superposition Theorem
+
+1. Consider **one source at a time**
+2. Turn off other sources:
+   - Voltage source → Replace with **short circuit**
+   - Current source → Replace with **open circuit**
+3. Find current/voltage due to that one source
+4. Repeat for all sources
+5. Add all results algebraically
+
+---
+
+## 🔹 3. Key Points
+
+- Works only for **linear circuits**
+- Cannot be used directly for **power calculation**
+- Helps simplify complex circuits
+
+---
+
+## 🔹 4. Example (Concept)
+
+If a circuit has:
+- Voltage source V1
+- Voltage source V2
+
+Then:
+Total current = Current due to V1 + Current due to V2
+
+---
+
+## 🔹 5. Applications
+
+- Circuit analysis
+- Troubleshooting circuits
+- Useful in electronic and embedded system design
+
+---
+
+## 🚀 Conclusion
+
+Superposition Theorem makes it easier to analyze circuits with multiple sources by breaking them into simpler parts.
+
+---
+
+## 📅 Progress
+
+✔️ Day 14 Completed  
+🔜 Next: Thevenin’s Theorem
