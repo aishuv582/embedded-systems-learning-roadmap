@@ -1,0 +1,25 @@
+# Day 14 - Electrical Power and Energy
+
+## Electrical Power
+Power is the rate at which electrical energy is consumed.
+
+Formula:
+P = V × I
+
+Other formulas:
+P = I^2 R
+P = V^2 / R
+
+## Electrical Energy
+Energy is the total power consumed over time.
+
+Formula:
+E = P × t
+
+## Unit
+1 kWh = 1 unit (used in electricity bills)
+
+## Importance
+- Used in embedded systems
+- Helps in power optimization
+- Important for circuit design
