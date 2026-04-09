@@ -1,0 +1,53 @@
+Day 15 – Nodal Analysis (Node Voltage Method)
+📌 Overview
+
+Nodal Analysis is a method used to determine the voltage at different nodes in an electrical circuit.
+
+It is based on Kirchhoff’s Current Law (KCL):
+
+The total current entering a node equals the total current leaving the node.
+
+🔹 What is a Node?
+
+A node is a point where two or more circuit elements are connected.
+
+🔹 Steps for Nodal Analysis
+Identify all the nodes in the circuit
+Choose a reference node (Ground = 0V)
+Assign voltage variables (V₁, V₂, etc.)
+Apply KCL at each node
+Solve the equations to find node voltages
+🔹 Core Equations
+
+Using KCL:
+
+Σ I_in = Σ I_out
+
+Using Ohm’s Law:
+
+I = V / R
+🔹 Example Problem
+🧠 Given:
+Voltage Source = 10V
+Resistor R1 = 5Ω
+Resistor R2 = 10Ω
+🔸 Apply KCL:
+(10 - V) / 5 = V / 10
+🔸 Solve:
+2(10 - V) = V
+20 - 2V = V
+20 = 3V
+V = 6.67V
+✅ Final Answer
+
+Node Voltage (V) = 6.67 V
+
+💡 Key Takeaways
+Always choose a proper ground/reference node
+Maintain a consistent current direction
+Use Ohm’s Law to convert voltages into currents
+Simplifies analysis of complex circuits
+🚀 Applications
+Electrical circuit analysis
+Embedded systems hardware debugging
+Circuit simulation tools (e.g., SPICE)
