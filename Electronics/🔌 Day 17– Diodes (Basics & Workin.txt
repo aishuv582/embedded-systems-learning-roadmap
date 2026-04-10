@@ -1,0 +1,54 @@
+🔌 Day 16 – Diodes (Basics & Working)
+📌 What is a Diode?
+
+A diode is a semiconductor device that allows current to flow in only one direction.
+
+👉 Think of it like a one-way valve for electric current.
+
+⚙️ Structure of a Diode
+
+A diode is made of:
+
+P-type material (positive side → Anode)
+N-type material (negative side → Cathode)
+
+When joined, they form a PN junction.
+
+🔄 Working of a Diode
+1️⃣ Forward Bias (ON condition)
+Anode → connected to positive
+Cathode → connected to negative
+
+✅ Current flows
+✅ Diode conducts
+
+👉 Voltage required:
+
+Silicon diode → ~0.7V
+Germanium diode → ~0.3V
+2️⃣ Reverse Bias (OFF condition)
+Anode → negative
+Cathode → positive
+
+❌ No current flows
+❌ Diode blocks current
+
+📈 Diode Symbol
+   Anode     Cathode
+     |>| 
+
+➡️ Arrow shows direction of current flow
+
+💡 Key Concept: Barrier Voltage
+Small voltage needed to start conduction
+Important in real circuits (not ideal diode)
+🔧 Applications of Diodes
+Rectifiers (AC → DC conversion)
+Protection circuits
+Signal clipping & clamping
+LED (light emitting diode)
+🧠 Quick Revision
+Diode = unidirectional device
+Forward bias = conducts
+Reverse bias = blocks
+Used in power supplies & embedded circuits
