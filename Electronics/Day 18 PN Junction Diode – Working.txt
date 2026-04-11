@@ -1,0 +1,128 @@
+Day 17: PN Junction Diode – Working & V-I Characteristics
+🔹 1. What is a PN Junction Diode?
+
+A PN Junction Diode is formed by joining:
+
+P-type semiconductor (holes are majority carriers)
+N-type semiconductor (electrons are majority carriers)
+
+👉 It is the most basic and important semiconductor device.
+
+🔹 2. Formation of Depletion Region
+
+When P and N materials are joined:
+
+Electrons move from N → P
+Holes move from P → N
+
+This creates a region with:
+
+No free charge carriers
+Fixed ions
+
+👉 This region is called the Depletion Region
+
+🔹 3. Barrier Potential (Voltage)
+
+Due to charge separation:
+
+An electric field is formed
+It opposes further movement of charges
+
+👉 This voltage is called Barrier Voltage
+
+Typical values:
+
+Silicon: 0.7 V
+Germanium: 0.3 V
+🔹 4. Biasing of Diode
+🔸 Forward Bias
+P → Positive terminal
+N → Negative terminal
+
+👉 Effect:
+
+Depletion layer reduces
+Current flows
+🔸 Reverse Bias
+P → Negative terminal
+N → Positive terminal
+
+👉 Effect:
+
+Depletion layer increases
+Current almost zero
+🔹 5. V-I Characteristics of Diode
+
+This shows the relationship between:
+
+Voltage (V)
+Current (I)
+🔸 Forward Region:
+No current until threshold voltage
+After threshold → current increases rapidly
+🔸 Reverse Region:
+Very small current (leakage current)
+At high voltage → breakdown occurs
+🔹 6. Diode Equation
+
+Here’s the important formula:
+
+𝐼
+=
+𝐼
+𝑠
+(
+𝑒
+𝑉
+𝜂
+𝑉
+𝑇
+−
+1
+)
+I=I
+s
+	​
+
+(e
+ηV
+T
+	​
+
+V
+	​
+
+−1)
+
+Where:
+
+𝐼
+I = Diode current
+𝐼
+𝑠
+I
+s
+	​
+
+ = Reverse saturation current
+𝑉
+V = Applied voltage
+𝑉
+𝑇
+V
+T
+	​
+
+ = Thermal voltage
+𝑒
+𝑡
+𝑎
+eta = Ideality factor
+🔹 7. Key Points to Remember
+Diode allows current only in one direction
+Works like a switch
+Used in:
+Rectifiers
+Clippers & Clampers
+Power supplies
