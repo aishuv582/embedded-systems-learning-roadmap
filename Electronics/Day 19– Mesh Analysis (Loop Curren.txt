@@ -1,0 +1,90 @@
+Day 16 – Mesh Analysis (Loop Current Method)
+🔹 What is Mesh Analysis?
+
+Mesh Analysis is a method used to find currents in a circuit using Kirchhoff’s Voltage Law.
+
+👉 It is mainly used for planar circuits (circuits without crossing branches).
+
+🔹 What is a Mesh?
+
+A mesh is a loop in a circuit that does not contain any other loops inside it.
+
+🔹 Steps to Solve Mesh Analysis
+Identify all meshes in the circuit
+Assign mesh currents (I₁, I₂, …)
+Apply KVL to each mesh
+Express voltages using Ohm’s Law (V = IR)
+Solve the equations
+🔹 Key Idea (Very Important)
+
+👉 Around any loop:
+Sum of voltage drops = Sum of voltage sources
+
+🔹 Example
+
+Consider a simple loop with:
+
+Voltage source = 10V
+Resistors = 2Ω and 3Ω
+Mesh current = I
+
+Apply KVL:
+
+10
+=
+2
+𝐼
++
+3
+𝐼
+10=2I+3I
+
+Solve:
+
+10
+=
+5
+𝐼
+10=5I
+𝐼
+=
+2
+𝐴
+I=2A
+🔹 Case: Two Meshes (Important Concept)
+
+When two meshes share a resistor:
+
+👉 Current through shared resistor = (I₁ - I₂)
+
+Example term:
+
+𝑅
+(
+𝐼
+1
+−
+𝐼
+2
+)
+R(I
+1
+	​
+
+−I
+2
+	​
+
+)
+🔹 Why Mesh Analysis is Important for You
+
+For your embedded systems journey:
+
+Helps in power circuit design
+Useful in motor driver circuits
+Helps in debugging PCB current paths
+Important for hardware interviews
+🔹 Quick Comparison
+Method	Based On	Finds
+Nodal Analysis	KCL	Voltages
+Mesh Analysis	KVL	Curre
