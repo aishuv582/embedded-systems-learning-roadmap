@@ -1,0 +1,125 @@
+Day 20: Transistors (BJT Basics)
+
+Today’s topic is very important because transistors are the heart of electronics—used in amplifiers, switches, and microcontroller circuits.
+
+🔹 What is a Transistor?
+
+A transistor is a semiconductor device used to:
+
+Amplify signals 📈
+Act as a switch 🔌
+
+The most common type is BJT (Bipolar Junction Transistor).
+
+🔹 Types of BJT
+NPN Transistor
+PNP Transistor
+
+👉 Most commonly used: NPN
+
+🔹 Structure of BJT
+
+A transistor has 3 terminals:
+
+Emitter (E) → emits charge carriers
+Base (B) → controls the transistor
+Collector (C) → collects carriers
+🔹 Working of NPN Transistor
+When base-emitter junction is forward biased
+And collector-base is reverse biased
+
+👉 Current flows from Collector → Emitter
+
+Key idea:
+
+👉 Small base current controls large collector current
+
+🔹 Transistor as a Switch
+
+Two states:
+
+OFF State (Cut-off region)
+No base current
+Transistor OFF
+ON State (Saturation region)
+Base current present
+Transistor ON
+
+👉 This is widely used in:
+
+LEDs
+Relays
+Embedded systems GPIO control
+🔹 Transistor as an Amplifier
+Weak signal at base
+Strong signal at collector
+
+👉 Used in:
+
+Audio circuits
+Signal processing
+🔹 Important Formula
+
+Relationship between currents:
+
+𝐼
+𝐸
+=
+𝐼
+𝐶
++
+𝐼
+𝐵
+I
+E
+	​
+
+=I
+C
+	​
+
++I
+B
+	​
+
+
+Where:
+
+𝐼
+𝐸
+I
+E
+	​
+
+ = Emitter current
+𝐼
+𝐶
+I
+C
+	​
+
+ = Collector current
+𝐼
+𝐵
+I
+B
+	​
+
+ = Base current
+🔹 Simple Example
+
+If:
+
+Base current = 1 mA
+Current gain (β) = 100
+
+Then:
+
+Collector current = 100 mA
+
+👉 Small input → Large output 🚀
+
+🔹 Real-Life Use in Embedded Systems
+Driving LEDs using microcontroller
+Controlling motors and relays
+Used inside logic gates and processors
