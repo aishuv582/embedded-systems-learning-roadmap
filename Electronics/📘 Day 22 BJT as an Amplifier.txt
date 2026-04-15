@@ -1,0 +1,94 @@
+📘 Day 22: BJT as an Amplifier
+🔹 What is an Amplifier?
+
+An amplifier increases the strength of a signal.
+
+👉 In electronics:
+
+Input → small signal (voltage/current)
+Output → larger version of the same signal
+🔹 Why BJT is used as an Amplifier?
+
+A Bipolar Junction Transistor (BJT) can:
+
+Take a small base current (Ib)
+Control a large collector current (Ic)
+
+👉 This property is called current amplification
+
+🔹 Basic Concept
+𝐼
+𝐶
+=
+𝛽
+×
+𝐼
+𝐵
+I
+C
+	​
+
+=β×I
+B
+	​
+
+
+Where:
+
+𝐼
+𝐶
+I
+C
+	​
+
+ = Collector current
+𝐼
+𝐵
+I
+B
+	​
+
+ = Base current
+𝛽
+β = Current gain
+🔹 Common Emitter (CE) Amplifier
+
+This is the most widely used amplifier configuration.
+
+🔸 Circuit Features:
+Input → Base
+Output → Collector
+Emitter → Ground
+🔸 Key Properties:
+High gain 🔥
+Output is inverted
+Widely used in audio & embedded circuits
+🔹 Working Principle
+Small AC signal is applied to base
+Base current changes slightly
+Collector current changes significantly
+Voltage across load resistor increases
+Output = amplified signal
+🔹 Regions for Amplifier Operation
+
+👉 For amplification, BJT must operate in:
+
+✅ Active Region
+
+Base-Emitter → Forward biased
+Collector-Base → Reverse biased
+
+❌ Cut-off → No amplification
+❌ Saturation → Acts like switch
+
+🔹 Simple Example
+Input signal = 10 mV
+Output signal = 1 V
+
+👉 Amplification achieved ✅
+
+🔹 Applications
+Audio amplifiers 🎧
+Signal processing
+Sensors in embedded systems
+Communication circuits
