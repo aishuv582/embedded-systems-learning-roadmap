@@ -1,0 +1,96 @@
+Day 23 of Electronics – BJT as an Amplifier (Detailed Understanding)
+
+BJT using a transistor as an amplifier.
+
+🔹 What is Amplification?
+
+Amplification means:
+👉 Increasing the strength of a weak signal
+
+Example:
+
+Input signal → small voltage/current
+Output signal → larger voltage/current
+🔹 How BJT Works as an Amplifier
+
+A BJT (Bipolar Junction Transistor) amplifies when it operates in the:
+
+👉 Active Region
+
+Conditions for Active Region:
+Emitter-Base Junction → Forward biased
+Collector-Base Junction → Reverse biased
+🔹 Common Emitter (CE) Amplifier
+
+This is the most commonly used configuration.
+
+Why?
+High voltage gain
+High current gain
+Moderate power gain
+🔹 Basic Circuit Explanation
+
+Components:
+
+Input → Base
+Output → Collector
+Emitter → Ground
+Working:
+Small input signal applied at base
+Small base current (Ib) flows
+This controls large collector current (Ic)
+
+👉 Relationship:
+
+Ic = β × Ib
+
+So,
+➡️ Small change in Ib → Large change in Ic → Amplification
+
+🔹 Voltage Gain Concept
+
+Voltage gain (Av) tells how much signal is amplified.
+
+👉 Formula:
+
+𝐴
+𝑣
+=
+𝑉
+𝑜
+𝑢
+𝑡
+𝑉
+𝑖
+𝑛
+A
+v
+	​
+
+=
+V
+in
+	​
+
+V
+out
+	​
+
+	​
+
+🔹 Key Point (VERY IMPORTANT ⚡)
+
+In CE amplifier:
+👉 Output is inverted
+
+Input ↑ → Output ↓
+Phase difference = 180°
+🔹 Types of Gain
+Current Gain (β)
+Voltage Gain (Av)
+Power Gain
+🔹 Real-Life Applications
+Audio amplifiers 🎧
+Radio signals 📻
+Sensors signal boosting
+Embedded systems analog circuits
