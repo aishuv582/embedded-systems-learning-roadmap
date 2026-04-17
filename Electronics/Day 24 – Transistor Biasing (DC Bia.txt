@@ -1,0 +1,53 @@
+Day 23 – Transistor Biasing (DC Biasing of BJT)
+🔹 Overview
+
+Today, I learned about biasing in BJT, which is essential to make the transistor work properly as an amplifier by fixing a stable operating point.
+
+🔹 What is Biasing?
+
+Biasing means applying DC voltages to a transistor to set a proper operating point (Q-point).
+
+👉 It ensures the transistor stays in the active region for amplification.
+
+🔹 Why Biasing is Important?
+Prevents distortion
+Keeps output stable
+Maintains proper amplification
+Avoids transistor going into cutoff or saturation
+🔹 Types of Biasing
+1. Fixed Bias
+Simple circuit
+Uses base resistor
+Poor stability
+2. Collector-to-Base Bias
+Better stability than fixed bias
+Feedback from collector improves performance
+3. Voltage Divider Bias ⭐ (Most Important)
+Most stable method
+Uses two resistors (R1, R2)
+Widely used in practical circuits
+🔹 Q-Point (Operating Point)
+The DC operating point of the transistor
+Represents values of:
+Collector current (Ic)
+Collector-Emitter voltage (Vce)
+
+👉 Proper Q-point → No signal distortion
+
+🔹 Stability
+
+Biasing helps to stabilize the circuit against:
+
+Temperature changes
+Variations in transistor parameters (β)
+🔹 Key Idea
+
+👉 Without proper biasing, amplification will be distorted or unstable
+
+🔹 Applications
+Amplifier circuits
+Audio systems
+Signal processing
+🔹 Summary
+
+Biasing is crucial for the proper functioning of a BJT amplifier. Among all methods, voltage divider bias is the most commonly used due to its stability.
