@@ -1,0 +1,60 @@
+Day 24 – Capacitors in Amplifiers (Coupling & Bypass Capacitors)
+🔹 Overview
+
+Today, I learned the role of capacitors in amplifier circuits, especially how they are used for coupling and bypass purposes to improve signal quality and performance.
+
+🔹 Why Capacitors are Used in Amplifiers?
+
+Capacitors allow AC signals to pass while blocking DC components.
+
+👉 This helps in:
+
+Maintaining proper biasing
+Transferring signals between stages
+Improving amplifier efficiency
+🔹 Types of Capacitors in Amplifiers
+1. Coupling Capacitor
+Used to connect two stages of an amplifier
+Blocks DC and allows AC signal to pass
+Prevents disturbance of biasing between stages
+
+👉 Placed at:
+
+Input (between source and amplifier)
+Output (between amplifier and load)
+2. Bypass Capacitor
+Connected across the emitter resistor
+Provides a low-resistance path for AC signals
+Improves voltage gain
+
+👉 Without bypass capacitor:
+
+Gain decreases
+
+👉 With bypass capacitor:
+
+Gain increases
+🔹 Working Principle
+Coupling Capacitor:
+Passes AC signal from one stage to another
+Blocks DC to maintain independent biasing
+Bypass Capacitor:
+Shorts AC signals to ground
+Removes negative feedback in emitter resistor
+Enhances amplification
+🔹 Key Concept
+
+👉 Capacitors behave differently for AC and DC:
+
+For DC → Open circuit
+For AC → Low impedance (acts like short circuit at high frequency)
+🔹 Applications
+Multi-stage amplifiers
+Audio amplifier circuits
+Communication systems
+🔹 Summary
+
+Capacitors play a crucial role in amplifier circuits by ensuring smooth signal transfer and improving gain.
+
+Coupling capacitors pass signals between stages
+Bypass capacitors increase gain by reducing AC resistance
