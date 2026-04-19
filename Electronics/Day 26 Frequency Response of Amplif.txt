@@ -1,0 +1,80 @@
+Day 25: Frequency Response of Amplifiers
+
+This topic directly builds on yesterday (capacitors), and it’s very important for interviews + real circuit design.
+
+🔹 1. What is Frequency Response?
+
+👉 Frequency response tells how an amplifier’s gain changes with frequency.
+
+Not all signals are amplified equally — it depends on frequency.
+
+🔸 2. Frequency Regions
+
+An amplifier works in 3 regions:
+
+🟢 1. Low-Frequency Region
+Gain decreases
+Due to:
+Coupling capacitors
+Bypass capacitor
+
+👉 At low frequency:
+
+Capacitor reactance is high
+Signal gets blocked
+🟡 2. Mid-Frequency Region
+Gain is maximum and constant
+Capacitors act like short circuits
+This is the ideal working region
+🔴 3. High-Frequency Region
+Gain decreases again
+Due to:
+Internal transistor capacitances
+Wiring/parasitic effects
+🔹 3. Frequency Response Curve
+
+It looks like a band-pass shape:
+
+y=Gain(f)
+
+👉 Shape:
+
+Low freq → Gain rises
+Mid freq → Flat
+High freq → Falls
+🔸 4. Important Terms
+✅ Cut-off Frequency (f₁ and f₂)
+Lower cut-off frequency (f₁) → Gain drops at low freq
+Upper cut-off frequency (f₂) → Gain drops at high freq
+
+👉 At cut-off:
+
+Gain becomes 70.7% of maximum (or -3 dB)
+✅ Bandwidth (BW)
+
+BW=f
+2
+	​
+
+−f
+1
+	​
+
+
+👉 Bandwidth = range of frequencies where amplifier works properly
+
+🔹 5. Why Gain Drops?
+🔽 Low Frequency:
+Capacitors block signal
+🔽 High Frequency:
+Internal capacitances create leakage paths
+Signal gets weakened
+🔸 6. Practical Importance
+Audio amplifiers → Need wide bandwidth (20 Hz – 20 kHz)
+Communication systems → Need specific frequency range
+Embedded systems → Sensor signal conditioning
+🔹 7. Interview Points (Very Important)
+Why capacitor affects low frequency?
+What is -3 dB point?
+Define bandwidth
+Why gain falls at high frequency?
