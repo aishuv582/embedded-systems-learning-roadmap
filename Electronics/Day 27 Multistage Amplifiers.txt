@@ -1,0 +1,98 @@
+Day 26: Multistage Amplifiers
+🔹 What is a Multistage Amplifier?
+
+A multistage amplifier is formed by:
+
+👉 Connecting two or more amplifiers in series
+
+Output of one stage → input of next stage
+Used when a single amplifier cannot provide enough gain
+🔹 Why Do We Need It?
+
+A single amplifier:
+
+Has limited gain
+Cannot drive heavy loads effectively
+
+👉 So we combine stages to:
+
+Increase overall gain
+Improve signal strength
+Drive output devices (like speakers)
+🔹 Types of Multistage Coupling
+1. RC Coupling (Most Common)
+Uses resistor + capacitor
+Best for audio frequencies
+
+✅ Advantages:
+
+Simple
+Low cost
+Good frequency response
+
+❌ Disadvantage:
+
+Power loss
+2. Transformer Coupling
+Uses a transformer
+
+✅ Advantages:
+
+High efficiency
+Good impedance matching
+
+❌ Disadvantages:
+
+Expensive
+Bulky
+3. Direct Coupling
+No capacitor or transformer
+Stages directly connected
+
+✅ Advantages:
+
+Works for low frequency (DC signals)
+
+❌ Disadvantage:
+
+Temperature variations affect performance
+🔹 Overall Gain of Multistage Amplifier
+
+A
+v
+	​
+
+=A
+v1
+	​
+
+×A
+v2
+	​
+
+×A
+v3
+	​
+
+…
+
+👉 Total gain = product of individual stage gains
+
+Example:
+
+Stage 1 gain = 10
+Stage 2 gain = 20
+
+👉 Total gain = 200
+
+🔹 Block Diagram
+Input → [Amplifier 1] → [Amplifier 2] → Output
+🔹 Frequency Response
+Similar to single amplifier
+But bandwidth may reduce slightly
+Gain increases significantly
+🔹 Real-Life Applications
+Audio amplifiers (speakers)
+Radio transmitters
+Signal processing circuits
+Embedded systems with sensors
