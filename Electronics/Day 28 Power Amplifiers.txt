@@ -1,0 +1,112 @@
+Day 27: Power Amplifiers
+🔹 What is a Power Amplifier?
+
+A power amplifier is designed to:
+
+👉 Increase the power of a signal to drive loads like speakers
+
+Unlike small-signal amplifiers:
+
+Focus is on power (not just voltage gain)
+Used at the output stage
+🔹 Why Do We Need Power Amplifiers?
+Signals from previous stages are weak
+Cannot drive devices like:
+Speakers
+Motors
+Output loads
+
+👉 Power amplifier boosts signal strength to usable level
+
+🔹 Types of Power Amplifiers (Classes)
+🔸 Class A Amplifier
+Transistor conducts for full 360°
+
+✅ Advantages:
+
+High signal quality
+No distortion
+
+❌ Disadvantages:
+
+Very low efficiency (~25–30%)
+Generates heat
+🔸 Class B Amplifier
+Conducts for 180°
+
+✅ Advantages:
+
+Better efficiency (~70%)
+
+❌ Disadvantage:
+
+Crossover distortion
+🔸 Class AB Amplifier
+Conducts for between 180° and 360°
+
+✅ Advantages:
+
+Combines benefits of A & B
+Less distortion + good efficiency
+
+👉 Most commonly used in real circuits
+
+🔸 Class C Amplifier
+Conducts for less than 180°
+
+✅ Advantages:
+
+Very high efficiency
+
+❌ Disadvantage:
+
+High distortion
+
+👉 Used in RF applications
+
+🔹 Efficiency of Amplifier
+
+η=
+P
+in
+	​
+
+P
+out
+	​
+
+	​
+
+×100%
+
+P
+out
+	​
+
+ → Output power
+P
+in
+	​
+
+ → Input power
+
+👉 Higher efficiency = less power wasted as heat
+
+🔹 Key Terms
+Output Power → Power delivered to load
+Distortion → Change in signal shape
+Heat Dissipation → Important in power amplifiers
+🔹 Real-Life Applications
+Audio systems 🔊
+Radio transmitters 📡
+TV broadcasting
+Embedded systems (actuators, drivers)
+🔹 Simple Understanding
+
+👉 Think like this:
+
+Small amplifier → “signal clarity”
+Power amplifier → “signal strength”
+🔹 Interview Point
+
+👉 “Class AB amplifiers are widely used because they provide a balance between efficiency and distortion.”
