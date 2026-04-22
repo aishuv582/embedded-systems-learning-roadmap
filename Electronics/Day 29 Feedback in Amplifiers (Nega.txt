@@ -1,0 +1,72 @@
+Day 28: Feedback in Amplifiers (Negative Feedback)
+🔹 What is Feedback?
+
+Feedback means taking a portion of the output signal and feeding it back to the input.
+
+There are two types:
+
+Positive Feedback → Increases gain (can cause instability)
+Negative Feedback → Reduces gain but improves performance ✅
+🔹 Negative Feedback Concept
+
+In most amplifier circuits, we use negative feedback because it makes the system stable and reliable.
+
+📌 Gain with Feedback:
+
+A
+f
+	​
+
+=
+1+Aβ
+A
+	​
+
+
+Where:
+
+A = Open-loop gain
+β = Feedback factor
+A
+f
+	​
+
+ = Closed-loop gain
+🔹 Advantages of Negative Feedback
+✅ 1. Stabilizes Gain
+
+Even if components change, gain remains nearly constant.
+
+✅ 2. Reduces Distortion
+
+Improves signal quality.
+
+✅ 3. Increases Bandwidth
+
+Amplifier works over a wider frequency range.
+
+✅ 4. Reduces Noise
+
+Cleaner output signal.
+
+🔹 Disadvantages
+Gain is reduced
+Circuit becomes slightly complex
+🔹 Types of Negative Feedback
+Voltage Series Feedback
+Voltage Shunt Feedback
+Current Series Feedback
+Current Shunt Feedback
+
+👉 These types depend on:
+
+What is sampled (voltage/current)
+How it is fed back (series/shunt)
+🔹 Real-Life Example
+Audio amplifiers → clear sound without distortion 🎧
+Operational amplifiers (Op-Amps) → precise control
+Embedded systems circuits → stable sensor readings
+🔹 Quick Summary
+Feedback = Output → Input
+Negative feedback = Stability + Better performance
+Formula: Gain reduces but quality improves
