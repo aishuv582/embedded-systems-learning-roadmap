@@ -1,0 +1,109 @@
+Day 30: Operational Amplifier (Op-Amp) Basics
+🔹 What is an Op-Amp?
+
+An Operational Amplifier (Op-Amp) is a high-gain electronic voltage amplifier used in signal processing.
+
+👉 It amplifies the difference between two input voltages.
+
+🔹 Op-Amp Symbol
++ (Non-inverting input)
+– (Inverting input)
+Output terminal
+🔹 Basic Equation
+
+V
+out
+	​
+
+=A(V
++
+	​
+
+−V
+−
+	​
+
+)
+
+V
+out
+	​
+
+: Output voltage
+A: Gain (very high, ideally infinite)
+V
++
+	​
+
+: Non-inverting input
+V
+−
+	​
+
+: Inverting input
+🔹 Ideal Op-Amp Characteristics
+Infinite gain
+Infinite input impedance (no current enters input)
+Zero output impedance
+Infinite bandwidth
+🔹 Common Op-Amp Configurations
+1️⃣ Inverting Amplifier
+Input applied to – terminal
+Output is inverted
+
+👉 Formula:
+
+V
+out
+	​
+
+=−
+R
+in
+	​
+
+R
+f
+	​
+
+	​
+
+V
+in
+	​
+
+2️⃣ Non-Inverting Amplifier
+Input applied to + terminal
+Output is not inverted
+
+👉 Formula:
+
+V
+out
+	​
+
+=(1+
+R
+in
+	​
+
+R
+f
+	​
+
+	​
+
+)V
+in
+	​
+
+🔹 Why Op-Amps are Important (Embedded Systems 💡)
+Sensor signal amplification
+Filtering signals (noise removal)
+ADC interfacing
+Analog signal conditioning
+🔹 Real-Life Example
+
+👉 Temperature sensor output is very small (mV range)
+→ Op-amp amplifies it
+→ Microcontroller reads accurate value
