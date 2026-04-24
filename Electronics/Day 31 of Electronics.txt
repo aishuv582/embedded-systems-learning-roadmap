@@ -1,0 +1,93 @@
+Day 31 of Electronics
+Op-Amp Non-Idealities & Practical Limitations
+
+This is where most candidates struggle — and where you can stand out.
+
+🔹 1. Slew Rate (VERY IMPORTANT)
+
+👉 Definition:
+Maximum rate at which output can change
+
+Slew Rate=
+dt
+dV
+out
+	​
+
+	​
+
+
+Why it matters:
+If input changes too fast → output can’t keep up
+Output becomes distorted
+
+👉 Example:
+
+Square wave → becomes triangular
+🔹 2. Gain Bandwidth Product (GBW)
+
+👉 Real op-amps:
+
+Gain decreases as frequency increases
+
+Gain×Bandwidth=Constant
+
+Meaning:
+High gain → low bandwidth
+High bandwidth → low gain
+
+👉 Very common interview question.
+
+🔹 3. Input Offset Voltage
+
+👉 Ideally:
+
+Output = 0 when input = 0
+
+👉 Practically:
+
+Small unwanted voltage exists → causes error
+🔹 4. Bias Current
+
+👉 Small current flows into input terminals
+(not exactly zero)
+
+Effect:
+Creates voltage drop → error in output
+🔹 5. CMRR (Common Mode Rejection Ratio)
+
+👉 Ability to reject noise common to both inputs
+
+CMRR=
+A
+c
+	​
+
+A
+d
+	​
+
+	​
+
+
+Where:
+
+A
+d
+	​
+
+ = differential gain
+A
+c
+	​
+
+ = common mode gain
+
+👉 Higher CMRR = better noise rejection
+
+🔹 6. PSRR (Power Supply Rejection Ratio)
+
+👉 Measures how well op-amp ignores power supply variations
+
+🔹 Why This Topic Matters for You
+
