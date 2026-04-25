@@ -1,0 +1,91 @@
+Day 32 – Oscillators (RC & LC Basics)
+🔹 What is an Oscillator?
+
+An oscillator is a circuit that generates a continuous waveform (without external input signal).
+
+👉 Output types:
+
+Sine wave
+Square wave
+Triangle wave
+
+👉 Used in:
+
+Microcontrollers (clock signal)
+Communication systems
+Signal generators
+🔹 Basic Principle (Very Important)
+
+An oscillator works using:
+
+👉 Positive Feedback + Amplifier
+
+Condition for oscillation:
+
+Aβ=1
+
+Where:
+
+A = Gain of amplifier
+β = Feedback factor
+
+✔ This is called Barkhausen Criterion
+
+🔹 Types of Oscillators
+1. RC Oscillator
+
+Used for low frequency signals
+
+👉 Example:
+
+Phase Shift Oscillator
+Wien Bridge Oscillator
+
+✔ Uses resistors + capacitors
+✔ Simple design
+
+2. LC Oscillator
+
+Used for high frequency signals
+
+👉 Example:
+
+Hartley Oscillator
+Colpitts Oscillator
+
+✔ Uses inductor + capacitor
+✔ Used in RF applications
+
+🔹 Frequency of Oscillation
+RC Oscillator:
+
+f=
+2πRC
+1
+	​
+
+
+LC Oscillator:
+
+f=
+2π
+LC
+	​
+
+1
+	​
+
+
+🔹 Real Embedded Connection 🔥
+
+This is where it matters for your goal:
+
+👉 In microcontrollers:
+
+External crystal oscillator gives clock frequency
+Example: 16 MHz crystal in MCU
+
+👉 Without oscillator:
+
+No timing
+No instruction execution
