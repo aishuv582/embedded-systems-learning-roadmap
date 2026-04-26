@@ -1,0 +1,77 @@
+Day 33 of Electronics – Timers & Counters
+
+This is a must-know topic for microcontrollers (8051, PIC, ARM, etc.)
+
+🔹 What is a Timer?
+
+A Timer is used to measure time intervals using the internal clock.
+
+👉 It counts clock pulses to generate delay.
+
+🔹 What is a Counter?
+
+A Counter counts external events (like pulses from sensors).
+
+👉 Example:
+
+Counting number of objects passing a sensor
+🔹 Key Difference
+Feature	Timer ⏱️	Counter 🔢
+Input	Internal clock	External signal
+Purpose	Time delay	Event counting
+🔹 Basic Working
+
+👉 Both use a register that increments with each pulse.
+
+Example:
+Clock frequency = 1 MHz
+Time per pulse = 1 μs
+
+If timer counts 1000 pulses → delay = 1000 μs = 1 ms
+
+🔹 Timer Formula
+
+Time=
+Clock Frequency
+Count
+	​
+
+
+🔹 Modes of Timer
+1️⃣ Up Counter
+Counts from 0 → Max value
+2️⃣ Down Counter
+Counts from Max → 0
+3️⃣ Auto-Reload Mode
+Automatically resets and repeats
+🔹 Applications
+Time delay generation
+PWM (Pulse Width Modulation)
+Frequency measurement
+Event counting
+Real-time clocks
+🔹 Real Embedded Example 🔥
+
+👉 In microcontrollers:
+
+Timer is used to create:
+1 second delay
+LED blinking
+UART baud rate generation
+🔹 Simple Example
+
+👉 Blink LED every 1 second:
+
+Set timer value
+Wait until overflow
+Toggle LED
+Repeat
+🔹 Important Terms
+Overflow → Timer reaches max value
+Prescaler → Divides clock to slow down timer
+Interrupt → Timer signals CPU when done
+🔹 Quick Summary
+Timer → measures time
+Counter → counts events
+Works using clock pulses
+Core concept in microcontrollers
