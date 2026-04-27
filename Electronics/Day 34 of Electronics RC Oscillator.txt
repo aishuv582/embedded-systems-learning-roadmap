@@ -1,0 +1,57 @@
+Day 34 of Electronics: RC Oscillators (Phase Shift & Wien Bridge)
+
+You’ve already covered oscillator basics—today let’s go one level deeper into RC oscillators, which are widely used for generating low-frequency signals (audio range).
+
+🔹 What is an RC Oscillator?
+
+An RC oscillator uses resistors (R) and capacitors (C) along with an amplifier (like BJT or Op-Amp) to generate a stable sine wave output.
+
+👉 No inductors here—just R and C components!
+
+🔸 1. RC Phase Shift Oscillator
+💡 Concept:
+Uses 3 RC sections to produce 180° phase shift
+Amplifier (like transistor) gives another 180°
+Total = 360° (or 0°) → satisfies oscillation condition
+📌 Frequency Formula:
+
+f=
+2πRC
+6
+	​
+
+1
+	​
+
+
+⚙️ Key Points:
+Produces sine waves
+Simple design but low output strength
+Used in audio signal generation
+🔸 2. Wien Bridge Oscillator
+💡 Concept:
+Uses a bridge circuit (RC network) for feedback
+Provides stable frequency and low distortion
+📌 Frequency Formula:
+
+f=
+2πRC
+1
+	​
+
+
+⚙️ Key Points:
+Very stable and accurate
+Uses Op-Amp
+Common in function generators & audio applications
+🔁 Comparison
+Feature	Phase Shift	Wien Bridge
+Components	R, C, BJT	R, C, Op-Amp
+Stability	Moderate	High
+Output	Low	High
+Complexity	Simple	Slightly complex
+🧠 Quick Revision
+RC oscillators are best for low frequencies
+Phase Shift → uses 3 RC stages
+Wien Bridge → more stable and widely used
+No inductors → compact and easy to design
