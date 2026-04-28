@@ -1,0 +1,123 @@
+Day 35 of Electronics – LC Oscillators (Hartley & Colpitts)
+
+Today we move to LC Oscillators, which are very important for embedded + communication systems (RF circuits, transmitters, etc.).
+
+🔹 What is an LC Oscillator?
+
+An LC Oscillator uses:
+
+Inductor (L)
+Capacitor (C)
+
+👉 It generates oscillations using energy exchange between:
+
+Electric field (capacitor)
+Magnetic field (inductor)
+🔹 Basic Working Principle
+Capacitor stores energy (electric field)
+It discharges into inductor → creates magnetic field
+Inductor releases energy → charges capacitor again
+Cycle repeats → oscillations generated
+🔹 Frequency of LC Oscillator
+
+This is the core formula you must remember 👇
+
+f=
+2π
+LC
+	​
+
+1
+	​
+
+
+👉 This is called the resonant frequency
+
+🔹 Types of LC Oscillators
+1. Hartley Oscillator
+
+👉 Uses:
+
+Two inductors (or tapped coil)
+One capacitor
+
+📌 Frequency:
+
+f=
+2π
+(L
+1
+	​
+
++L
+2
+	​
+
+)C
+	​
+
+1
+	​
+
+
+✔ Key Points:
+Feedback is taken from inductor
+Easy to design using tapped coil
+Common in RF circuits
+2. Colpitts Oscillator
+
+👉 Uses:
+
+One inductor
+Two capacitors (C₁, C₂)
+
+📌 Frequency:
+
+f=
+2π
+L⋅
+C
+1
+	​
+
++C
+2
+	​
+
+C
+1
+	​
+
+C
+2
+	​
+
+	​
+
+	​
+
+1
+	​
+
+
+✔ Key Points:
+Feedback is taken from capacitor divider
+Better frequency stability than Hartley
+Widely used in high-frequency applications
+🔹 Hartley vs Colpitts
+Feature	Hartley	Colpitts
+Components	2 Inductors + 1 Capacitor	1 Inductor + 2 Capacitors
+Feedback	Inductive	Capacitive
+Stability	Moderate	High
+Usage	RF circuits	RF + Communication systems
+🔹 Conditions for Oscillation
+
+Same Barkhausen Criterion:
+
+Loop gain = 1
+Phase shift = 360°
+🔹 Applications
+RF transmitters
+Signal generators
+Communication systems
+Oscillator circuits in embedded hardware
