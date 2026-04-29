@@ -1,0 +1,64 @@
+Day 36: Crystal Oscillators (Quartz Oscillator)
+🔹 What is a Crystal Oscillator?
+
+A crystal oscillator uses a quartz crystal to generate a very stable frequency signal. It is widely used in microcontrollers, clocks, communication systems, etc.
+
+🔹 Why Quartz Crystal?
+
+Quartz has a special property called the Piezoelectric Effect:
+
+👉 When voltage is applied → it vibrates
+👉 When it vibrates → it generates voltage
+
+This makes it act like a very precise frequency generator.
+
+🔹 Equivalent Circuit of Crystal
+
+A crystal behaves like an RLC circuit:
+
+Resistance (R)
+Inductance (L)
+Capacitance (C)
+
+Because of this, it has a very high Q-factor → extremely stable frequency.
+
+🔹 Types of Resonance
+1. Series Resonance
+Crystal behaves like a low impedance
+Frequency is minimum
+2. Parallel Resonance
+Crystal behaves like a high impedance
+Mostly used in circuits
+🔹 Frequency Formula
+
+For crystal (approximation similar to LC):
+
+f=
+2π
+LC
+	​
+
+1
+	​
+
+
+👉 This shows frequency depends on inductance and capacitance.
+
+🔹 Advantages
+
+✔ Very high stability
+✔ Accurate frequency
+✔ Less noise
+✔ Used in timing applications (like microcontrollers)
+
+🔹 Disadvantages
+
+✖ Expensive compared to RC oscillators
+✖ Limited frequency range
+✖ Fragile (physical crystal)
+
+🔹 Applications
+Microcontrollers (like 8051 – you’ve used this 👍)
+Digital watches
+Communication systems
+Computers & embedded systems
