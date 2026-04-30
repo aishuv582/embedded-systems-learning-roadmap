@@ -1,0 +1,47 @@
+Day 37 of Electronics: Crystal Oscillators
+🔹 Definition
+
+A crystal oscillator is an electronic circuit that uses a quartz crystal to produce a precise and stable frequency signal.
+
+🔹 Key Concept
+
+It works based on the 👉 Piezoelectric Effect
+
+Apply voltage → crystal vibrates
+Crystal vibrates → generates voltage
+This creates continuous oscillations
+🔹 Equivalent Model
+
+A crystal behaves like an RLC circuit:
+
+Resistance (R)
+Inductance (L)
+Capacitance (C)
+
+👉 This gives it a very high Q-factor (sharp and stable frequency)
+
+🔹 Types
+Series Resonance
+Low impedance
+Frequency slightly lower
+Parallel Resonance
+High impedance
+Most commonly used
+🔹 Working
+Amplifier provides gain
+Crystal selects exact frequency
+Feedback sustains oscillation
+
+👉 Output: Highly stable sinusoidal signal
+
+🔹 Advantages
+
+✔ Very high frequency stability
+✔ High accuracy
+✔ Low noise
+
+🔹 Applications
+Microcontrollers (clock signal)
+Digital watches
+Communication systems
+Embedded systems (very important for your goal 🚀)
