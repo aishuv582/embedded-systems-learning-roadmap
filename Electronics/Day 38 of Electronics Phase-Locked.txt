@@ -1,0 +1,60 @@
+Day 38 of Electronics: Phase-Locked Loop (PLL)
+
+This is a very important topic for communication + embedded systems (you’ll definitely see this in interviews 👀).
+
+🔷 What is a PLL?
+
+A Phase-Locked Loop (PLL) is a control system that:
+
+locks the phase and frequency of an output signal to a reference signal
+
+👉 In simple terms:
+It makes one signal follow another signal exactly.
+
+🔷 Basic Block Diagram
+
+A PLL has 3 main components:
+
+Phase Detector (PD)
+Low Pass Filter (LPF)
+Voltage Controlled Oscillator (VCO)
+🔷 Working Principle
+Step-by-step:
+Phase Detector
+Compares input signal & VCO output
+Produces an error signal (difference in phase)
+Low Pass Filter
+Removes noise
+Gives a smooth DC control voltage
+VCO (Voltage Controlled Oscillator)
+Frequency changes based on input voltage
+
+👉 This loop continues until:
+
+✅ Phase difference = 0
+✅ Frequency becomes equal
+
+This state is called Lock Condition
+
+🔷 Key Concept: Lock Condition
+
+When PLL is locked:
+
+Output frequency = Input frequency
+Phase difference = constant (ideally zero)
+🔷 Important Terms
+🔹 Free Running Frequency
+Frequency of VCO without input signal
+🔹 Lock Range
+Range of frequencies where PLL stays locked
+🔹 Capture Range
+Range where PLL can initially lock
+
+👉 Capture range < Lock range
+
+🔷 Applications
+Frequency synthesis
+Clock generation in microcontrollers
+FM demodulation
+Signal synchronization
+Communication systems
