@@ -1,0 +1,47 @@
+Day 39 of Electronics: Voltage Controlled Oscillator (VCO)
+
+This is an important topic for communication + embedded systems.
+
+🔹 What is a VCO?
+
+A Voltage Controlled Oscillator (VCO) is an oscillator whose output frequency changes with input voltage.
+
+👉 Input = Control Voltage
+👉 Output = Frequency signal
+
+🔹 Key Idea
+Increase voltage → frequency increases
+Decrease voltage → frequency decreases
+🔹 Basic Relation
+
+f∝V
+control
+	​
+
+
+🔹 How it Works
+Uses components like varactor diode / capacitor
+Changing voltage → changes capacitance
+This changes the oscillation frequency
+🔹 Types of VCO
+RC VCO
+LC VCO
+Crystal VCO (VCXO) – more stable
+🔹 Important Characteristics
+Tuning range → range of frequency variation
+Linearity → how smoothly frequency changes
+Phase noise → signal quality
+🔹 Applications (Very Important 🚀)
+Phase Locked Loop (PLL) ← most important
+Frequency modulation (FM)
+Signal generators
+Clock generation in embedded systems
+🔹 Real-Time Use
+
+In communication systems:
+👉 VCO + PLL = used for frequency synchronization
+
+🔹 Interview Question
+
+👉 What is the function of a VCO in PLL?
+Answer: It generates a frequency that is adjusted to match the input signal using feedback.
