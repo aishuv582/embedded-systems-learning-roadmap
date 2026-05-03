@@ -1,0 +1,43 @@
+Day 40 of Electronics – Frequency Stability in Oscillators
+
+Yesterday you covered oscillators, so today we’ll go one level deeper: how stable the frequency is (very important in real embedded systems).
+
+🔹 What is Frequency Stability?
+
+It means how constant the oscillator frequency remains over time.
+
+👉 Ideally: frequency should be constant
+👉 Practically: it varies due to different factors
+
+🔹 Types of Frequency Variations
+Short-term stability
+Small fluctuations over milliseconds/seconds
+Caused by noise
+Long-term stability
+Drift over minutes/hours/days
+Caused by temperature, aging
+🔹 Factors Affecting Stability
+Temperature
+Components (R, L, C) change with temperature
+Leads to frequency drift
+Power Supply Variations
+Voltage changes → frequency changes
+Component Aging
+Over time, components degrade
+Noise
+External interference affects signal
+🔹 Stability Comparison of Oscillators
+Oscillator Type	Stability
+RC Oscillator	Low ❌
+LC Oscillator	Medium ⚠️
+Crystal Oscillator	High ✅
+
+👉 Crystal oscillators are best because they use quartz crystal vibration.
+
+🔹 Why Crystal Oscillators are Stable?
+Based on mechanical resonance
+Very high Q factor (Quality factor)
+Minimal frequency variation
+🔹 Frequency of Crystal Oscillator
+
+The frequency is determined by crystal properties (not by R, L, C like others).
