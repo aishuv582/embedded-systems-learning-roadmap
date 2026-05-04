@@ -1,0 +1,64 @@
+Day 40: Timers and Counters in Microcontrollers
+
+This is genuinely important for interviews, especially for 8051, ARM, and embedded firmware roles.
+
+What is a Timer?
+
+A timer counts internal clock pulses to measure time delays.
+
+Uses:
+
+Generate delays
+Baud rate generation
+Task scheduling
+PWM generation
+What is a Counter?
+
+A counter counts external events/pulses.
+
+Uses:
+
+Counting sensor signals
+Frequency measurement
+Event detection
+Difference
+Timer	Counter
+Counts internal clock	Counts external pulses
+Used for delays	Used for event counting
+In 8051
+
+There are 2 timers/counters
+
+Timer 0
+Timer 1
+
+Modes:
+
+13-bit mode
+16-bit mode
+8-bit auto-reload
+Split timer mode
+Important Registers
+
+TMOD → Select mode
+TCON → Control timer
+TH0/TL0 → Timer 0 high/low register
+TH1/TL1 → Timer 1 high/low register
+
+Example
+
+If clock = 12 MHz
+
+Machine cycle:
+
+Machine Cycle=
+Clock Frequency
+12
+	​
+
+
+So:
+
+12 / 12 MHz = 1 µs
+
+That means timer increments every 1 microsecond
