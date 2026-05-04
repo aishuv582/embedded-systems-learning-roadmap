@@ -1,0 +1,53 @@
+Interrupts in 8051 (Very Important)
+
+Add:
+
+What is an interrupt?
+Types:
+External Interrupt (INT0, INT1)
+Timer Interrupt
+Serial Interrupt
+Priority concept
+
+👉 Interviewers LOVE this topic
+
+🔹 3. Polling vs Interrupts
+
+Make a small comparison:
+
+Polling	Interrupt
+CPU checks continuously	CPU responds when event occurs
+Waste of CPU time	Efficient
+
+👉 This shows practical thinking
+
+🔹 4. Simple Delay Program (C)
+
+Example:
+
+#include <reg51.h>
+
+void delay() {
+    int i, j;
+    for(i=0;i<100;i++)
+        for(j=0;j<1000;j++);
+}
+
+void main() {
+    while(1) {
+        P1 = 0xFF;
+        delay();
+        P1 = 0x00;
+        delay();
+    }
+}
+
+👉 This proves you can code, not just read theory
+
+🔹 5. Real-World Use Case
+
+Add 3–4 lines like:
+
+Timer used in PWM for motor control
+Interrupt used in keyboard input detection
+Counter used in pulse measurement (sensors)
