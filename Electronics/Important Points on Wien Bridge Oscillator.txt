@@ -1,0 +1,84 @@
+More Important Points on Wien Bridge Oscillator
+🔸 8. Why RC Network is Special
+The Wien bridge has a lead-lag network
+At one specific frequency:
+Phase shift = 0°
+That’s why oscillation sustains (unlike RC phase shift which gives 180°)
+🔸 9. Role of Positive Feedback
+The RC bridge provides positive feedback
+Only the desired frequency is fed back
+👉 Acts like a frequency selective filter
+🔸 10. Amplitude Stabilization (VERY IMPORTANT)
+
+Without control:
+
+Output will keep increasing → distortion
+Or decrease → oscillation stops
+
+👉 So we use:
+
+Lamp (classic method)
+Diodes / Thermistors (modern method)
+
+✔️ The lamp automatically adjusts resistance:
+
+More output → resistance ↑ → gain ↓
+Less output → resistance ↓ → gain ↑
+
+👉 This keeps amplitude stable (beautiful concept, often asked)
+
+🔸 11. Practical Gain Setting
+
+Gain formula for op-amp:
+
+A=1+
+R
+1
+	​
+
+R
+f
+	​
+
+	​
+
+
+👉 For oscillation:
+
+A=3
+
+So:
+
+R
+1
+	​
+
+R
+f
+	​
+
+	​
+
+=2
+
+✔️ Example:
+
+R
+f
+	​
+
+=20kΩ, R
+1
+	​
+
+=10kΩ
+🔸 12. Frequency Range
+Typically used for:
+Audio frequencies (20 Hz – 20 kHz)
+Not suitable for high-frequency RF applications
+🔸 13. Compared to RC Phase Shift Oscillator
+Feature	Wien Bridge	RC Phase Shift
+Output	Sine wave (clean)	Sine (more distortion)
+Gain required	3	~29
+Complexity	Moderate	Simple
+Stability	High	Lower
