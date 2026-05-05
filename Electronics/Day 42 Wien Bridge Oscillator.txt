@@ -1,0 +1,47 @@
+Day 42 of Electronics: Wien Bridge Oscillator
+
+This is an important topic (very interview-relevant for embedded + analog roles).
+
+🔹 1. What is a Wien Bridge Oscillator?
+
+A type of RC oscillator that produces a low-distortion sine wave using a bridge network.
+
+👉 Mostly used in:
+
+Signal generators
+Audio frequency applications
+🔹 2. Circuit Idea (Simple Understanding)
+Uses an Op-Amp
+Has a Wien bridge network (RC network) in feedback
+Includes positive + negative feedback
+🔹 3. Frequency of Oscillation
+
+This is the key formula:
+
+f=
+2πRC
+1
+	​
+
+
+👉 Where:
+
+R = Resistance
+C = Capacitance
+🔹 4. Condition for Oscillation (Very Important)
+
+Based on Barkhausen Criterion:
+
+Loop gain = 1
+Total phase shift = 0°
+
+👉 For Wien Bridge:
+
+Gain must be exactly 3
+🔹 5. Advantages
+Produces pure sine wave
+Low distortion
+Stable frequency
+🔹 6. Disadvantages
+Requires precise gain control
+Components must be accurate
