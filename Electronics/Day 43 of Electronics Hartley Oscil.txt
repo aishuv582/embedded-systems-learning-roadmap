@@ -1,0 +1,77 @@
+Day 42 of Electronics: Hartley Oscillator
+
+This is an important LC oscillator and very useful for interviews + core understanding.
+
+🔹 What is a Hartley Oscillator?
+
+A Hartley Oscillator is an LC oscillator where the feedback is taken using inductors instead of capacitors.
+
+👉 It uses:
+
+One capacitor (C)
+Two inductors (L₁ and L₂) (or a tapped inductor)
+🔹 Circuit Idea
+Tank circuit = L₁ + L₂ + C
+Feedback is taken from the junction of inductors
+Amplifier (usually BJT or FET) sustains oscillations
+🔹 Frequency of Oscillation
+
+f=
+2π
+(L
+1
+	​
+
++L
+2
+	​
+
++2M)C
+	​
+
+1
+	​
+
+
+👉 If mutual inductance M is negligible:
+
+f≈
+2π
+(L
+1
+	​
+
++L
+2
+	​
+
+)C
+	​
+
+1
+	​
+
+🔹 Working Principle (Simple)
+When power is ON, noise starts oscillations
+Energy exchanges between inductor and capacitor
+Part of output is fed back via inductors
+If feedback is positive, oscillations continue
+🔹 Condition for Oscillation (Barkhausen)
+Loop gain = 1
+Total phase shift = 0° or 360°
+🔹 Advantages
+Simple design
+Easy frequency tuning (by changing inductance)
+Good for RF applications
+🔹 Disadvantages
+Frequency stability is less compared to crystal oscillator
+Affected by temperature and stray capacitance
+🔹 Applications
+Radio frequency (RF) oscillators
+Signal generators
+Tuned circuits
+🔹 Hartley vs Colpitts (Quick Insight)
+Feature	Hartley	Colpitts
+Feedback	Inductors	Capacitors
+Stability	Moderate	Better
+Tuning	Easy	Slightly complex
