@@ -1,0 +1,95 @@
+1. Role of Mutual Inductance (M)
+In practical circuits, L₁ and L₂ are often magnetically coupled
+This introduces mutual inductance (M)
+That’s why total inductance becomes:
+L
+total
+	​
+
+=L
+1
+	​
+
++L
+2
+	​
+
++2M
+
+👉 If coupling is strong → frequency changes → less stability
+
+🔹 2. Feedback Ratio (Very Important 🔥)
+Feedback depends on inductor ratio
+Feedback∝
+L
+2
+	​
+
+L
+1
+	​
+
+	​
+
+
+👉 This ratio controls:
+
+Gain requirement
+Stability of oscillation
+
+✔ If feedback is too high → distortion
+✔ If too low → oscillations stop
+
+🔹 3. Phase Shift Understanding
+Amplifier gives 180° phase shift
+Inductive divider gives another 180°
+Total = 360° → sustained oscillations
+
+👉 This is how Barkhausen condition is satisfied in Hartley.
+
+🔹 4. Energy Transfer Insight
+Energy oscillates between:
+Magnetic field (Inductor)
+Electric field (Capacitor)
+
+👉 This continuous exchange = oscillation
+
+🔹 5. Practical Design Tip (Interview Gold ⭐)
+Instead of two separate inductors:
+👉 A single tapped coil is used
+
+✔ Advantages:
+
+Compact design
+Better coupling
+Reduced losses
+🔹 6. Frequency Tuning Methods
+
+You can vary frequency by:
+
+Changing capacitor (C)
+Adjusting inductance (L₁ or L₂)
+Using a variable capacitor (varactor)
+
+👉 That’s why used in radio tuning circuits
+
+🔹 7. Stability Factors
+
+Frequency stability is affected by:
+
+Temperature changes
+Core material of inductor
+Parasitic capacitance
+Mutual coupling variations
+
+👉 Better than RC oscillators, but worse than crystal oscillators
+
+🔹 8. Waveform Output
+Output is ideally sinusoidal
+But in real circuits:
+👉 Slight distortion occurs due to non-linearity
+🔹 9. Typical Frequency Range
+Works in RF range (kHz to MHz)
+👉 Common in:
+AM transmitters
+RF signal generators
