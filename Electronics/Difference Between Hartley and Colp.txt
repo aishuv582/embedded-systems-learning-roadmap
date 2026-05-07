@@ -1,0 +1,6 @@
+Difference Between Hartley and Colpitts Oscillator
+Hartley Oscillator	Colpitts Oscillator
+Uses two inductors	Uses two capacitors
+Inductive feedback	Capacitive feedback
+Better tuning flexibility	Better frequency stability
+Larger coil requirement	Smaller inductors needed
