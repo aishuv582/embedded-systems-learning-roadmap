@@ -1,0 +1,7 @@
+Quick Revision
+Parameter	Colpitts Oscillator
+Type	LC Oscillator
+Feedback	Capacitive
+Main Components	One inductor + two capacitors
+Output	Sinusoidal
+Frequency Range	High Frequency
