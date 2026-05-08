@@ -1,0 +1,55 @@
+Day 46 of Electronics – Analog to Digital Converter (ADC)
+ADC converts analog signals into digital data so microcontrollers can process real-world inputs.
+Sensors like temperature, pressure, and light sensors usually give analog outputs.
+ADC samples the analog voltage at specific intervals and assigns a digital value.
+Resolution determines accuracy:
+8-bit ADC → 256 levels
+10-bit ADC → 1024 levels
+12-bit ADC → 4096 levels
+Sampling rate indicates how fast the ADC converts signals.
+Quantization is the process of mapping analog values to discrete digital levels.
+Common ADC types:
+Flash ADC
+Successive Approximation ADC (SAR)
+Dual Slope ADC
+SAR ADC is widely used in embedded systems because of good speed and accuracy.
+ADC is commonly present inside microcontrollers like STM32, PIC, and AVR.
+Applications:
+Sensor interfacing
+Audio processing
+Biomedical devices
+Industrial automation
+Data acquisition systems
+Key Formula
+
+ADC Resolution Step Size:
+
+Step Size=
+2
+n
+V
+ref
+	​
+
+	​
+
+
+Where:
+
+V
+ref
+	​
+
+ = Reference voltage
+n = Number of ADC bits
+Example
+
+For a 10-bit ADC with 5V reference:
+
+Step Size=
+2
+10
+5
+	​
+
+=4.88 mV
