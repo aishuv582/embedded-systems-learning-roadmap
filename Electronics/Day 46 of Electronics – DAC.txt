@@ -1,0 +1,46 @@
+Day 46 of Electronics – Digital to Analog Converter (DAC)
+
+Today’s topic: Digital to Analog Converter (DAC) 🎛️
+
+What is a DAC?
+
+A DAC converts digital binary data into an equivalent analog voltage or current signal.
+
+It is the opposite of an ADC.
+
+Why DAC is Important?
+
+Processors and microcontrollers work with digital data, but many real-world devices require analog signals. DAC helps digital systems interact with analog devices.
+
+Working Principle
+Digital binary input is given.
+DAC converts each binary value into proportional voltage/current.
+Analog output signal is produced.
+Common Types of DAC
+Binary Weighted Resistor DAC
+Uses resistors weighted according to binary values.
+Simple but difficult for high resolutions.
+R-2R Ladder DAC
+Uses only two resistor values (R and 2R).
+Most widely used DAC architecture.
+Important Terms
+Resolution
+Smallest analog change produced by 1-bit change.
+Higher bits → better accuracy.
+Settling Time
+Time required for output to reach final value.
+Accuracy
+Closeness of output to expected analog value.
+Applications
+Audio systems and speakers
+Signal generators
+Motor control
+Embedded systems
+Communication systems
+Video processing
+Advantages
+Converts digital data into usable analog signals
+Essential for multimedia and control systems
+Disadvantages
+Output may contain noise
+High-resolution DACs are costly
