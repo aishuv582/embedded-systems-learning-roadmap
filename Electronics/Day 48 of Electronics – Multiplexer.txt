@@ -1,0 +1,72 @@
+Day 48 of Electronics – Multiplexer (MUX)
+What is a Multiplexer?
+
+A Multiplexer (MUX) is a combinational circuit that selects one input from multiple inputs and sends it to a single output line.
+
+It is also called:
+
+Data Selector
+Basic Idea
+
+A MUX has:
+
+Multiple input lines
+One output line
+Selection lines
+
+The selection lines decide which input is connected to the output.
+
+Example: 4-to-1 Multiplexer
+Inputs:
+I0
+I1
+I2
+I3
+Selection Lines:
+S0
+S1
+Output:
+Y
+Truth Table
+S1	S0	Output
+0	0	I0
+0	1	I1
+1	0	I2
+1	1	I3
+Number of Selection Lines
+
+Formula:
+
+n=log
+2
+	​
+
+N
+
+Where:
+
+N = number of input lines
+n = number of selection lines
+
+Example:
+
+8 inputs → 3 selection lines
+Block Diagram Concept
+
+Many inputs → MUX → Single output
+
+MUX reduces multiple communication lines into one line.
+
+Applications
+Data routing
+Communication systems
+Memory selection
+ALU design
+Digital switching
+Advantages
+Reduces hardware complexity
+Efficient data transmission
+Saves cost and wiring
+Disadvantages
+Delay increases with more inputs
+Complex for large systems
