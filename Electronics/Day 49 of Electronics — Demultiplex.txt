@@ -1,0 +1,71 @@
+Day 49 of Electronics — Demultiplexer (DEMUX)
+
+A Demultiplexer (DEMUX) is a digital circuit that takes one input and sends it to one of many outputs based on select lines.
+
+It is also called a Data Distributor.
+
+Definition
+A DEMUX has:
+One data input
+Multiple outputs
+Select lines
+Depending on the select input, the data is transferred to a particular output.
+Basic Concept
+1 : 4 DEMUX
+1 Input → D
+2 Select lines → S1, S0
+4 Outputs → Y0, Y1, Y2, Y3
+
+Only one output receives the input at a time.
+
+Block Representation
+          S1 S0
+            ↓
+        +--------+
+ D ---->| DEMUX  |----> Y0
+        |        |----> Y1
+        |        |----> Y2
+        +--------+----> Y3
+Working of 1:4 DEMUX
+S1	S0	Active Output
+0	0	Y0
+0	1	Y1
+1	0	Y2
+1	1	Y3
+
+The input data appears only at the selected output.
+
+Boolean Expressions
+Y0 = D·S1'·S0'
+Y1 = D·S1'·S0
+Y2 = D·S1 ·S0'
+Y3 = D·S1 ·S0
+Applications
+Data routing
+Communication systems
+Memory address decoding
+Serial to parallel conversion
+Arithmetic circuits
+Advantages
+Simple data distribution
+Efficient signal routing
+Reduces wiring complexity
+Disadvantages
+Output depends on select lines
+More outputs require more hardware
+Difference Between MUX and DEMUX
+Multiplexer	Demultiplexer
+Many inputs → One output	One input → Many outputs
+Data selector	Data distributor
+Important Interview Points
+DEMUX performs opposite operation of MUX.
+Number of outputs = 2
+n
+, where n = select lines.
+Used in communication and routing applications.
+Quick Revision
+Parameter	DEMUX
+Full Form	Demultiplexer
+Function	One input to many outputs
+Also Called	Data Distributor
+Control	Select Lines
