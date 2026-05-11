@@ -1,0 +1,34 @@
+DEMUX in Communication
+
+In communication systems:
+
+Sender transmits data through one channel
+DEMUX at receiver separates data into different outputs
+
+Used in:
+
+Telephone networks
+Data communication
+Networking systems
+Difference Between Decoder and DEMUX
+Decoder	DEMUX
+No data input	Has data input
+Converts code to outputs	Routes data to outputs
+
+A DEMUX is similar to a decoder with an added data input.
+
+Truth Table of 1:2 DEMUX
+S	Y0	Y1
+0	D	0
+1	0	D
+Important Formula
+
+For:
+
+1:2 DEMUX → 1 select line
+1:4 DEMUX → 2 select lines
+1:8 DEMUX → 3 select lines
+
+Formula:
+
+n = log₂(Number of Outputs)
