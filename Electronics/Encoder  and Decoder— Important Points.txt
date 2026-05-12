@@ -1,0 +1,117 @@
+Encoder — Important Points
+
+
+An encoder is a combinational logic circuit.
+
+
+It converts 2ⁿ input lines into n output lines.
+
+
+Only one input should be active in a normal encoder.
+
+
+Output is usually in binary form.
+
+
+Used to reduce the number of transmission lines.
+
+
+Helps in data compression and efficient communication.
+
+
+A priority encoder is used when multiple inputs may become active simultaneously.
+
+
+Common applications:
+
+
+Keyboard encoding
+
+
+Interrupt systems
+
+
+Digital communication
+
+
+Data transmission
+
+
+
+
+Example
+
+
+8-to-3 encoder:
+
+
+8 inputs
+
+
+3 binary outputs
+
+
+
+
+
+Decoder — Important Points
+
+
+A decoder is also a combinational logic circuit.
+
+
+It converts n input lines into 2ⁿ output lines.
+
+
+Only one output becomes active for a given input combination.
+
+
+Used for selection and decoding operations.
+
+
+Often includes an Enable (E) input to control operation.
+
+
+Common applications:
+
+
+Memory address decoding
+
+
+Seven-segment displays
+
+
+Instruction decoding
+
+
+Demultiplexing
+
+
+
+
+Example
+
+
+3-to-8 decoder:
+
+
+3 binary inputs
+
+
+8 outputs
+
+
+
+
+
+Key Difference
+EncoderDecoderConverts many inputs to fewer outputsConverts fewer inputs to many outputsPerforms codingPerforms decodingOutput is binary codeOutput activates one line
+
+One-Line Memory Trick
+
+
+Encoder → Compresses information
+
+
+Decoder → Expands information
+
