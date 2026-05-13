@@ -1,0 +1,69 @@
+D Latch
+
+A D Latch (Data Latch) is a digital memory circuit used to store 1 bit of data.
+
+It is designed to remove the invalid condition present in the SR latch.
+
+1. Inputs and Outputs
+Inputs
+D → Data input
+EN → Enable signal
+Outputs
+Q
+Q̅ (complement)
+2. Working Principle
+
+The operation depends on the Enable (EN) signal.
+
+Case 1: EN = 1
+Latch becomes active
+Output follows the input
+Q=D
+
+Meaning:
+
+If D = 1 → Q = 1
+If D = 0 → Q = 0
+Case 2: EN = 0
+Latch becomes inactive
+Previous data is stored
+Q(next)=Q(previous)
+
+So it acts like a small memory element.
+
+3. Truth Table
+EN	D	Q(next)
+0	X	No change
+1	0	0
+1	1	1
+
+(X means “don’t care”)
+
+4. Why D Latch is Better than SR Latch
+
+In SR latch:
+
+S = 1 and R = 1 is invalid
+
+In D latch:
+
+Only one data input is used
+Invalid state is eliminated
+5. Characteristic Equation
+Q(next)=EN⋅D+EN
+′
+⋅Q
+
+Meaning:
+
+When enabled → output follows D
+When disabled → stores previous value
+6. Applications
+Data storage
+Registers
+Buffer circuits
+Temporary memory
+Sequential circuits
+7. Important Point
+
+D latch is a level-triggered device because it responds whenever Enable is HIGH.
