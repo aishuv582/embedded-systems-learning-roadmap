@@ -1,0 +1,42 @@
+Day 51 of Electronics — Latch
+
+A Latch is a basic memory device used to store 1 bit of data.
+
+Important Points
+1. Definition
+A latch is a level-triggered circuit.
+It stores binary information temporarily.
+2. Types of Latches
+SR Latch
+D Latch
+3. SR Latch
+
+Built using:
+
+NOR gates or
+NAND gates
+Inputs
+S → Set
+R → Reset
+Outputs
+Q
+Q̅ (complement)
+4. SR Latch Truth Table
+S	R	Q(next)
+0	0	No change
+0	1	0
+1	0	1
+1	1	Invalid
+5. D Latch
+Removes invalid state problem of SR latch
+Has:
+Data input (D)
+Enable signal
+Operation
+Enable = 1 → output follows input
+Enable = 0 → previous value stored
+6. Applications
+Temporary data storage
+Registers
+Memory circuits
+Sequential circuits
