@@ -1,0 +1,77 @@
+Day 52 of Electronics – Flip-Flop Continuation
+JK Flip-Flop
+
+A JK flip-flop is an improved version of the SR flip-flop.
+It removes the invalid condition present in SR flip-flop.
+
+Inputs and Outputs
+Inputs → J and K
+Outputs → Q and Q̅
+Truth Table
+J	K	Q(next)	Operation
+0	0	Q	No Change
+0	1	0	Reset
+1	0	1	Set
+1	1	Q̅	Toggle
+Important Points
+1. Toggle Condition
+
+When:
+
+J = 1
+K = 1
+
+The output changes to the opposite state.
+
+Example:
+
+If Q = 0 → next Q = 1
+If Q = 1 → next Q = 0
+2. No Invalid State
+
+Unlike SR flip-flop:
+
+JK flip-flop has no forbidden condition.
+3. Clock Controlled Device
+
+The output changes only when the clock pulse is applied.
+
+Applications
+Counters
+Frequency division
+Registers
+Memory circuits
+Master Slave JK Flip-Flop
+
+Used to remove the race around condition.
+
+Race Around Condition
+
+When:
+
+J = K = 1
+Clock pulse width is too long
+
+The output toggles continuously and becomes unstable.
+
+Solution
+
+Master-slave arrangement uses:
+
+Two JK flip-flops
+One acts as Master
+Other acts as Slave
+
+This prevents multiple toggling during one clock pulse.
+
+Difference Between SR and JK Flip-Flop
+SR Flip-Flop	JK Flip-Flop
+Has invalid state	No invalid state
+Simpler	More reliable
+Less flexible	Widely used
+Quick Revision Points
+JK is modified SR flip-flop.
+J acts like Set.
+K acts like Reset.
+J = K = 1 causes toggle.
+Master-slave JK removes race around problem.
