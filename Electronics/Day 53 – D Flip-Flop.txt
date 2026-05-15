@@ -1,0 +1,65 @@
+Day 53 – D Flip-Flop
+What is a D Flip-Flop?
+
+A D Flip-Flop (Data or Delay Flip-Flop) is a sequential digital circuit used to store one bit of data.
+
+D → Data input
+Q → Output
+Stores the value present at D when the clock signal arrives.
+
+It removes the invalid state problem found in the SR flip-flop.
+
+Symbol of D Flip-Flop
+Inputs and Outputs
+Input/Output	Meaning
+D	Data input
+CLK	Clock input
+Q	Present output
+Q̅	Complement output
+Working Principle
+
+When the clock pulse is active:
+
+Q follows D
+Whatever value is applied to D becomes the output.
+Operation:
+If D = 1 → Q becomes 1
+If D = 0 → Q becomes 0
+
+After the clock pulse ends, the output remains stored until the next clock pulse.
+
+Truth Table
+Clock	D	Q(next)
+↑	0	0
+↑	1	1
+
+The next state equation is:
+
+Q
+n+1
+	​
+
+=D
+
+Timing Waveform
+Advantages
+Simple design
+No invalid state
+Reliable data storage
+Widely used in digital electronics
+Applications
+Registers
+Memory devices
+Counters
+Data synchronization
+Shift registers
+Important Interview Points
+D flip-flop stores 1 bit of data.
+It is also called Data Flip-Flop or Delay Flip-Flop.
+Output changes only during the clock trigger.
+Characteristic equation:
+Q
+n+1
+	​
+
+=D
