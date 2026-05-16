@@ -1,0 +1,85 @@
+Day 54 of Electronics — T Flip-Flop
+What is a T Flip-Flop?
+
+A T Flip-Flop (Toggle Flip-Flop) is a flip-flop that changes its output state whenever the input is HIGH during the clock pulse.
+
+T = Toggle
+It is mainly used in counters and frequency division circuits.
+Inputs and Outputs
+Input
+T → Toggle input
+CLK → Clock signal
+Outputs
+Q → Normal output
+Q̅ → Complement output
+Working Principle
+Case 1: T = 0
+
+No change occurs.
+
+Present state = Next state
+Case 2: T = 1
+
+Output toggles.
+
+0 becomes 1
+1 becomes 0
+Truth Table
+Clock Edge	T	Q(n)	Q(n+1)
+↑	0	0	0
+↑	0	1	1
+↑	1	0	1
+↑	1	1	0
+Characteristic Equation
+
+Q
+n+1
+	​
+
+=T⊕Q
+n
+	​
+
+
+Where:
+
+Q
+n
+	​
+
+ = Present state
+Q
+n+1
+	​
+
+ = Next state
+⊕ = XOR operation
+Excitation Table
+Present State	Next State	T
+0	0	0
+0	1	1
+1	0	1
+1	1	0
+Construction of T Flip-Flop
+
+A T flip-flop can be made using:
+
+JK Flip-Flop by connecting:
+J = K = T
+Applications
+Binary counters
+Frequency divider circuits
+Digital clocks
+Sequential circuits
+Advantages
+Simple design
+Useful for counting operations
+Efficient toggle operation
+Disadvantages
+Not suitable for direct data storage
+Continuous toggling may create propagation delay in ripple counters
+Important Interview Points
+T flip-flop toggles when T = 1.
+It is derived from JK flip-flop.
+Mostly used in counters.
+Each toggle divides frequency by 2.
