@@ -1,0 +1,91 @@
+Day 55 of Electronics — SR Flip-Flop
+What is an SR Flip-Flop?
+
+An SR Flip-Flop (Set-Reset Flip-Flop) is the basic memory element in digital electronics used to store 1 bit of data.
+
+S = Set
+R = Reset
+
+It has two stable states:
+
+SET state
+RESET state
+Inputs and Outputs
+Inputs
+S → Set input
+R → Reset input
+CLK → Clock signal (in clocked SR flip-flop)
+Outputs
+Q → Normal output
+Q̅ → Complement output
+Working Principle
+Case 1: S = 1, R = 0
+
+SET condition
+
+Q = 1
+Q̅ = 0
+Case 2: S = 0, R = 1
+
+RESET condition
+
+Q = 0
+Q̅ = 1
+Case 3: S = 0, R = 0
+
+No change condition
+
+Output retains previous state.
+Case 4: S = 1, R = 1
+
+Invalid/Forbidden condition
+
+Output becomes unpredictable.
+This is the main disadvantage of SR flip-flop.
+Truth Table
+S	R	Q(next)
+0	0	No Change
+0	1	0
+1	0	1
+1	1	Invalid
+Characteristic Equation
+
+Q
+n+1
+	​
+
+=S+
+R
+Q
+n
+	​
+
+
+Where:
+
+Q
+n
+	​
+
+ = Present state
+Q
+n+1
+	​
+
+ = Next state
+Types of SR Flip-Flop
+NOR-based SR Flip-Flop
+NAND-based SR Flip-Flop
+Clocked SR Flip-Flop
+Applications
+Basic memory storage
+Switching circuits
+Control circuits
+Debouncing circuits
+Advantages
+Simple design
+Easy to understand
+Basic building block of sequential circuits
+Disadvantages
+Has invalid condition (S = R = 1)
+Less reliable compared to JK and D flip-flops
