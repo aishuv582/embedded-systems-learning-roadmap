@@ -1,0 +1,104 @@
+Day 56 of Electronics — Flip-Flop Revision & Counters
+
+Since you completed SR, JK, D, and T flip-flops, today let’s move to an important application of flip-flops: Counters.
+
+What is a Counter?
+
+A counter is a sequential circuit that counts clock pulses.
+
+It changes its state for every clock pulse and stores the count in binary form.
+
+Example:
+
+000 → 001 → 010 → 011 → 100 …
+
+Counters are mainly built using flip-flops.
+
+Types of Counters
+1. Asynchronous Counter (Ripple Counter)
+
+In this counter:
+
+Only the first flip-flop receives the clock pulse directly.
+Remaining flip-flops receive clock from previous flip-flop output.
+Features
+Simple design
+Slow operation due to propagation delay
+Also called Ripple Counter
+Working
+
+For a 3-bit counter:
+
+FF0 toggles every clock pulse
+FF1 toggles when FF0 changes
+FF2 toggles when FF1 changes
+
+Count sequence:
+
+Decimal	Binary
+0	000
+1	001
+2	010
+3	011
+4	100
+5	101
+6	110
+7	111
+2. Synchronous Counter
+
+In this counter:
+
+All flip-flops receive the same clock pulse simultaneously.
+Features
+Faster than asynchronous counter
+Less propagation delay
+Used in high-speed digital systems
+Modulus (MOD) of Counter
+
+The number of states a counter goes through before repeating.
+
+Example:
+
+MOD-8 counter → counts from 0 to 7
+MOD-10 counter → counts from 0 to 9
+
+Formula:
+
+MOD=2
+n
+
+Where:
+
+n = number of flip-flops
+
+Example:
+
+3 flip-flops → 2
+3
+=8 states
+Important Points
+Asynchronous Counter
+Easy to design
+Low speed
+More delay
+Synchronous Counter
+High speed
+More reliable
+Slightly complex design
+Applications of Counters
+Digital clocks
+Frequency counters
+Traffic light systems
+Timers
+Digital watches
+Event counting circuits
+Interview Questions
+What is the difference between synchronous and asynchronous counters?
+Why is ripple counter called asynchronous?
+What is MOD value in counters?
+Which counter is faster?
+How many flip-flops are required for MOD-16 counter?
+Quick Revision
+Counter Type	Clock Given To	Speed
+Asynchronous	First FF only	Slow
+Synchronous	All FFs	Fast
