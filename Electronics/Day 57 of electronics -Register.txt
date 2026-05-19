@@ -1,0 +1,62 @@
+What is a Register?
+
+A register is a group of flip-flops used to store binary data temporarily.
+
+Each flip-flop stores 1 bit
+A 4-bit register uses 4 flip-flops
+Registers are widely used in:
+Microprocessors
+Microcontrollers
+Memory units
+Data transfer operations
+Block Diagram Concept
+
+Example:
+
+4 D flip-flops connected together
+Common clock signal
+Stores 4-bit data
+Input Data → Flip-Flops → Stored Binary Output
+Types of Registers
+1. Serial In Serial Out (SISO)
+Data enters serially (one bit at a time)
+Data exits serially
+Used in serial communication
+2. Serial In Parallel Out (SIPO)
+Data enters serially
+Output available in parallel form
+Used for serial-to-parallel conversion
+3. Parallel In Serial Out (PISO)
+Parallel data input
+Serial output
+Used in parallel-to-serial conversion
+4. Parallel In Parallel Out (PIPO)
+Parallel input and parallel output
+Fastest data transfer
+Shift Register
+
+A shift register shifts binary data from one flip-flop to another for every clock pulse.
+
+Types
+Left Shift Register
+Right Shift Register
+Bidirectional Shift Register
+Applications of Registers
+Temporary data storage
+Data transfer
+Data synchronization
+Serial communication
+Counters
+CPU operations
+Important Interview Points
+Register = collection of flip-flops
+Each flip-flop stores one bit
+Shift registers move data bit by bit
+Registers are sequential circuits
+Clock pulse controls data movement
+Difference Between Register and Memory
+Register	Memory
+Very fast	Comparatively slower
+Small storage	Large storage
+Located inside CPU	External/Internal memory
+Temporary storage	Permanent/Semi-permanent storage
