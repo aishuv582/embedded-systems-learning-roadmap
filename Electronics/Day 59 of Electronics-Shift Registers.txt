@@ -1,0 +1,159 @@
+Shift Registers
+Universal Shift Registers
+1. Shift Register
+
+A shift register is a group of flip-flops used to store and shift binary data.
+
+It shifts data either:
+
+left
+right
+
+with every clock pulse.
+
+Definition
+
+A shift register is a sequential circuit that transfers stored data from one flip-flop to another on each clock pulse.
+
+Basic Idea
+
+Suppose we store:
+
+1011
+
+After one clock pulse (right shift):
+
+0101
+
+After another clock pulse:
+
+0010
+
+Data moves one position at a time.
+
+Block Diagram Concept
+6
+
+Each flip-flop stores 1 bit.
+
+For a 4-bit register:
+
+4 flip-flops are connected
+common clock is used
+Types of Shift Registers
+
+There are 4 major types.
+
+1. SISO — Serial In Serial Out
+Working
+Data enters one bit at a time
+Data exits one bit at a time
+Example
+
+Input bits:
+1 → 0 → 1 → 1
+
+Output also comes serially after clock pulses.
+
+Applications
+Delay circuits
+Serial communication
+2. SIPO — Serial In Parallel Out
+Working
+Data enters serially
+Output is available simultaneously
+Example
+
+Input:
+1011
+
+Outputs after 4 clocks:
+
+Q3 = 1
+Q2 = 0
+Q1 = 1
+Q0 = 1
+Applications
+Serial to parallel conversion
+Interfacing devices
+3. PISO — Parallel In Serial Out
+Working
+Multiple bits loaded together
+Output comes serially
+Applications
+Parallel to serial conversion
+Communication systems
+4. PIPO — Parallel In Parallel Out
+Working
+Data loaded together
+Data available together
+
+Fastest type because no shifting is needed.
+
+Applications
+Temporary data storage
+Buffer registers
+Shift Right vs Shift Left
+Right Shift
+
+Bits move toward LSB.
+
+Example:
+
+1010 → 0101
+
+Left Shift
+
+Bits move toward MSB.
+
+Example:
+
+1010 → 0100
+
+Applications of Shift Registers
+Data storage
+Data transfer
+Serial communication
+Time delay generation
+Ring counters
+Digital systems
+Microprocessors
+2. Universal Shift Register
+
+A universal shift register can perform all operations:
+
+Shift left
+Shift right
+Parallel load
+Data storage
+
+That’s why it is called universal.
+
+Operations
+Mode	Operation
+00	No change
+01	Shift right
+10	Shift left
+11	Parallel load
+Features
+Very flexible
+Used in processors and controllers
+Combines all register operations in one circuit
+Applications
+CPUs
+Data manipulation
+Communication systems
+Embedded systems
+Important Interview Questions
+What is a shift register?
+Difference between register and shift register?
+Explain SISO and SIPO.
+Why is PIPO faster?
+What is a universal shift register?
+Applications of shift registers?
+Quick Revision
+Register Type	Input	Output
+SISO	Serial	Serial
+SIPO	Serial	Parallel
+PISO	Parallel	Serial
+PIPO	Parallel	Parallel
