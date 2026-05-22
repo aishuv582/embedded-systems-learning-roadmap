@@ -1,0 +1,125 @@
+Today’s topic: Shift Registers
+A shift register is a group of flip-flops used to store and move binary data from one stage to another with each clock pulse.
+
+What is a Shift Register?
+
+A shift register is made using multiple flip-flops connected together.
+
+Each flip-flop stores 1 bit
+Data shifts left or right when a clock pulse is applied
+Commonly built using D flip-flops
+Main Functions
+Data storage
+Data transfer
+Serial ↔ Parallel conversion
+Time delay applications
+Types of Shift Registers
+1. Serial In Serial Out (SISO)
+Working
+Data enters one bit at a time
+Data also comes out one bit at a time
+Each clock pulse shifts data to the next flip-flop
+Example
+
+Suppose input sequence is:
+1 → 0 → 1 → 1
+
+After every clock pulse, bits move one position.
+
+Applications
+Delay circuits
+Temporary data storage
+2. Serial In Parallel Out (SIPO)
+Working
+Data enters serially
+Output is taken simultaneously from all flip-flops
+Purpose
+
+Converts:
+Serial data → Parallel data
+
+Applications
+Interfacing
+LED control
+Communication systems
+3. Parallel In Serial Out (PISO)
+Working
+Multiple bits are loaded together
+Data comes out one bit at a time
+Purpose
+
+Converts:
+Parallel data → Serial data
+
+Applications
+Data transmission
+Microprocessor communication
+4. Parallel In Parallel Out (PIPO)
+Working
+Data enters simultaneously
+Data exits simultaneously
+Features
+No shifting operation
+Used mainly for storage
+Applications
+Buffer registers
+Temporary storage
+Bidirectional Shift Register
+
+A bidirectional shift register can shift data:
+
+Left
+Right
+
+depending on the control signal.
+
+Applications
+Arithmetic operations
+Data manipulation
+Universal Shift Register
+
+A universal shift register can perform:
+
+Shift left
+Shift right
+Parallel load
+Data storage
+
+It is called “universal” because it performs multiple operations.
+
+Important Points
+Shift registers are sequential circuits
+Built mainly using D flip-flops
+Clock pulse controls shifting
+Each flip-flop stores one bit
+Widely used in digital communication systems
+Real-Life Example
+
+Think of people standing in a line passing a ball.
+
+Each person = flip-flop
+Ball = data bit
+Every whistle = clock pulse
+Ball moves to next person = shifting
+Interview Questions
+1. What is a shift register?
+
+A sequential circuit used to store and shift binary data.
+
+2. Which flip-flop is commonly used in shift registers?
+
+D flip-flop.
+
+3. What is the difference between SIPO and PISO?
+SIPO: Serial input, parallel output
+PISO: Parallel input, serial output
+4. What is a universal shift register?
+
+A shift register capable of multiple operations like left shift, right shift, and parallel loading.
+
+Quick Revision Table
+Type	Input	Output
+SISO	Serial	Serial
+SIPO	Serial	Parallel
+PISO	Parallel	Serial
+PIPO	Parallel	Parallel
