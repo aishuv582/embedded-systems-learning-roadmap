@@ -1,0 +1,132 @@
+Day 61 of Electronics — Counters
+What is a Counter?
+
+A counter is a sequential digital circuit that counts clock pulses.
+It is built using flip-flops and changes its state in a fixed sequence whenever a clock signal is applied.
+
+Counters are widely used in:
+
+Digital clocks
+Frequency measurement
+Timers
+Microprocessors
+Traffic light systems
+Event counting circuits
+Basic Working Principle
+A clock pulse is given to the counter.
+For every pulse, the output changes.
+The counter stores the count in binary form.
+
+Example:
+
+Clock Pulses	Binary Output	Decimal
+0	000	0
+1	001	1
+2	010	2
+3	011	3
+4	100	4
+Types of Counters
+1. Asynchronous Counter (Ripple Counter)
+
+In this type:
+
+Only the first flip-flop receives the external clock.
+Remaining flip-flops receive clock from previous flip-flop output.
+Features
+Simple design
+Low hardware requirement
+Slower due to propagation delay
+Example
+
+A 3-bit ripple counter counts:
+000 → 001 → 010 → 011 → 100 → 101 → 110 → 111
+
+2. Synchronous Counter
+
+In this type:
+
+All flip-flops receive the same clock pulse simultaneously.
+Features
+Faster operation
+Less delay
+More reliable for high-speed applications
+Applications
+Digital systems
+CPUs
+Frequency counters
+Modulus (MOD) of Counter
+
+The MOD number indicates how many states the counter goes through before repeating.
+
+Example:
+
+MOD-8 counter → counts 0 to 7
+MOD-10 counter → counts 0 to 9
+
+Formula:
+MOD=2
+n
+
+Where:
+
+n = number of flip-flops
+
+Example:
+
+3 flip-flops → 2
+3
+=8 states
+Up Counter
+
+Counts in increasing order.
+
+Example:
+000 → 001 → 010 → 011 → 100
+
+Down Counter
+
+Counts in decreasing order.
+
+Example:
+111 → 110 → 101 → 100 → 011
+
+Up/Down Counter
+
+Can count both upward and downward depending on control input.
+
+Applications:
+
+Elevators
+Position tracking systems
+Ring Counter
+
+A circular shift register where:
+
+Output of last flip-flop is connected to input of first flip-flop.
+
+Example sequence:
+1000 → 0100 → 0010 → 0001
+
+Johnson Counter
+
+Modified ring counter where:
+
+Inverted output of last flip-flop is fed back.
+
+Advantages:
+
+More states than ring counter
+Simple decoding
+Applications of Counters
+Digital watches
+Frequency division
+Object counters
+Stopwatch circuits
+Traffic signal control
+ADC/DAC systems
+Important Interview Points
+Counter is a sequential circuit.
+Built using flip-flops.
+Synchronous counters are faster than asynchronous counters.
+MOD value depends on number of flip-flops.
+Ripple counter suffers from propagation delay.
