@@ -1,0 +1,91 @@
+Ripple Counter (Asynchronous Counter)
+
+A ripple counter is a type of counter in which the clock pulse is applied only to the first flip-flop, and the output of one flip-flop acts as the clock input for the next flip-flop.
+
+Because the clock signal “ripples” through the circuit one after another, it is called a ripple counter.
+
+Basic Concept
+
+Suppose we have 3 flip-flops:
+
+FF0
+FF1
+FF2
+
+Only FF0 receives the external clock.
+
+Then:
+
+Output of FF0 → clock input of FF1
+Output of FF1 → clock input of FF2
+
+So the counting happens step by step.
+
+3-Bit Ripple Counter
+Circuit Operation
+FF0 toggles for every clock pulse.
+FF1 toggles when FF0 changes state.
+FF2 toggles when FF1 changes state.
+Counting Sequence
+Clock Pulse	Q2	Q1	Q0	Decimal
+0	0	0	0	0
+1	0	0	1	1
+2	0	1	0	2
+3	0	1	1	3
+4	1	0	0	4
+5	1	0	1	5
+6	1	1	0	6
+7	1	1	1	7
+
+After 111, it returns to 000.
+
+MOD of Ripple Counter
+
+Formula:
+MOD=2
+n
+
+Where:
+
+n = number of flip-flops
+
+Example:
+
+3 flip-flops → MOD-8 counter
+Why is it called Asynchronous?
+
+Because:
+
+All flip-flops do NOT receive the clock at the same time.
+Output changes occur one after another.
+
+This causes delay called:
+
+Propagation Delay
+
+Time taken for output to pass from one flip-flop to another.
+
+Due to this delay:
+
+Ripple counters are slower.
+Advantages
+Simple design
+Requires fewer connections
+Easy to implement
+Low hardware cost
+Disadvantages
+Slow operation
+Propagation delay increases with more flip-flops
+Not suitable for high-speed circuits
+Applications
+Frequency division
+Digital clocks
+Simple timers
+Event counting
+Low-speed counting circuits
+Important Interview Points
+Ripple counter = asynchronous counter.
+Clock is given only to first flip-flop.
+Remaining flip-flops are triggered by previous outputs.
+Suffers from propagation delay.
+Simple but slower than synchronous counter.
