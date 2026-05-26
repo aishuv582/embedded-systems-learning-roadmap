@@ -1,0 +1,84 @@
+Day 63 of Electronics — Synchronous Counter
+
+A Synchronous Counter is a counter in which all flip-flops receive the clock pulse simultaneously.
+
+Unlike ripple counters, all flip-flops change state at the same time, so the delay is very small.
+
+Basic Idea
+Same clock signal is connected to all flip-flops.
+Faster operation compared to ripple counters.
+Commonly built using JK flip-flops or T flip-flops.
+Working of 3-Bit Synchronous Counter
+Flip-Flop Conditions
+First flip-flop toggles every clock pulse.
+Second flip-flop toggles when Q0 = 1.
+Third flip-flop toggles when Q0 and Q1 are both 1.
+Toggle Logic
+
+T
+0
+	​
+
+=1
+
+T
+1
+	​
+
+=Q
+0
+	​
+
+
+T
+2
+	​
+
+=Q
+0
+	​
+
+Q
+1
+	​
+
+
+Counting Sequence
+Clock	Q2	Q1	Q0	Decimal
+0	0	0	0	0
+1	0	0	1	1
+2	0	1	0	2
+3	0	1	1	3
+4	1	0	0	4
+5	1	0	1	5
+6	1	1	0	6
+7	1	1	1	7
+Modulus of Synchronous Counter
+
+MOD=2
+n
+
+Where:
+
+n = number of flip-flops
+Advantages
+Faster than ripple counters
+Reduced propagation delay
+Suitable for high-speed circuits
+Better performance in digital systems
+Disadvantages
+Circuit design is more complex
+Requires additional logic gates
+Applications
+Digital clocks
+Frequency counters
+Control systems
+Digital processors
+Embedded systems
+Ripple Counter vs Synchronous Counter
+Ripple Counter	Synchronous Counter
+Asynchronous	Synchronous
+Clock applied to first FF only	Clock applied to all FFs
+High delay	Low delay
+Slower	Faster
+Simple design	Complex design
