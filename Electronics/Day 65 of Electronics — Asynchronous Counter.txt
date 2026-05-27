@@ -1,0 +1,134 @@
+Day 63 of Electronics — Asynchronous (Ripple) Counter vs Synchronous Counter
+
+Yesterday you learned about the ripple counter.
+Today let’s understand another important counter: the Synchronous Counter and compare it with the ripple counter.
+
+1. What is a Synchronous Counter?
+
+A synchronous counter is a counter in which all flip-flops receive the clock pulse at the same time.
+
+Unlike ripple counters, the clock does not travel stage by stage.
+
+2. Block Diagram Idea
+Ripple Counter
+
+Clock goes to first flip-flop only.
+
+CLK → FF1 → FF2 → FF3
+
+Each output triggers the next flip-flop.
+
+Synchronous Counter
+
+Clock is connected to all flip-flops together.
+
+        ┌──FF1
+CLK ────┼──FF2
+        └──FF3
+
+All flip-flops change simultaneously.
+
+3. Working of 3-bit Synchronous Counter
+
+A 3-bit counter has:
+
+FF0 (LSB)
+FF1
+FF2 (MSB)
+Counting Sequence
+Clock Pulse	Q2 Q1 Q0	Decimal
+0	000	0
+1	001	1
+2	010	2
+3	011	3
+4	100	4
+5	101	5
+6	110	6
+7	111	7
+
+After 111, it returns to 000.
+
+4. Important Logic Condition
+
+For T flip-flop synchronous counters:
+
+First FF toggles every clock.
+Second FF toggles when first FF = 1.
+Third FF toggles when first two FFs = 1.
+
+Example:
+
+T0 = 1
+T1 = Q0
+T2 = Q1 · Q0
+
+This ensures proper binary counting.
+
+5. Advantages of Synchronous Counter
+High Speed
+
+All flip-flops operate together.
+
+No Ripple Delay
+
+No cumulative propagation delay.
+
+Better Performance
+
+Used in fast digital systems.
+
+6. Disadvantages
+Complex Design
+
+Needs extra combinational logic.
+
+More Hardware
+
+Requires more gates than ripple counters.
+
+7. Ripple Counter vs Synchronous Counter
+Feature	Ripple Counter	Synchronous Counter
+Clocking	Sequential	Simultaneous
+Speed	Slower	Faster
+Delay	High	Low
+Circuit Complexity	Simple	Complex
+Hardware	Less	More
+Accuracy	Lower at high speed	Better
+8. Applications of Synchronous Counter
+Digital clocks
+Frequency counters
+Microprocessors
+Digital control systems
+Traffic light controllers
+9. Interview Questions
+Q1. Why is a synchronous counter faster?
+
+Because all flip-flops are triggered simultaneously.
+
+Q2. What is propagation delay?
+
+Time taken for output change after clock input.
+
+Q3. Which counter is simpler?
+
+Ripple counter.
+
+Q4. Which counter is preferred in high-speed applications?
+
+Synchronous counter.
+
+10. Key Points for Notes
+All flip-flops share the same clock.
+Faster than ripple counter.
+No accumulated delay.
+Requires extra logic gates.
+Widely used in modern digital systems.
+Tiny Revision
+Ripple Counter
+Output of one FF clocks next FF
+Slow
+Simple
+Synchronous Counter
+Same clock to all FFs
+Fast
+Complex
