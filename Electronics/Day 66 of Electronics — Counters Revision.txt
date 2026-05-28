@@ -1,0 +1,109 @@
+Day 63 of Electronics — Counters Revision
+
+Today let’s learn about an important topic in digital electronics: Counters.
+
+What is a Counter?
+
+A counter is a sequential digital circuit that counts clock pulses.
+
+It is made using flip-flops and changes its state whenever a clock pulse is applied.
+
+Main Function
+Counts events
+Stores number of pulses
+Divides frequency
+Used in timers, clocks, digital watches, elevators, traffic lights, etc.
+Types of Counters
+1. Asynchronous Counter (Ripple Counter)
+
+In this counter:
+
+Only the first flip-flop gets the external clock.
+Remaining flip-flops are triggered by the output of the previous flip-flop.
+Working
+
+When the first flip-flop toggles, it triggers the next one, creating a ripple effect.
+
+Features
+Simple design
+Less hardware required
+Slow operation because of propagation delay
+Example
+
+A 3-bit ripple counter counts:
+
+000 → 001 → 010 → 011 → 100 → 101 → 110 → 111
+
+2. Synchronous Counter
+
+In synchronous counters:
+
+All flip-flops receive the clock pulse simultaneously.
+Features
+Faster operation
+No ripple delay
+More reliable for high-speed applications
+Applications
+Digital clocks
+Frequency counters
+Microprocessor systems
+Up Counter
+
+An up counter counts in increasing order.
+
+Example:
+
+0 → 1 → 2 → 3 → 4 ...
+
+Binary sequence:
+
+000 → 001 → 010 → 011 → 100
+
+Down Counter
+
+A down counter counts in decreasing order.
+
+Example:
+
+7 → 6 → 5 → 4 ...
+
+Binary sequence:
+
+111 → 110 → 101 → 100
+
+Modulus (MOD) of Counter
+
+The MOD number tells how many states a counter has.
+
+Formula:
+
+MOD=2
+n
+
+Where:
+
+n = number of flip-flops
+Example
+
+For 3 flip-flops:
+
+MOD=2
+3
+=8
+
+So it counts from 0 to 7.
+
+Applications of Counters
+Digital clocks
+Frequency measurement
+Timers
+Traffic light controllers
+Object counting machines
+Digital electronics systems
+Important Interview Points
+Topic	Key Point
+Ripple Counter	Slow due to propagation delay
+Synchronous Counter	Faster because all FFs are clocked together
+Up Counter	Counts upward
+Down Counter	Counts downward
+MOD Counter	Total number of states
