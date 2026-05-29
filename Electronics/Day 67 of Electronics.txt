@@ -1,0 +1,111 @@
+Day 67 of Electronics — Up Counter and Down Counter
+
+Today let’s learn two important types of counters:
+
+Up Counter
+Down Counter
+
+These are widely used in digital electronics and embedded systems.
+
+1. Up Counter
+
+An up counter counts numbers in increasing order.
+
+Example:
+
+000 → 001 → 010 → 011 → 100 ...
+
+It increases from smaller value to larger value.
+
+3-bit Up Counter Sequence
+Decimal	Binary
+0	000
+1	001
+2	010
+3	011
+4	100
+5	101
+6	110
+7	111
+
+After 111, it returns to 000.
+
+Working Principle
+Least Significant Bit (LSB) changes every clock pulse
+Next bits toggle according to previous bits
+
+This creates ascending binary counting.
+
+Applications of Up Counter
+Digital clocks
+Event counting
+Frequency counting
+Timer circuits
+2. Down Counter
+
+A down counter counts in decreasing order.
+
+Example:
+
+111 → 110 → 101 → 100 → 011 ...
+
+It decreases from higher value to lower value.
+
+3-bit Down Counter Sequence
+Decimal	Binary
+7	111
+6	110
+5	101
+4	100
+3	011
+2	010
+1	001
+0	000
+
+After 000, it returns to 111.
+
+How Down Counter Works
+Counter starts from maximum binary value
+Each clock pulse decreases the count
+Up Counter vs Down Counter
+Feature	Up Counter	Down Counter
+Counting Direction	Increasing	Decreasing
+Example	000 → 001	111 → 110
+Usage	Counting events	Countdown systems
+Modulus (MOD) of Counter
+
+The MOD number tells how many states the counter has.
+
+Formula:
+
+MOD=2
+n
+
+Where:
+
+n = number of flip-flops
+
+Example:
+
+For 3 flip-flops:
+
+MOD=2
+3
+=8
+
+So a 3-bit counter has 8 states.
+
+Important Points
+
+✅ Up counter counts forward
+✅ Down counter counts backward
+✅ Both use flip-flops
+✅ Used in digital systems and processors
+
+Real-Life Examples
+Up Counter
+People counter
+Score counter
+Down Counter
+Rocket launch timer
+Microwave timer
