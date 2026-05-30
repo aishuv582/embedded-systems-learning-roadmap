@@ -1,0 +1,79 @@
+Day 66 of Electronics – Decade Counter (MOD-10 Counter)
+
+After learning synchronous counters and MOD-N counters, the next important topic is the Decade Counter.
+
+What is a Decade Counter?
+
+A decade counter is a counter that counts from 0 to 9 (10 states) and then resets back to 0.
+
+It is also called a MOD-10 Counter because it has 10 valid states.
+
+Counting Sequence
+Decimal	Binary
+0	0000
+1	0001
+2	0010
+3	0011
+4	0100
+5	0101
+6	0110
+7	0111
+8	1000
+9	1001
+Reset	0000
+Why 4 Flip-Flops?
+
+To represent 10 states, we need 4 flip-flops because:
+
+2
+3
+=8<10
+2
+4
+=16>10
+
+2
+4
+=16
+
+So, 4 flip-flops are required.
+
+Working Principle
+
+A normal 4-bit binary counter counts from 0 to 15.
+
+A decade counter detects the count 1010 (decimal 10) and immediately resets all flip-flops to 0000.
+
+Thus, only the states 0–9 are used.
+
+Reset Condition
+
+When:
+
+Q3 Q2 Q1 Q0 = 1010
+
+the reset circuit activates and clears the counter.
+
+Advantages
+
+✅ Counts decimal digits directly
+
+✅ Easy interface with displays
+
+✅ Widely used in digital clocks
+
+✅ Simple implementation
+
+Disadvantages
+
+❌ Additional reset logic required
+
+❌ Some designs may have glitches due to reset timing
+
+Applications
+Digital clocks
+Frequency counters
+Digital stopwatches
+Calculator circuits
+Seven-segment display systems
+Event counting systems
