@@ -1,0 +1,77 @@
+What is Memory?
+
+Memory is an electronic device used to store binary data (0s and 1s).
+
+Memory is essential in microcontrollers, microprocessors, computers, and embedded systems.
+
+1. RAM (Random Access Memory)
+Read and write memory
+Data is lost when power is turned off (volatile memory)
+Used for temporary storage
+Types of RAM
+
+SRAM (Static RAM)
+
+Uses flip-flops
+Faster
+More expensive
+Used in cache memory
+
+DRAM (Dynamic RAM)
+
+Uses capacitors
+Slower than SRAM
+Higher storage density
+Requires refreshing
+2. ROM (Read Only Memory)
+Non-volatile memory
+Data remains even after power is removed
+Stores firmware and program code
+Types of ROM
+Mask ROM
+PROM
+EPROM
+EEPROM
+Flash Memory
+EEPROM vs Flash Memory
+EEPROM	Flash
+Byte-wise erase	Block-wise erase
+Slower	Faster
+Costlier	Cheaper
+Small storage	Large storage
+Why is Flash Memory Important in Embedded Systems?
+
+When you program a microcontroller, your code is stored in Flash memory.
+
+Examples:
+
+Microchip Technology PIC Controllers
+STMicroelectronics STM32 Controllers
+NXP Semiconductors Controllers
+
+All store firmware in Flash memory.
+
+Interview Questions
+What is volatile memory?
+
+Memory that loses data when power is removed.
+
+Which memory is faster: SRAM or DRAM?
+
+SRAM.
+
+Which memory stores embedded firmware?
+
+Flash Memory.
+
+Why is DRAM refreshed?
+
+Because capacitor charge leaks with time.
+
+Embedded Engineer Note
+
+Whenever you write a C program and flash it into a microcontroller:
+
+Program code → Flash Memory
+Variables → RAM
+Constants → ROM/Flash
