@@ -1,0 +1,69 @@
+Day 68 of Electronics – Modulo Counters (MOD Counters)
+
+Since you've already covered ripple counters and synchronous counters, the next important topic is Modulo Counters.
+
+What is a Modulo Counter?
+
+A modulo (MOD) counter counts a fixed number of states and then resets to zero.
+
+Formula:
+
+MOD Number=Number of states before repeating
+
+Examples:
+
+MOD-4 Counter → Counts 0,1,2,3 and repeats.
+MOD-10 Counter → Counts 0 to 9 and repeats.
+MOD-16 Counter → Counts 0 to 15 and repeats.
+Why are MOD Counters Needed?
+
+Many real-world applications require counting a specific number of events.
+
+Examples:
+
+Digital clocks (MOD-60 for seconds)
+Frequency dividers
+Traffic light controllers
+Event counters
+Microcontroller timers
+MOD-10 (Decade Counter)
+
+A MOD-10 counter uses 4 flip-flops because:
+
+2
+3
+=8<10
+2
+4
+=16>10
+
+So 4 flip-flops are required.
+
+Counting Sequence
+Decimal	Binary
+0	0000
+1	0001
+2	0010
+3	0011
+4	0100
+5	0101
+6	0110
+7	0111
+8	1000
+9	1001
+
+After 1001, the counter resets to 0000.
+
+MOD-N Counter
+
+A counter that counts from 0 to N−1 and then repeats.
+
+Examples:
+
+Counter	States
+MOD-2	2
+MOD-4	4
+MOD-8	8
+MOD-10	10
+MOD-12	12
+MOD-60	60
