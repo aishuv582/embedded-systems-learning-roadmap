@@ -1,0 +1,82 @@
+Day 71 of Electronics – Mod-N Counters
+
+Since you've already covered counters, today's topic is an important extension: Mod-N Counters.
+
+What is a Mod-N Counter?
+
+A Mod-N counter is a counter that goes through N distinct states before returning to its initial state.
+
+Formula:
+N=Number of states
+
+Examples
+Mod-2 Counter → Counts: 0, 1
+Mod-4 Counter → Counts: 0, 1, 2, 3
+Mod-8 Counter → Counts: 0 to 7
+Mod-10 Counter (Decade Counter) → Counts: 0 to 9
+Determining Number of Flip-Flops
+
+For a Mod-N counter:
+
+2
+n
+≥N
+
+Where:
+
+N = Required modulus
+n = Number of flip-flops
+Example: Mod-10 Counter
+2
+3
+=8 (not enough)
+2
+4
+=16 (sufficient)
+
+Therefore, 4 flip-flops are required.
+
+Decade Counter (Mod-10)
+
+A decade counter counts:
+
+0000 → 0001 → 0010 → ...
+...
+1001 (9)
+
+After 9, it resets to:
+
+0000
+
+instead of continuing to 10, 11, 12, etc.
+
+Applications
+Digital clocks
+Frequency counters
+Event counters
+Digital displays
+Stopwatch circuits
+Types of Mod-N Counters
+1. Asynchronous Mod-N Counter
+Uses ripple counting.
+Simpler design.
+Slower due to propagation delay.
+2. Synchronous Mod-N Counter
+All flip-flops receive the same clock.
+Faster operation.
+Preferred in modern digital systems.
+Interview Questions
+
+Q1. What is a Mod-16 counter?
+
+A counter with 16 states (0–15).
+
+Q2. How many flip-flops are required for a Mod-12 counter?
+
+4 flip-flops because 2
+4
+=16≥12.
+
+Q3. Why is a decade counter called Mod-10?
+
+Because it has 10 valid states (0–9).
