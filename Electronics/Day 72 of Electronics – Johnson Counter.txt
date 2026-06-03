@@ -1,0 +1,66 @@
+Day 72 of Electronics – Johnson Counter (Twisted Ring Counter)
+
+After learning Ring Counters, the next important shift-register-based counter is the Johnson Counter.
+
+What is a Johnson Counter?
+
+A Johnson Counter is a shift register counter in which the inverted output of the last flip-flop is fed back to the input of the first flip-flop.
+
+4-Bit Johnson Counter
+
+Q
+3
+	​
+
+	​
+
+→D
+0
+	​
+
+
+Unlike a Ring Counter, a Johnson Counter produces 2N states using N flip-flops.
+
+For example:
+
+4 flip-flops → 8 states
+5 flip-flops → 10 states
+Working of a 4-Bit Johnson Counter
+
+State sequence:
+
+Clock Pulse	Q3 Q2 Q1 Q0
+Initial	0000
+1	1000
+2	1100
+3	1110
+4	1111
+5	0111
+6	0011
+7	0001
+8	0000
+
+The sequence then repeats.
+
+Advantages
+
+✅ More states than a Ring Counter for the same number of flip-flops
+
+✅ Simple decoding logic
+
+✅ Easy implementation using D flip-flops
+
+✅ Widely used in digital sequencing circuits
+
+Ring Counter vs Johnson Counter
+Feature	Ring Counter	Johnson Counter
+Feedback	Direct output fed back	Inverted output fed back
+States	N	2N
+Efficiency	Lower	Higher
+Decoding	Simple	Simple
+Applications
+Timing sequence generation
+Frequency division
+Digital control circuits
+State machines
+LED chasers and pattern generators
