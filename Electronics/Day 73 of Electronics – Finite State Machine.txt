@@ -1,0 +1,49 @@
+Day 73 of Electronics – Finite State Machines (FSM)
+
+Finite State Machines (FSMs) are widely used in embedded systems, digital circuits, communication protocols, traffic light controllers, and vending machines.
+
+What is an FSM?
+
+A Finite State Machine is a system that:
+
+Exists in one state at a time.
+Changes state based on inputs.
+Produces outputs based on the current state and/or inputs.
+Basic Components
+States
+Inputs
+Outputs
+State Transitions
+
+Example: A traffic light controller transitions through:
+
+Red → Green → Yellow → Red
+Types of FSM
+1. Moore Machine
+
+In a Moore machine, the output depends only on the current state.
+
+Output=f(State)
+
+Advantages
+
+Stable outputs
+Easier to design
+
+Disadvantages
+
+May require more states
+2. Mealy Machine
+
+In a Mealy machine, the output depends on both the current state and input.
+
+Output=f(State,Input)
+
+Advantages
+
+Faster response
+Requires fewer states
+
+Disadvantages
+
+Output can change immediately with input variations
