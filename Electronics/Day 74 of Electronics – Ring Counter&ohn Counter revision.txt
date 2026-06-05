@@ -1,0 +1,50 @@
+Day 74 of Electronics – Ring Counter & Johnson Counter
+
+1. Ring Counter
+
+A Ring Counter is a type of shift register counter where the output of the last flip-flop is connected back to the input of the first flip-flop.
+
+Working
+
+Consider a 4-bit ring counter initialized as:
+
+1000 → 0100 → 0010 → 0001 → 1000 ...
+
+Only one flip-flop contains logic '1' at any time, and this '1' circulates around the register.
+
+Features
+Uses D flip-flops.
+Requires initialization (preset).
+For n flip-flops, it has n states.
+Simple decoding because only one bit is HIGH at a time.
+Applications
+Sequence generation
+Timing control circuits
+LED chasers
+Digital control systems
+2. Johnson Counter (Twisted Ring Counter)
+
+A Johnson Counter is a modified ring counter where the inverted output of the last flip-flop is fed back to the input of the first flip-flop.
+
+Example (4-bit Johnson Counter)
+
+State sequence:
+
+0000 → 1000 → 1100 → 1110 → 1111 → 0111 → 0011 → 0001 → 0000
+
+Features
+For n flip-flops, it has 2n states.
+More efficient than a ring counter.
+Easier decoding than binary counters.
+Applications
+Frequency division
+Sequence generation
+Digital timing circuits
+State machines
+Ring Counter vs Johnson Counter
+Feature	Ring Counter	Johnson Counter
+Feedback	Direct output	Inverted output
+States	n	2n
+Initialization	Required	Easier
+Efficiency	Lower	Higher
+Complexity	Simple	Slightly complex
