@@ -1,0 +1,50 @@
+Day 75 of Electronics – Finite State Machines (FSM)
+
+A Finite State Machine is a digital system whose output depends on its current state and input.
+
+Think of an elevator:
+
+It can be in a limited number of states (Floor 1, Floor 2, Floor 3, etc.).
+Based on button inputs, it moves from one state to another.
+
+This is exactly how FSMs work.
+
+Components of an FSM
+States
+Inputs
+Outputs
+State Transitions
+Clock
+Types of FSM
+1. Moore Machine
+
+Output depends only on the current state.
+
+Output = f(State)
+Advantages
+Stable outputs
+Easier to design and debug
+Disadvantages
+May require more states
+2. Mealy Machine
+
+Output depends on both the current state and the input.
+
+Output = f(State, Input)
+Advantages
+Faster response
+Usually requires fewer states
+Disadvantages
+Output can change immediately with input changes
+Moore vs Mealy
+Feature	Moore	Mealy
+Output Depends On	State only	State + Input
+Number of States	More	Fewer
+Response Speed	Slower	Faster
+Output Stability	Better	Less stable
+Applications of FSM
+Traffic light controllers
+Vending machines
+Washing machines
+UART communication protocols
+Embedded system control logic
