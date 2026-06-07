@@ -1,0 +1,89 @@
+Day 76 of Electronics – Analog to Digital Converter (ADC) Architectures
+
+You may have learned what an ADC does. Today focus on the different ADC architectures, which are frequently asked in interviews.
+
+Why ADC is Needed
+
+Most real-world signals (temperature, pressure, sound, light) are analog, while microcontrollers process digital data.
+
+ADC converts:
+
+Analog Signal → Digital Value
+
+Types of ADCs
+1. Flash ADC
+Fastest ADC type.
+Uses many comparators.
+Conversion happens in a single step.
+
+Advantages
+
+Extremely high speed.
+
+Disadvantages
+
+High power consumption.
+Expensive for high resolutions.
+
+Applications
+
+Oscilloscopes
+Radar systems
+High-speed communication
+2. Successive Approximation Register (SAR) ADC
+Most commonly used ADC in microcontrollers.
+Performs a binary search to find the digital value.
+
+Advantages
+
+Good balance of speed, accuracy, and power.
+
+Applications
+
+Embedded systems
+Sensor interfacing
+Data acquisition systems
+3. Dual Slope ADC
+Integrates the input signal over time.
+Highly accurate but slow.
+
+Applications
+
+Digital multimeters
+Precision measurement instruments
+4. Sigma-Delta ADC
+Uses oversampling and digital filtering.
+
+Advantages
+
+Very high resolution.
+Excellent noise performance.
+
+Applications
+
+Audio systems
+Precision sensors
+Industrial instrumentation
+Interview Questions
+
+Q1. Which ADC is commonly found in microcontrollers?
+
+SAR ADC.
+
+Q2. Which ADC is the fastest?
+
+Flash ADC.
+
+Q3. Which ADC provides the highest accuracy for measurement instruments?
+
+Dual Slope ADC.
+
+Q4. Which ADC is preferred for audio applications?
+
+Sigma-Delta ADC.
+Quick Comparison
+ADC Type	Speed	Accuracy	Cost
+Flash	Very High	Medium	High
+SAR	High	High	Medium
+Dual Slope	Low	Very High	Medium
+Sigma-Delta	Medium	Very High	Medium
