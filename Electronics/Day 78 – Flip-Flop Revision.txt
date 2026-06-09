@@ -1,0 +1,51 @@
+Day 78 – Flip-Flop Revision
+
+A flip-flop is a bistable device that stores 1 bit of data. It has two stable states: 0 and 1.
+
+1. SR Flip-Flop
+S	R	Q(next)
+0	0	No Change
+0	1	0 (Reset)
+1	0	1 (Set)
+1	1	Invalid
+
+Key Point: Simple flip-flop, but the S=R=1 condition is invalid.
+
+2. JK Flip-Flop
+J	K	Q(next)
+0	0	No Change
+0	1	Reset
+1	0	Set
+1	1	Toggle
+
+Key Point: Eliminates the invalid state of the SR flip-flop.
+
+3. D Flip-Flop
+D	Q(next)
+0	0
+1	1
+
+Key Point: Output follows the input D on the clock edge.
+
+Applications:
+
+Data storage
+Registers
+Memory circuits
+4. T Flip-Flop
+T	Q(next)
+0	No Change
+1	Toggle
+
+Key Point: Changes state whenever T = 1.
+
+Applications:
+
+Counters
+Frequency division
+Comparison Table
+Flip-Flop	Inputs	Special Feature
+SR	S, R	Basic flip-flop
+JK	J, K	No invalid state
+D	D	Data storage
+T	T	Toggle operation
