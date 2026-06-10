@@ -1,0 +1,47 @@
+Topic: Sequence Detector (Moore Machine)
+Problem Statement
+
+Design a Moore FSM that detects the sequence 101 in a serial input stream.
+
+Example:
+
+Input: 11010110
+
+Output: 00000100
+
+(Output becomes 1 only when the sequence 101 is detected.)
+
+Step 1: Define States
+State	Meaning
+S0	Initial state (nothing detected)
+S1	Detected 1
+S2	Detected 10
+S3	Detected 101 (Sequence found)
+Step 2: State Transition Table
+Present State	Input=0	Input=1
+S0	S0	S1
+S1	S2	S1
+S2	S0	S3
+S3	S2	S1
+Step 3: Output Table (Moore Machine)
+State	Output
+S0	0
+S1	0
+S2	0
+S3	1
+
+Output depends only on the current state.
+
+Step 4: State Diagram
+      1
+S0 ------> S1
+^          |
+|0         |0
+|          v
+|         S2
+|          |
+|1         |0
+|          v
++--------- S3
+
+(S3 is the detection state with Output = 1)
