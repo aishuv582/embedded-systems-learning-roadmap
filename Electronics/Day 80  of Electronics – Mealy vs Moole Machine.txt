@@ -1,0 +1,56 @@
+Day 78 of Electronics – Mealy vs Moore State Machines
+
+Since you've already started learning FSMs, today's topic is Mealy and Moore Machines, the two major types of Finite State Machines used in digital design.
+
+1. Moore Machine
+
+In a Moore machine, the output depends only on the present state.
+
+Block Representation:
+
+Present State → Output
+      ↓
+ Next State Logic
+
+Output Equation:
+
+Output = f(Present State)
+
+Advantages
+
+Stable output
+Less prone to glitches
+Easier to design and debug
+
+Disadvantage
+
+May require more states
+2. Mealy Machine
+
+In a Mealy machine, the output depends on both the present state and the input.
+
+Block Representation:
+
+Present State + Input → Output
+           ↓
+     Next State Logic
+
+Output Equation:
+
+Output = f(Present State, Input)
+
+Advantages
+
+Fewer states required
+Faster response to input changes
+
+Disadvantage
+
+Output can change immediately with input, causing glitches
+Mealy vs Moore
+Feature	Moore	Mealy
+Output depends on	State only	State + Input
+Number of states	More	Fewer
+Output response	Slower	Faster
+Glitch possibility	Low	Higher
+Design complexity	Simple	Slightly complex
