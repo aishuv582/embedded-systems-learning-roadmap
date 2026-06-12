@@ -1,0 +1,41 @@
+Day 80 of Electronics – Finite State Machine (FSM) State Minimization
+
+Since you've already covered FSM basics, state diagrams, state tables, and Mealy vs Moore machines, today's topic is State Minimization, an important concept in digital system design.
+
+What is State Minimization?
+
+State minimization is the process of reducing the number of states in an FSM without changing its behavior.
+
+Benefits:
+
+Reduces hardware complexity
+Uses fewer flip-flops
+Lowers power consumption
+Simplifies circuit design
+When are Two States Equivalent?
+
+Two states are considered equivalent if:
+
+They produce the same output for the same inputs.
+They transition to the same or equivalent next states for every input.
+State Minimization Procedure
+Create the state table.
+Identify states with identical outputs.
+Compare next-state transitions.
+Group equivalent states.
+Merge equivalent states.
+Draw the reduced state table and state diagram.
+Example
+Present State	Input=0	Input=1	Output
+A	B	C	0
+B	B	D	0
+C	B	C	0
+D	B	D	1
+
+Observe:
+
+States A and C have the same output (0).
+Their next-state behavior is also identical.
+Therefore, A and C can be merged into a single state.
+
+Result: The FSM uses fewer states while performing the same function.
