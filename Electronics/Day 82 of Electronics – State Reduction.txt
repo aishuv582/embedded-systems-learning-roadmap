@@ -1,0 +1,73 @@
+Day 82 of Electronics – State Reduction in FSM (Finite State Machines)
+
+Since you've already covered FSM basics, Mealy/Moore machines, state assignment, and state minimization, today's topic is:
+
+State Reduction (State Equivalence Method)
+What is State Reduction?
+
+State reduction is the process of reducing the number of states in an FSM without changing its external behavior.
+
+Goal: Simplify the circuit and reduce hardware requirements.
+
+Equivalent States
+
+Two states are said to be equivalent if:
+
+For the same input, they produce the same output.
+They transition to equivalent states.
+
+If two states behave identically from the user's perspective, one of them can be removed.
+
+Example
+
+Consider a Moore machine:
+
+Present State	Output
+A	0
+B	1
+C	0
+D	1
+
+Suppose:
+
+A and C have identical outputs and transitions.
+B and D have identical outputs and transitions.
+
+Then:
+
+A ≡ C
+B ≡ D
+
+Reduced machine:
+
+Original States	Reduced State
+A, C	X
+B, D	Y
+
+Number of states reduced from 4 to 2.
+
+Steps in State Reduction
+List all states.
+Compare outputs of states.
+Group states with same outputs.
+Check next-state transitions.
+Merge equivalent states.
+Draw reduced state table/diagram.
+Advantages
+Reduces hardware complexity.
+Requires fewer flip-flops.
+Lowers power consumption.
+Makes FSM easier to implement and debug.
+Interview Questions
+
+Q1. Why is state reduction performed?
+
+To reduce the number of states while maintaining the same behavior.
+
+Q2. Can states with different outputs be equivalent?
+
+No. Equivalent states must produce the same output.
+
+Q3. What is the benefit of reducing states?
+
+Fewer flip-flops and simpler logic circuits.
