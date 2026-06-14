@@ -1,0 +1,54 @@
+Day 83 of Electronics – State Reduction (State Minimization) in FSM
+
+Since you've already covered FSM basics, Mealy/Moore machines, state diagrams, state tables, and state reduction, today let's strengthen the concept with a practical approach.
+
+What is State Reduction?
+
+State reduction is the process of reducing the number of states in a finite state machine without changing its external behavior.
+
+Purpose:
+
+Reduces hardware complexity
+Uses fewer flip-flops
+Lowers cost and power consumption
+When are Two States Equivalent?
+
+Two states are equivalent if:
+
+They produce the same output for every input.
+They transition to the same or equivalent states for every input.
+Example State Table
+Present State	Input=0	Input=1	Output
+A	B	C	0
+B	D	E	1
+C	D	E	1
+D	D	E	0
+E	D	E	0
+Step 1: Compare Outputs
+B and C have the same output (1)
+D and E have the same output (0)
+
+Possible equivalent pairs:
+
+(B, C)
+(D, E)
+Step 2: Compare Next States
+
+For B and C:
+
+Input 0 → D
+Input 1 → E
+
+Both transitions are identical.
+
+Therefore:
+
+B ≡ C
+
+For D and E:
+
+Their transitions are not identical because they move to different states.
+
+Therefore:
+
+D and E are not equivalent.
