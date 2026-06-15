@@ -1,0 +1,33 @@
+Day 84 of Electronics – Sequence Detector FSM Design
+
+
+
+What is a Sequence Detector?
+
+A sequence detector is a digital circuit that detects a specific bit pattern in a serial input stream.
+
+Example: Detect the sequence 1011
+
+Input stream: 1101011011
+
+Output becomes 1 whenever 1011 is detected.
+
+Design Steps
+Define the sequence
+Example: 1011
+Create states
+S0 → Initial state
+S1 → Detected 1
+S2 → Detected 10
+S3 → Detected 101
+S4 → Detected 1011 (output = 1)
+Draw the state diagram
+Each state represents the progress of sequence matching.
+Create the state table
+Present State
+Input
+Next State
+Output
+Choose Moore or Mealy implementation
+Moore: Output depends only on state.
+Mealy: Output depends on state and input (uses fewer states).
