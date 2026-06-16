@@ -1,0 +1,88 @@
+Day 85 of Electronics – Sequence Detector using FSM
+
+Since you've already covered FSM basics, Mealy/Moore machines, state minimization, and state reduction, let's move to a practical application: Sequence Detectors.
+
+What is a Sequence Detector?
+
+A sequence detector is a digital circuit that detects a specific pattern of bits in a serial input stream.
+
+Example:
+Detect the sequence 1011.
+
+Input stream:
+1101011011
+
+Output:
+0000000101
+
+(Output becomes 1 whenever the sequence 1011 is detected.)
+
+Types of Sequence Detectors
+1. Non-Overlapping Sequence Detector
+
+After detecting a sequence, the FSM starts searching from the beginning.
+
+Example:
+
+Input: 1011011
+
+Detected sequences:
+1011 → detected once
+
+Output: 0001000
+
+2. Overlapping Sequence Detector
+
+After detecting a sequence, some bits can be reused for the next detection.
+
+Example:
+
+Input: 1011011
+
+Detected:
+
+First 1011
+Second 1011 (overlapping)
+
+Output: 0001001
+
+Designing a Moore Sequence Detector for 1011
+States
+State	Meaning
+S0	Initial state
+S1	Received 1
+S2	Received 10
+S3	Received 101
+S4	Received 1011 (Detected)
+State Transitions
+
+S0
+
+0 → S0
+1 → S1
+
+S1
+
+0 → S2
+1 → S1
+
+S2
+
+0 → S0
+1 → S3
+
+S3
+
+0 → S2
+1 → S4
+
+S4 (Output = 1)
+
+For overlapping detector: 1 → S1, 0 → S2
+For non-overlapping detector: return to S0
+Moore vs Mealy Sequence Detector
+Feature	Moore	Mealy
+Output depends on	State	State + Input
+States required	More	Fewer
+Output delay	1 clock cycle	Immediate
+Design complexity	Simple	Slightly complex
