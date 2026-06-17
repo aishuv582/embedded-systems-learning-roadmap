@@ -1,0 +1,41 @@
+Day 85 of Electronics – 101 Sequence Detector Design (Mealy vs Moore)
+
+Today we'll design a sequence detector for 101 and compare Mealy and Moore implementations.
+
+Mealy Sequence Detector (101)
+
+States:
+
+S0 → Initial state
+S1 → Received 1
+S2 → Received 10
+
+State Transitions:
+
+S0 --1→ S1
+S0 --0→ S0
+S1 --0→ S2
+S1 --1→ S1
+S2 --1/1→ S1 (Sequence 101 detected, output = 1)
+S2 --0→ S0
+
+Key Point: Output depends on both present state and input, so detection occurs immediately.
+
+Moore Sequence Detector (101)
+
+States:
+
+S0 → Initial state
+S1 → Received 1
+S2 → Received 10
+S3 → Received 101 (Output = 1)
+
+Key Point: Output depends only on the state, so an extra state is required.
+
+Mealy vs Moore
+Feature	Mealy	Moore
+Output depends on	State + Input	State only
+Number of states	Fewer	More
+Response speed	Faster	Slightly delayed
+Circuit complexity	Lower	Higher
+Output stability	Less stable	More stable
