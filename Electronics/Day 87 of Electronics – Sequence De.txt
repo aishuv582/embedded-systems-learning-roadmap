@@ -1,0 +1,47 @@
+Day 87 of Electronics – Sequence Detector (Overlapping vs Non-Overlapping)
+
+Since you've already covered FSM basics, state minimization, and sequence detectors, today's revision topic is:
+
+Overlapping and Non-Overlapping Sequence Detectors
+
+A sequence detector identifies a specific bit pattern in a serial input stream.
+
+Example Sequence: 1011
+1. Non-Overlapping Sequence Detector
+
+After detecting the sequence, the FSM resets and starts searching for a new sequence from the beginning.
+
+Input: 1011011
+
+Detection:
+
+First 1011 → Detected
+FSM resets
+Remaining bits are checked as a new sequence
+
+Advantage:
+
+Simpler design
+Fewer false detections
+2. Overlapping Sequence Detector
+
+After detection, the FSM reuses bits that may be part of the next sequence.
+
+Input: 1011011
+
+Detection:
+
+First 1011 → Detected
+Last bits can be reused
+Second 1011 can also be detected
+
+Advantage:
+
+Detects sequences faster
+More efficient for continuous data streams
+Comparison
+Feature	Non-Overlapping	Overlapping
+Reuses bits after detection	No	Yes
+Number of detections	Fewer	More
+Complexity	Lower	Higher
+Efficiency	Lower	Higher
