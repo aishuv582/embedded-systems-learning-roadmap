@@ -1,0 +1,65 @@
+Day 88 of Electronics – Sequence Detector Design (Overlapping vs Non-Overlapping)
+
+Since you've already covered FSMs, Mealy/Moore machines, state minimization, and sequence detectors, today's topic is an important design concept used in interviews and embedded/digital design roles.
+
+1. What is a Sequence Detector?
+
+A sequence detector is a sequential circuit that detects a specific bit pattern in a serial input stream.
+
+Example sequence: 1011
+
+Input stream:
+
+1101011011
+
+Output becomes HIGH whenever 1011 is detected.
+
+2. Non-Overlapping Sequence Detector
+
+After detecting the sequence, the detector starts searching from the beginning again.
+
+Example:
+
+Sequence = 1011
+
+Input:
+
+1011011
+
+Detected:
+
+1011 → Output = 1
+
+The second detection is ignored because some bits overlap with the first detected sequence.
+
+3. Overlapping Sequence Detector
+
+After detecting a sequence, some previously received bits are reused to find the next occurrence.
+
+Example:
+
+Sequence = 1011
+
+Input:
+
+1011011
+
+Detections:
+
+1011 → Output = 1
+   1011 → Output = 1
+
+Both occurrences are detected.
+
+4. Why Overlapping Detection is Preferred?
+Faster detection
+Fewer input bits required
+Efficient hardware utilization
+Commonly used in communication systems
+5. Design Steps
+Identify the sequence.
+Draw states representing partial matches.
+Create the state transition diagram.
+Develop the state table.
+Assign binary codes to states.
+Implement using flip-flops and combinational logic.
