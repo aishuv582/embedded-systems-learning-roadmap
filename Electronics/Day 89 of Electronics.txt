@@ -1,0 +1,41 @@
+Day 89 of Electronics – Sequence Detector Design (Practice)
+
+
+Topic: Design a Mealy Sequence Detector for "101"
+Problem Statement
+
+Design a sequence detector that detects the sequence 101 in a serial input stream. Overlapping sequences are allowed.
+
+Step 1: Define States
+S0 → Initial state (no bits matched)
+S1 → Detected 1
+S2 → Detected 10
+Step 2: State Diagram
+Present State	Input	Next State	Output
+S0	0	S0	0
+S0	1	S1	0
+S1	0	S2	0
+S1	1	S1	0
+S2	0	S0	0
+S2	1	S1	1
+
+Output = 1 when the final 1 of the sequence 101 arrives.
+
+Step 3: Why Overlapping Works
+
+Input stream: 10101
+
+Detection points:
+
+First 101 → Output = 1
+Second 101 → Output = 1
+
+Output sequence: 00101
+
+Step 4: Mealy vs Moore Reminder
+Mealy Machine: Output depends on present state + input.
+Fewer states.
+Faster response.
+Moore Machine: Output depends only on present state.
+More states.
+More stable output.
