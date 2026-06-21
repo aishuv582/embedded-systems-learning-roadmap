@@ -1,0 +1,56 @@
+Day 90 of Electronics – Sequence Detector Design (Practice Problem)
+
+ today we'll solve a complete design problem.
+
+Problem Statement
+
+Design a Mealy Sequence Detector to detect the sequence 1011 (overlapping allowed).
+
+Step 1: Define States
+State	Meaning
+S0	Initial state, no bits detected
+S1	Detected "1"
+S2	Detected "10"
+S3	Detected "101"
+Step 2: State Diagram
+S0
+Input 0 → S0
+Input 1 → S1
+S1
+Input 0 → S2
+Input 1 → S1
+S2
+Input 0 → S0
+Input 1 → S3
+S3
+Input 0 → S2
+Input 1 → S1, Output = 1 (Sequence detected)
+Step 3: State Table
+Present State	Input	Next State	Output
+S0	0	S0	0
+S0	1	S1	0
+S1	0	S2	0
+S1	1	S1	0
+S2	0	S0	0
+S2	1	S3	0
+S3	0	S2	0
+S3	1	S1	1
+Why Overlapping Works?
+
+Input Stream: 1011011
+
+Detection occurs at:
+
+First 1011 → Output = 1
+Last 1011 overlaps with previous bits → Output = 1
+
+Hence outputs:
+
+Input  : 1 0 1 1 0 1 1
+Output : 0 0 0 1 0 0 1
+Interview Question
+
+Why does a Mealy machine require fewer states than a Moore machine for sequence detection?
+
+Answer:
+In a Mealy machine, output depends on both the present state and input, so the output can be generated during the transition itself. Therefore, fewer states are needed compared to a Moore machine, where output depends only on the state.
