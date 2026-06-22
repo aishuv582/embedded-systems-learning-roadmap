@@ -1,0 +1,42 @@
+Day 91 of Electronics – Moore Sequence Detector
+
+Since you completed the Mealy Sequence Detector, today let's learn the Moore Sequence Detector.
+
+What is a Moore Sequence Detector?
+
+A Moore machine generates its output based only on the present state, not on the input.
+
+Output = f(Present State)
+
+Moore vs Mealy
+Feature	Moore Machine	Mealy Machine
+Output depends on	Present State	Present State + Input
+Output changes	On state transition	Immediately with input change
+Number of states	More	Fewer
+Stability	More stable	Faster response
+Example: Detect Sequence "101"
+States
+S0: Initial state
+S1: Received 1
+S2: Received 10
+S3: Received 101 (Sequence detected)
+State Transitions
+Present State	Input=0	Input=1	Output
+S0	S0	S1	0
+S1	S2	S1	0
+S2	S0	S3	0
+S3	S2	S1	1
+Key Point
+
+In a Moore machine, the output 1 is produced only when the machine enters state S3.
+
+Advantages
+
+✔ Stable output
+✔ Less prone to glitches
+✔ Easier hardware implementation
+
+Disadvantages
+
+✖ Requires more states
+✖ Output may be delayed by one clock cycle
