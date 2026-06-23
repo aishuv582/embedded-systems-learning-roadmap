@@ -1,0 +1,24 @@
+Day 92 of Electronics – Sequence Detector Design Example (1011 Detector)
+
+Today, let's design a Moore Sequence Detector that detects the sequence 1011.
+
+Step 1: Define States
+S0 → Initial state (no bits detected)
+S1 → Detected 1
+S2 → Detected 10
+S3 → Detected 101
+S4 → Detected 1011 (Output = 1)
+Step 2: State Transitions
+Present State	Input = 0	Input = 1
+S0	S0	S1
+S1	S2	S1
+S2	S0	S3
+S3	S2	S4
+S4	S2	S1
+Step 3: Output Table (Moore Machine)
+State	Output
+S0	0
+S1	0
+S2	0
+S3	0
+S4	1
