@@ -1,0 +1,43 @@
+Day 92 of Electronics – FSM Implementation Using D Flip-Flops
+
+Since you've completed sequence detectors (Mealy and Moore machines), the next step is learning how to implement an FSM using flip-flops.
+
+What is FSM Implementation?
+
+After designing the state diagram and state table, we need hardware to store the current state. This is done using flip-flops.
+
+Steps to Implement an FSM
+Draw the state diagram.
+Assign binary codes to states.
+Create the state transition table.
+Determine next-state equations.
+Choose flip-flops (usually D flip-flops).
+Design the combinational logic for the D inputs.
+Connect the flip-flops and logic circuit.
+Why D Flip-Flops?
+
+For a D flip-flop:
+
+Q
+next
+	​
+
+=D
+
+The next-state equation can be directly connected to the D input, making the design simpler.
+
+Example
+
+Suppose the next-state equation is:
+
+Q
+next
+	​
+
+=X⊕Q
+
+Then:
+
+D=X⊕Q
+
+Connect the XOR gate output directly to the D input of the flip-flop.
