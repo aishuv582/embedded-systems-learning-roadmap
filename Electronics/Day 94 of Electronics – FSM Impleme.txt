@@ -1,0 +1,29 @@
+Day 94 of Electronics – FSM Implementation Using JK Flip-Flops
+
+Since you've completed FSM implementation using D Flip-Flops, the next step is implementing a Finite State Machine (FSM) using JK Flip-Flops.
+
+Why JK Flip-Flops?
+
+JK flip-flops are versatile because they can perform:
+
+No change
+Set
+Reset
+Toggle
+JK Excitation Table
+Present State (Q)	Next State (Q⁺)	J	K
+0	0	0	X
+0	1	1	X
+1	0	X	1
+1	1	X	0
+
+(X = Don't Care)
+
+FSM Design Steps Using JK Flip-Flops
+Draw the state diagram.
+Create the state transition table.
+Assign binary codes to states.
+Determine the next state bits.
+Use the JK excitation table to find required J and K inputs.
+Simplify J and K equations using K-maps.
+Draw the final logic circuit.
