@@ -1,0 +1,310 @@
+Day 96 of Electronics
+Memory Devices – Introduction
+1. What is Memory?
+
+Memory is an electronic component that stores data and instructions so that a processor (CPU or microcontroller) can use them whenever needed.
+
+Think of memory like a notebook.
+
+CPU = Student
+Memory = Notebook
+Data = Notes written in the notebook
+
+Without memory, the CPU cannot remember anything.
+
+Why do we need memory?
+
+Imagine a calculator.
+
+When you enter:
+
+25 + 35
+
+The calculator must remember:
+
+First number (25)
+Second number (35)
+Operator (+)
+
+It stores them temporarily in memory before displaying the answer.
+
+Similarly, every computer, mobile phone, microcontroller, and embedded system requires memory.
+
+Functions of Memory
+
+Memory performs three basic operations:
+
+1. Write Operation
+
+Stores data into memory.
+
+Example
+
+Store value = 11001010
+Address = 1010
+
+Memory saves the value at that address.
+
+2. Read Operation
+
+Retrieves stored data.
+
+Example
+
+Read Address = 1010
+
+Output
+
+11001010
+3. Hold Operation
+
+Keeps the stored data unchanged until it is overwritten or erased.
+
+Memory Organization
+
+Memory consists of many storage locations.
+
+Example
+
+A memory with
+
+16 × 8
+
+means
+
+16 memory locations (addresses)
+Each location stores 8 bits (1 byte)
+
+Example
+
+Address	Stored Data
+0000	10101100
+0001	11000011
+0010	00011101
+0011	11110000
+Memory Capacity
+
+Capacity tells us how much data memory can store.
+
+Formula
+
+Capacity = Number of Locations × Number of Bits
+
+Example
+
+1024 × 8
+
+means
+
+1024 Bytes
+
+Another example
+
+4096 × 16
+
+means
+
+4096 words
+
+Each word = 16 bits
+Types of Memory
+
+There are two major categories.
+
+                 Memory
+                    |
+      ------------------------------
+      |                            |
+     RAM                          ROM
+      |                            |
+ Temporary Storage          Permanent Storage
+What is RAM?
+
+RAM stands for
+
+Random Access Memory
+
+It temporarily stores data while the processor is working.
+
+Once power is OFF,
+
+all data is lost.
+
+Therefore,
+
+RAM is called
+
+Volatile Memory
+
+Example
+
+When using
+
+WhatsApp
+Chrome
+YouTube
+
+all information is temporarily stored in RAM.
+
+When the phone shuts down,
+
+everything inside RAM disappears.
+
+Characteristics of RAM
+
+✔ Read and Write possible
+
+✔ High speed
+
+✔ Temporary storage
+
+✔ Volatile
+
+Applications
+
+Laptop
+Computer
+Mobile phones
+Embedded Systems
+Raspberry Pi
+STM32
+Arduino
+What is ROM?
+
+ROM stands for
+
+Read Only Memory
+
+It permanently stores instructions.
+
+Even after power OFF,
+
+the data remains.
+
+Therefore,
+
+ROM is called
+
+Non-Volatile Memory
+
+Example
+
+When you switch ON a laptop,
+
+the BIOS starts automatically.
+
+BIOS is stored inside ROM.
+
+Characteristics
+
+✔ Permanent storage
+
+✔ Mostly Read only
+
+✔ Data remains after power OFF
+
+✔ Slower than RAM
+
+Applications
+
+BIOS
+Bootloader
+Firmware
+Washing Machine
+Microwave
+TV
+Printer
+Embedded systems
+Difference between RAM and ROM
+Feature	RAM	ROM
+Full Form	Random Access Memory	Read Only Memory
+Nature	Temporary	Permanent
+Power OFF	Data lost	Data retained
+Read	Yes	Yes
+Write	Yes	Limited or one-time (depends on ROM type)
+Speed	Fast	Slower than RAM
+Type	Volatile	Non-Volatile
+Examples	Program execution	Firmware storage
+Volatile vs Non-Volatile Memory
+Volatile Memory
+
+Needs continuous power.
+
+Power OFF
+
+↓
+
+Data disappears.
+
+Example
+
+RAM
+Cache
+Non-Volatile Memory
+
+Does not require power.
+
+Power OFF
+
+↓
+
+Data remains.
+
+Example
+
+ROM
+EEPROM
+Flash Memory
+SSD
+Where is Memory Used?
+
+Almost every electronic device uses memory.
+
+Examples include:
+
+Mobile phones
+Laptops
+Smart TVs
+ATMs
+Cars (Engine Control Unit)
+Medical devices
+Routers
+Arduino boards
+STM32 boards
+Washing machines
+Industrial automation systems
+Embedded Systems Perspective
+
+In an embedded system:
+
+Flash Memory (ROM) stores the program (firmware).
+RAM stores variables, stack, heap, and temporary data while the program is running.
+
+For example, in an STM32 microcontroller:
+
+Flash memory stores your compiled C program.
+SRAM stores variables, function call stack, and runtime data.
+Interview Questions
+
+Q1. What is memory?
+Memory is an electronic storage device used to store data and instructions for use by a processor.
+
+Q2. What is the difference between RAM and ROM?
+RAM is volatile, temporary, and supports read/write operations. ROM is non-volatile, stores firmware permanently, and retains data even after power is removed.
+
+Q3. Why is RAM called volatile memory?
+Because its contents are lost when the power supply is turned off.
+
+Q4. Why is ROM called non-volatile memory?
+Because it retains stored data even without power.
+
+Q5. Why is RAM faster than ROM?
+RAM is designed for frequent read/write access during program execution, while ROM is optimized for permanent storage.
+
+Summary
+Memory stores data and instructions.
+Memory operations are Read, Write, and Hold.
+Memory capacity = Number of locations × Bits per location.
+RAM is temporary, fast, and volatile.
+ROM is permanent and non-volatile.
+In embedded systems, Flash memory stores the program, while SRAM stores runtime data.
