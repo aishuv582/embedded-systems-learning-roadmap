@@ -1,0 +1,63 @@
+Day 97 of Electronics
+Topic: Universal Shift Register (Bidirectional Shift Register)
+
+A Universal Shift Register is a shift register that can perform multiple operations. It is called "universal" because it supports all basic shift register functions.
+
+Operations
+No Change (Hold) – Keeps the current data unchanged.
+Shift Right – Moves all bits one position to the right.
+Shift Left – Moves all bits one position to the left.
+Parallel Load – Loads all bits simultaneously.
+Block Diagram (Concept)
+        Parallel Inputs
+      P3  P2  P1  P0
+       |   |   |   |
+   +----------------------+
+SL->|                      |<-SR
+    | Universal Shift      |
+    | Register             |
+    +----------------------+
+       |   |   |   |
+      Q3  Q2  Q1  Q0
+SL – Serial input for left shift.
+SR – Serial input for right shift.
+P3–P0 – Parallel inputs.
+Q3–Q0 – Outputs.
+Mode Selection
+S1	S0	Operation
+0	0	Hold
+0	1	Shift Right
+1	0	Shift Left
+1	1	Parallel Load
+Working Example
+
+Suppose the current data is:
+
+Q3 Q2 Q1 Q0 = 1011
+
+Hold (00):
+
+1011 → 1011
+
+Shift Right (01):
+If SR = 0
+
+1011 → 0101
+
+Shift Left (10):
+If SL = 1
+
+1011 → 0111
+
+Parallel Load (11):
+Load 1100
+
+Output = 1100
+Applications
+Serial-to-parallel conversion
+Parallel-to-serial conversion
+Data storage
+Data transfer
+Arithmetic operations (shift multiplication/division)
+Digital communication systems
+Microprocessors and microcontrollers
