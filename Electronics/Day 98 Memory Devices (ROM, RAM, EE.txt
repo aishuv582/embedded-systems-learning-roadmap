@@ -1,0 +1,70 @@
+Day 97: Memory Devices (ROM, RAM, EEPROM, Flash Memory)
+1. Why Memory is Needed
+
+Memory stores:
+
+Program instructions
+Variables and data
+Configuration settings
+Firmware
+
+In embedded systems, memory is essential for both code execution and data storage.
+
+2. Types of Memory
+Memory	Full Form	Volatile	Can be Rewritten?	Common Use
+ROM	Read Only Memory	No	Usually No	Bootloader, firmware
+RAM	Random Access Memory	Yes	Yes	Temporary data, stack, heap
+EEPROM	Electrically Erasable Programmable ROM	No	Yes	Device settings
+Flash Memory	Flash EEPROM	No	Yes	Program storage
+3. ROM
+Non-volatile memory.
+Data remains even after power is turned off.
+Stores firmware and boot code.
+
+Examples:
+
+TV firmware
+Washing machine program
+Microcontroller startup code
+4. RAM
+Volatile memory.
+Data is lost when power is removed.
+Used during program execution.
+
+Stores:
+
+Variables
+Stack
+Heap
+Buffers
+5. EEPROM
+Can erase/write individual bytes.
+Slower than RAM.
+Suitable for storing settings that change occasionally.
+
+Example:
+
+Wi-Fi password
+Calibration values
+6. Flash Memory
+Non-volatile.
+Erased in blocks, written page-wise.
+Faster and cheaper than EEPROM for large storage.
+
+Used for:
+
+Firmware
+Bootloader
+File systems
+7. ROM vs RAM
+ROM	RAM
+Permanent	Temporary
+Non-volatile	Volatile
+Stores firmware	Stores running data
+Read mostly	Read and write
+8. EEPROM vs Flash
+EEPROM	Flash
+Byte-wise erase	Block-wise erase
+Smaller capacity	Larger capacity
+Slower	Faster
+Configuration data	Program storage
