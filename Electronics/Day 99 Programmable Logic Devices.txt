@@ -1,0 +1,54 @@
+Day 98: Programmable Logic Devices (PLDs)
+What are PLDs?
+
+A Programmable Logic Device (PLD) is an integrated circuit that can be programmed by the user to implement custom digital logic functions instead of using many individual logic gates.
+
+Why are PLDs used?
+Reduce hardware complexity
+Faster design changes
+Lower PCB size
+Easier debugging
+Used in embedded systems and digital circuit prototyping
+Types of PLDs
+1. PROM (Programmable Read-Only Memory)
+AND array: Fixed
+OR array: Programmable
+Can be programmed only once.
+
+Applications
+
+Lookup tables
+Code conversion
+Fixed logic implementation
+2. PAL (Programmable Array Logic)
+AND array: Programmable
+OR array: Fixed
+
+Advantages
+
+Faster than PROM
+Less expensive
+Easy to program
+
+Disadvantages
+
+Less flexible
+3. PLA (Programmable Logic Array)
+AND array: Programmable
+OR array: Programmable
+
+Advantages
+
+Highly flexible
+Can implement complex Boolean expressions
+
+Disadvantages
+
+Slower and more expensive than PAL
+Comparison
+Feature	PROM	PAL	PLA
+AND Array	Fixed	Programmable	Programmable
+OR Array	Programmable	Fixed	Programmable
+Speed	Medium	Fast	Moderate
+Flexibility	Medium	Low	High
+Cost	Medium	Low	High
