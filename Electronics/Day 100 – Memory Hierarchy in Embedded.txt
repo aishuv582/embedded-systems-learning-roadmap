@@ -1,0 +1,124 @@
+Day 100 – Memory Hierarchy in Embedded Systems
+What is Memory Hierarchy?
+
+Memory hierarchy is the arrangement of different types of memory based on speed, size, and cost. The processor accesses the fastest memories first and the slowest memories last.
+
+        CPU Registers
+             ↓
+           Cache
+             ↓
+            RAM
+             ↓
+           Flash/ROM
+             ↓
+     HDD/SSD/External Storage
+1. CPU Registers
+Fastest memory available.
+Located inside the CPU.
+Stores operands, addresses, and intermediate results.
+Very small capacity (typically a few bytes to a few kilobytes).
+Features
+Extremely fast access
+Highest cost per bit
+Volatile memory
+2. Cache Memory
+
+Cache stores frequently used instructions and data to reduce memory access time.
+
+Types
+L1 Cache (Fastest)
+L2 Cache
+L3 Cache
+Advantages
+Improves CPU performance
+Reduces latency
+Automatically managed by hardware
+3. RAM (Random Access Memory)
+Types
+SRAM (Static RAM)
+DRAM (Dynamic RAM)
+SRAM
+Uses flip-flops
+Faster
+No refresh required
+Expensive
+Used for cache
+DRAM
+Uses capacitors
+Slower
+Requires periodic refresh
+Cheaper
+Used as main memory
+4. ROM (Read Only Memory)
+
+Stores permanent firmware.
+
+Types
+Mask ROM
+PROM
+EPROM
+EEPROM
+Flash Memory
+
+Applications:
+
+BIOS
+Microcontroller firmware
+Bootloader
+5. Flash Memory
+
+Used in embedded systems to store programs.
+
+Types
+NOR Flash
+Faster read
+Execute code directly
+Used in microcontrollers
+NAND Flash
+Faster write/erase
+Higher density
+Used in SSDs and memory cards
+Comparison Table
+Memory	Speed	Cost	Capacity	Volatile
+Registers	Fastest	Highest	Very Small	Yes
+Cache	Very Fast	High	Small	Yes
+SRAM	Fast	High	Small	Yes
+DRAM	Moderate	Low	Large	Yes
+Flash	Slow	Low	Large	No
+HDD/SSD	Slowest	Lowest	Very Large	No
+Memory Hierarchy in Embedded Systems
+Application
+      ↓
+CPU Registers
+      ↓
+Cache
+      ↓
+SRAM
+      ↓
+Flash Memory
+      ↓
+External Storage (if available)
+Interview Questions
+Why is cache memory required?
+What is the difference between SRAM and DRAM?
+Why is SRAM used for cache?
+What is the difference between ROM and Flash memory?
+Which memory is volatile?
+Which memory stores firmware?
+Why is DRAM cheaper than SRAM?
+What is the purpose of registers?
+Differentiate NOR Flash and NAND Flash.
+Explain the memory hierarchy in an embedded system.
+Quick Revision
+Registers are the fastest memory.
+Cache improves processor performance.
+SRAM is fast and used in cache.
+DRAM is used as the main memory.
+ROM stores permanent firmware.
+Flash memory is non-volatile and stores programs.
+Memory hierarchy balances speed, cost, and capacity.
+Embedded Systems Tip
+
+Understanding memory hierarchy is essential for embedded engineers because efficient memory usage directly impacts system performance, power consumption, and cost. This knowledge is frequently tested in embedded systems interviews.
+
+🎉 Congratulations again on completing Day 100! Your consistency over these 100 days has built a strong foundation in digital electronics. From tomorrow, we can move into Microprocessors and Microcontrollers, the next major step toward your goal of becoming an embedded systems engineer
