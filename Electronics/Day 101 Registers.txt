@@ -1,0 +1,106 @@
+Day 101: Registers
+What is a Register?
+
+A register is a group of flip-flops used to store binary data temporarily.
+
+Each flip-flop stores 1 bit.
+An n-bit register consists of n flip-flops.
+Example:
+4-bit register → 4 flip-flops
+8-bit register → 8 flip-flops
+
+Registers are widely used in:
+
+Microprocessors
+Microcontrollers
+Digital systems
+Embedded systems
+Block Diagram
+D3 ---->|D FF|---- Q3
+D2 ---->|D FF|---- Q2
+D1 ---->|D FF|---- Q1
+D0 ---->|D FF|---- Q0
+
+        Common Clock
+
+All flip-flops share the same clock, so all bits are stored simultaneously.
+
+Types of Registers
+Parallel Register
+Shift Register
+Serial In Serial Out (SISO)
+Serial In Parallel Out (SIPO)
+Parallel In Serial Out (PISO)
+Parallel In Parallel Out (PIPO)
+Bidirectional Shift Register
+Universal Shift Register
+
+Over the next few days, you'll study each type in detail.
+
+Parallel Register
+
+A parallel register loads all bits at the same time.
+
+Example:
+
+Input:
+
+1011
+
+After one clock pulse:
+
+Output:
+
+1011
+
+All bits are transferred simultaneously.
+
+Working Principle
+
+Suppose a 4-bit register:
+
+Inputs
+
+D3 D2 D1 D0
+1  0  1  1
+
+After the rising edge of the clock:
+
+Q3 Q2 Q1 Q0
+
+1 0 1 1
+
+The register stores the data until:
+
+New data is loaded, or
+A reset signal clears it.
+Timing Diagram
+Clock
+
+___|‾|___|‾|___|‾|___
+
+Input
+
+1011
+
+Output
+
+0000 -----> 1011
+
+The output changes only on the active clock edge.
+
+Applications
+Temporary data storage
+CPU registers
+Memory buffering
+Arithmetic operations
+Data transfer between modules
+Advantages
+Fast data storage
+Easy implementation
+Synchronous operation
+Reliable data transfer
+Disadvantages
+Limited storage capacity
+Requires multiple flip-flops
+Uses more hardware as the number of bits increases
