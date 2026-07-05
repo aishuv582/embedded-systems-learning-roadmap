@@ -1,0 +1,110 @@
+Day 104: Shift Registers
+What is a Shift Register?
+
+A shift register is a sequential logic circuit made up of flip-flops that stores binary data and shifts it one bit to the left or right with each clock pulse.
+
+Built using D flip-flops (most common)
+Stores temporary data
+Used for data transfer, delay, and serial communication
+Example
+
+Suppose the register contains:
+
+1010
+
+After one right shift:
+
+0101
+
+Each clock pulse shifts every bit by one position.
+
+Types of Shift Registers
+1. Serial-In Serial-Out (SISO)
+Data enters one bit at a time.
+Data exits one bit at a time.
+Requires n clock pulses to load and retrieve an n-bit word.
+Applications
+Data delay
+Serial communication
+2. Serial-In Parallel-Out (SIPO)
+Input is serial.
+Output is available simultaneously on all outputs.
+Example
+
+Input bits:
+
+1 → 0 → 1 → 1
+
+After four clock pulses:
+
+Outputs:
+
+Q3 Q2 Q1 Q0
+
+1 0 1 1
+
+Applications
+Serial-to-parallel conversion
+Receiving UART data
+Microcontroller interfaces
+3. Parallel-In Serial-Out (PISO)
+Entire data is loaded simultaneously.
+Data leaves one bit at a time.
+Applications
+Parallel-to-serial conversion
+Communication systems
+4. Parallel-In Parallel-Out (PIPO)
+Data enters all flip-flops simultaneously.
+Data is read simultaneously.
+Applications
+Temporary storage
+Buffer registers
+Universal Shift Register
+
+A Universal Shift Register can perform all four operations:
+
+Hold data
+Shift left
+Shift right
+Parallel load
+
+It is called "universal" because it supports every major shift-register operation.
+
+Working Principle
+
+For a 4-bit shift register:
+
+Current value:
+
+Q3 Q2 Q1 Q0
+1  0  1  0
+
+After one right shift:
+
+0  1  0  1
+
+After another right shift:
+
+0  0  1  0
+
+Each clock pulse moves data by one position.
+
+Advantages
+Simple hardware
+Fast data transfer
+Temporary storage
+Easy serial communication
+Reduces wiring in digital systems
+Limitations
+Limited storage capacity
+Data can be lost if shifted out
+Requires clock synchronization
+Applications
+Serial communication (UART, SPI)
+Data buffering
+Digital delay lines
+Ring counters
+Johnson counters
+LED running displays
+Keyboard interfaces
+Data conversion (Serial ↔ Parallel)

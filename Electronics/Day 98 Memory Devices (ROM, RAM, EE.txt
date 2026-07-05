@@ -1,4 +1,4 @@
-Day 97: Memory Devices (ROM, RAM, EEPROM, Flash Memory)
+Day 98: Memory Devices (ROM, RAM, EEPROM, Flash Memory)
 1. Why Memory is Needed
 
 Memory stores:
