@@ -1,0 +1,151 @@
+Day 105: Shift Registers – Universal Shift Register
+What is a Universal Shift Register?
+
+A Universal Shift Register (USR) is a shift register that can perform all four operations:
+
+Hold data (No change)
+Shift Left
+Shift Right
+Parallel Load
+
+Because it performs all these operations, it is called universal.
+
+Block Diagram (Concept)
+         Parallel Inputs
+      P3  P2  P1  P0
+       |   |   |   |
+       ↓   ↓   ↓   ↓
+   +--------------------+
+SL→|                    |←SR
+   | Universal Shift    |
+   |     Register       |
+   +--------------------+
+       ↓   ↓   ↓   ↓
+      Q3  Q2  Q1  Q0
+SL = Serial Left Input
+SR = Serial Right Input
+P0–P3 = Parallel Inputs
+Q0–Q3 = Outputs
+Modes of Operation
+S1	S0	Operation
+0	0	Hold (No Change)
+0	1	Shift Right
+1	0	Shift Left
+1	1	Parallel Load
+
+The S1 and S0 lines are the mode selection inputs.
+
+1. Hold Mode (S1S0 = 00)
+
+The stored data remains unchanged.
+
+Example:
+
+Current:
+
+1010
+
+After clock:
+
+1010
+
+No change.
+
+2. Shift Right (S1S0 = 01)
+
+Every bit moves one position to the right.
+
+Example:
+
+Before:
+
+Q3 Q2 Q1 Q0
+1  0  1  0
+
+If Serial Input = 1
+
+After clock:
+
+1 1 0 1
+3. Shift Left (S1S0 = 10)
+
+Every bit moves one position to the left.
+
+Example:
+
+Before:
+
+1010
+
+If Serial Input = 0
+
+After clock:
+
+0100
+4. Parallel Load (S1S0 = 11)
+
+All bits are loaded simultaneously.
+
+Parallel input:
+
+1101
+
+After one clock:
+
+1101
+
+This is much faster than loading one bit at a time.
+
+Internal Structure
+
+A Universal Shift Register consists of:
+
+Multiple D Flip-Flops
+Multiplexers (MUXes) before each flip-flop
+Common clock
+Control inputs (S1, S0)
+
+Each multiplexer selects whether the flip-flop receives:
+
+Its previous output (Hold)
+Left neighbor (Shift Right)
+Right neighbor (Shift Left)
+Parallel input (Parallel Load)
+Applications
+Bidirectional data transfer
+Data storage
+Serial-to-parallel conversion
+Parallel-to-serial conversion
+Data buffering
+Digital communication systems
+Microprocessors and microcontrollers
+Arithmetic operations (shift-based multiplication/division)
+Common ICs
+74194 – 4-bit Bidirectional Universal Shift Register
+74195 – 4-bit Parallel Access Shift Register
+
+These are commonly studied in digital electronics and embedded systems.
+
+Interview Questions
+1. Why is it called a Universal Shift Register?
+
+Because it supports hold, shift left, shift right, and parallel load operations in a single device.
+
+2. Which component selects the operating mode?
+
+Multiplexers, controlled by the S1 and S0 selection lines.
+
+3. What is the advantage over a simple shift register?
+
+A simple shift register performs only one type of shifting, whereas a universal shift register supports multiple operations, making it more flexible.
+
+4. Why is parallel loading useful?
+
+It loads all bits simultaneously in one clock cycle, making data loading much faster than serial loading.
+
+Quick Revision
+✔ Universal Shift Register = Performs all shift register operations.
+✔ Four modes: Hold, Shift Left, Shift Right, Parallel Load.
+✔ Uses D Flip-Flops + Multiplexers.
+✔ Controlled by S1 and S0.
+✔ Widely used in embedded systems, processors, and communication circuits.
