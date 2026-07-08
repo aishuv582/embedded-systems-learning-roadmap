@@ -1,0 +1,298 @@
+Day 107 of Electronics – Memory Interfacing with 8085 Microprocessor
+
+Today you'll learn how memory chips are connected to the 8085. This is an important interview topic for embedded systems because it combines microprocessors, digital electronics, and address decoding.
+
+1. What is Memory Interfacing?
+
+Memory interfacing is the process of connecting external memory (ROM/RAM) to the microprocessor so it can read and write data.
+
+The 8085 itself does not contain program memory or data memory. External memory chips must be connected.
+
+        +----------------+
+        |     8085       |
+        +----------------+
+        | Address Bus    |
+        | Data Bus       |
+        | Control Lines  |
+        +----------------+
+               |
+      -------------------
+      |                 |
+   ROM Memory      RAM Memory
+2. Memory Types
+ROM (Read Only Memory)
+
+Used to store
+
+Program
+Bootloader
+Fixed instructions
+
+Characteristics
+
+Non-volatile
+Cannot normally be modified
+
+Examples
+
+EEPROM
+EPROM
+Flash
+RAM (Random Access Memory)
+
+Used to store
+
+Variables
+Stack
+Temporary data
+
+Characteristics
+
+Volatile
+Read and write possible
+3. Address Bus
+
+8085 has
+
+16 address lines
+
+A15 ... A0
+
+Therefore
+
+2^16 = 65,536 addresses
+
+= 64 KB memory
+
+Address range
+
+0000H
+↓
+
+FFFFH
+4. Data Bus
+
+8085 has
+
+8-bit data bus
+
+D7 ... D0
+
+It transfers
+
+Data
+Instructions
+5. Control Signals
+
+Three important control signals are used.
+
+RD̅ (Read)
+
+Active LOW
+
+RD = 0
+
+Memory → CPU
+WR̅ (Write)
+
+Active LOW
+
+WR = 0
+
+CPU → Memory
+IO/M̅
+
+Used to differentiate
+
+0 → Memory operation
+
+1 → I/O operation
+6. Memory Map
+
+Example
+
+0000H ----------------
+
+ROM
+
+1FFFH ----------------
+
+2000H ----------------
+
+RAM
+
+3FFFH ----------------
+
+4000H ----------------
+
+Unused
+
+FFFFH ----------------
+
+Every device occupies its own address range.
+
+7. Address Decoding
+
+Suppose we have
+
+8 KB ROM
+8 KB RAM
+
+The processor has
+
+64 KB
+
+Only one chip should respond to a given address.
+
+Address decoding solves this problem.
+
+It generates the
+
+Chip Select (CS)
+
+signal.
+
+8. Chip Select
+
+Every memory IC has
+
+CS
+
+When
+
+CS = 0
+
+Chip Enabled
+
+When
+
+CS = 1
+
+Chip Disabled
+
+Only one chip should be enabled at a time.
+
+9. Memory Read Operation
+
+Sequence
+
+CPU places address
+
+↓
+
+Memory selected
+
+↓
+
+RD becomes LOW
+
+↓
+
+Memory places data
+
+↓
+
+CPU reads data
+10. Memory Write Operation
+
+Sequence
+
+CPU places address
+
+↓
+
+CPU places data
+
+↓
+
+WR becomes LOW
+
+↓
+
+Memory stores data
+11. Example Memory Allocation
+
+Suppose
+
+16 KB ROM
+
+16 KB RAM
+
+Then
+
+ROM
+
+0000H – 3FFFH
+
+RAM
+
+4000H – 7FFFH
+
+Remaining
+
+8000H – FFFFH
+Unused
+12. Numerical Example
+Question
+
+How many address lines are needed for 32 KB memory?
+
+Solution
+
+32 KB
+
+= 32 × 1024
+
+= 32768
+
+2^15 = 32768
+
+Answer
+
+15 address lines
+Question
+
+8085 supports maximum memory?
+
+Solution
+
+16 address lines
+
+2^16
+
+= 64 KB
+
+Answer
+
+64 KB
+13. Interview Questions
+Q1. Why does the 8085 need external memory?
+
+Answer: The 8085 has no internal program/data memory, so external ROM and RAM are connected for instruction execution and data storage.
+
+Q2. What is address decoding?
+
+Answer: It is the process of generating the appropriate chip select signal so only the intended memory chip responds to a given address.
+
+Q3. Why is Chip Select required?
+
+Answer: Without Chip Select, multiple memory chips could respond to the same address, causing bus conflicts and incorrect operation.
+
+Q4. What is the maximum memory supported by the 8085?
+
+Answer: 64 KB.
+
+Q5. Which signal differentiates memory and I/O operations?
+
+Answer: IO/M̅ signal.
+
+14. Quick Revision
+8085 has 16 address lines → 64 KB address space.
+8-bit data bus transfers data and instructions.
+ROM stores programs; RAM stores temporary data.
+RD̅ is used for memory read operations.
+WR̅ is used for memory write operations.
+IO/M̅ = 0 indicates a memory operation.
+Address decoding generates the Chip Select (CS) signal.
+Only one memory chip should be active at a time.
+Memory mapping assigns address ranges to different memory devices.
