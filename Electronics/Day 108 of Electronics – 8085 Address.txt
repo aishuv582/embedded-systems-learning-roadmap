@@ -1,0 +1,245 @@
+Day 108 of Electronics – 8085 Addressing Modes
+
+Today we'll cover one of the most important concepts in the 8085 Microprocessor: Addressing Modes. Understanding addressing modes is essential because they determine how an instruction accesses data.
+
+What is an Addressing Mode?
+
+An addressing mode is the method used by the microprocessor to specify the location of the operand (data) needed for an instruction.
+
+Example:
+
+MVI A, 25H
+
+Here, 25H is directly provided in the instruction.
+
+Types of Addressing Modes in 8085
+
+There are 5 addressing modes.
+
+Immediate Addressing Mode
+Register Addressing Mode
+Direct Addressing Mode
+Register Indirect Addressing Mode
+Implied (Implicit) Addressing Mode
+1. Immediate Addressing Mode
+
+The data (operand) is directly included in the instruction.
+
+Syntax
+MVI Register, Data
+Example
+MVI A, 3AH
+Explanation
+Load 3AH into accumulator.
+No memory lookup is required for the data.
+
+Before:
+
+A = ??
+
+After:
+
+A = 3AH
+More Examples
+MVI B,20H
+ADI 05H
+LXI H,2500H
+Advantages
+Fast execution
+Easy to program
+Disadvantage
+
+Cannot change the data without modifying the instruction.
+
+2. Register Addressing Mode
+
+The operand is stored in another register.
+
+Syntax
+MOV Destination, Source
+Example
+MOV A,B
+
+Suppose
+
+B = 45H
+
+Execution
+
+A ← B
+
+After execution
+
+A = 45H
+More Examples
+MOV C,D
+ADD B
+SUB C
+Advantages
+Very fast
+No memory access
+3. Direct Addressing Mode
+
+The instruction itself contains the memory address.
+
+Syntax
+LDA Address
+STA Address
+Example
+LDA 2500H
+
+Memory
+
+2500H → 7FH
+
+Execution
+
+A ← (2500H)
+
+Result
+
+A = 7FH
+
+Another Example
+
+STA 3000H
+
+Stores accumulator data into memory location 3000H.
+
+4. Register Indirect Addressing Mode
+
+The memory address is stored inside a register pair.
+
+Usually
+
+HL
+BC
+DE
+
+are used.
+
+Example
+MOV A,M
+
+Suppose
+
+HL = 2500H
+
+Memory
+
+2500H → 4AH
+
+Execution
+
+A ← Memory(HL)
+
+Result
+
+A = 4AH
+
+Another Example
+
+MOV M,C
+
+Stores register C into memory location pointed by HL.
+
+Why use this?
+
+Useful for arrays, loops, and large amounts of data.
+
+5. Implied (Implicit) Addressing Mode
+
+No operand is mentioned.
+
+The instruction automatically knows which register to use.
+
+Examples
+CMA
+RLC
+RRC
+RAL
+RAR
+DAA
+
+Example
+
+Before
+
+A = 35H
+
+Instruction
+
+CMA
+
+After
+
+A = CAH
+
+(The accumulator bits are complemented.)
+
+Comparison Table
+Addressing Mode	Operand Location	Example	Memory Access
+Immediate	Inside instruction	MVI A,20H	No
+Register	Register	MOV A,B	No
+Direct	Memory address in instruction	LDA 2500H	Yes
+Register Indirect	Address stored in register pair	MOV A,M	Yes
+Implied	Operand implied by instruction	CMA	No
+Memory Access Example
+Memory
+------------------
+2500H → 3AH
+2501H → 45H
+2502H → 89H
+------------------
+
+If
+
+HL = 2501H
+
+Instruction
+
+MOV A,M
+
+Result
+
+A = 45H
+Interview Questions
+1. How many addressing modes are available in 8085?
+
+Answer: 5
+
+2. Which addressing mode is the fastest?
+
+Answer: Register Addressing Mode (followed closely by Immediate Addressing Mode).
+
+3. Which instruction uses Direct Addressing Mode?
+
+Answer:
+
+LDA 2500H
+STA 3000H
+LHLD 2500H
+SHLD 3000H
+4. Which register pair is used with MOV A,M?
+
+Answer: HL register pair.
+
+5. What is the difference between Direct and Register Indirect Addressing?
+Direct Addressing: The memory address is specified explicitly in the instruction (e.g., LDA 2500H).
+Register Indirect Addressing: The memory address is stored in a register pair (typically HL), and the instruction accesses the memory location pointed to by that register pair (e.g., MOV A,M).
+Practice Questions
+Explain all five addressing modes of the 8085 with examples.
+Differentiate Immediate and Register Addressing Modes.
+What is Register Indirect Addressing? Give an example.
+Write an instruction to load the accumulator with the contents of memory location 3000H.
+If HL = 4000H and memory location 4000H contains 55H, what will be the result after executing MOV A,M?
+Which addressing mode is used by ADI 10H?
+Which addressing mode is used by CMA?
+Compare Direct and Register Indirect Addressing Modes.
+Key Takeaways
+Addressing modes define how the CPU locates operands.
+Immediate: Data is part of the instruction.
+Register: Data is stored in a CPU register.
+Direct: Instruction contains the memory address.
+Register Indirect: A register pair holds the memory address.
+Implied: Operand is implicit in the instruction.
