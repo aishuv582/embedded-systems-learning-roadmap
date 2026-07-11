@@ -1,0 +1,117 @@
+Day 110 of Electronics – 8255 Programmable Peripheral Interface (PPI)
+Learning Objectives
+
+By the end of today, you should understand:
+
+What the 8255 PPI is and why it is used.
+The architecture and pin diagram of the 8255.
+The functions of Ports A, B, and C.
+The operating modes of the 8255.
+How the 8255 interfaces with the 8085 microprocessor.
+1. What is the 8255 PPI?
+
+The 8255 Programmable Peripheral Interface (PPI) is a programmable I/O device used to connect the 8085 microprocessor with external peripherals such as:
+
+LEDs
+Keyboards
+LCDs
+Switches
+Printers
+Sensors
+
+It provides 24 programmable I/O pins.
+
+2. Block Diagram
+
+The 8255 consists of:
+
+Data Bus Buffer
+Read/Write Control Logic
+Group A Control
+Group B Control
+Port A (8-bit)
+Port B (8-bit)
+Port C (8-bit)
+
+Port C can be split into:
+
+Upper Port C (PC7–PC4)
+Lower Port C (PC3–PC0)
+3. Ports
+Port A
+8-bit I/O port
+Can operate in Modes 0, 1, and 2
+Port B
+8-bit I/O port
+Supports Modes 0 and 1
+Port C
+8-bit port
+Can be used as:
+General-purpose I/O
+Handshaking signals
+Two 4-bit ports
+4. Operating Modes
+Mode 0 – Simple I/O
+Basic input/output
+No handshaking
+Outputs are latched
+Inputs are not latched
+
+Applications: LEDs, switches
+
+Mode 1 – Strobed I/O
+Uses handshaking signals
+Supports interrupt generation
+Suitable for slower peripherals
+
+Applications: Keyboard, printer
+
+Mode 2 – Bidirectional Bus
+Available only for Port A
+Supports two-way communication
+Uses handshaking signals
+
+Applications: Data communication
+
+5. BSR Mode (Bit Set/Reset)
+
+Used to control individual bits of Port C without affecting the other bits.
+
+Example:
+
+Set PC5
+Reset PC2
+6. Control Word
+
+The control word configures:
+
+I/O mode
+Input/output direction of each port
+BSR operations
+
+It is written into the Control Register.
+
+7. Applications of 8255
+Traffic light controller
+LCD interfacing
+Keyboard interfacing
+Industrial automation
+Motor control
+Data acquisition systems
+8. Interview Questions
+What is the purpose of the 8255 PPI?
+How many I/O lines does the 8255 provide?
+Explain the three operating modes.
+What is BSR mode?
+Which port supports Mode 2?
+Why is Port C divided into two halves?
+What is the function of the Control Word Register?
+Differentiate Mode 0 and Mode 1.
+Quick Revision
+8255: Programmable Peripheral Interface
+Total I/O Lines: 24
+Ports: A, B, and C
+Mode 0: Simple I/O
+Mode 1: Strobed I/O
+Mode 2: Bidirectional I/O (Port A only)
+BSR Mode: Controls individual bits of Port C
