@@ -1,0 +1,167 @@
+Day 111 – 8085 Interrupt Handling (Detailed)
+
+Since you've already covered the introduction to interrupts, today let's focus on how the 8085 actually handles an interrupt.
+
+What is Interrupt Handling?
+
+Interrupt handling is the sequence of operations performed by the 8085 microprocessor after it receives an interrupt request.
+
+The purpose is to:
+
+Pause the current program.
+Execute the Interrupt Service Routine (ISR).
+Return to the interrupted program.
+Interrupt Handling Sequence
+Step 1: Program Execution
+
+The CPU executes the main program instruction by instruction.
+
+Main Program
+↓
+Instruction 1
+↓
+Instruction 2
+↓
+Instruction 3
+Step 2: Interrupt Occurs
+
+An external device (keyboard, timer, ADC, etc.) generates an interrupt signal.
+
+Example:
+
+RST 7.5 = HIGH
+
+The processor does not stop immediately.
+
+It first completes the instruction currently being executed.
+
+Step 3: Save Current Program Address
+
+The address of the next instruction (Program Counter) is pushed onto the stack.
+
+Stack
+
+| PC High |
+|---------|
+| PC Low  |
+
+This allows the processor to return to the exact location later.
+
+Step 4: Disable Further Interrupts
+
+The Interrupt Enable (IE) flip-flop is cleared automatically.
+
+Purpose:
+
+Prevent another interrupt from disturbing the current ISR.
+Step 5: Jump to ISR
+
+The CPU loads the ISR address.
+
+Example:
+
+For RST 6.5
+
+ISR Address = 0034H
+
+Execution starts from:
+
+0034H
+↓
+Interrupt Service Routine
+Step 6: Execute ISR
+
+The ISR performs the required task, such as:
+
+Reading data from an I/O device.
+Clearing an interrupt flag.
+Sending an acknowledgment.
+Updating a counter.
+
+Example:
+
+IN 80H
+MOV B,A
+Step 7: RETI (Return from Interrupt)
+
+The ISR ends with:
+
+RETI
+
+or
+
+RET
+
+RETI is generally preferred because it explicitly indicates the end of an interrupt service routine.
+
+The processor pops the saved Program Counter from the stack.
+
+Step 8: Resume Main Program
+
+Execution continues exactly where it was interrupted.
+
+Main Program
+↓
+
+Instruction 4
+↓
+
+Instruction 5
+
+The user never notices the interruption.
+
+Flow Diagram
+Main Program
+      │
+      ▼
+Interrupt Request
+      │
+      ▼
+Finish Current Instruction
+      │
+      ▼
+Save PC on Stack
+      │
+      ▼
+Disable Interrupts
+      │
+      ▼
+Jump to ISR
+      │
+      ▼
+Execute ISR
+      │
+      ▼
+RETI
+      │
+      ▼
+Restore PC
+      │
+      ▼
+Continue Main Program
+Why is the Stack Used?
+
+Suppose the CPU is executing:
+
+2000H : MOV A,B
+2001H : ADD C
+2002H : INR D
+
+If an interrupt occurs during ADD C, the CPU must remember that the next instruction is at 2002H.
+
+So it stores 2002H on the stack.
+
+After the ISR completes:
+
+POP PC
+
+PC = 2002H
+
+Execution resumes from INR D.
+
+Advantages of Interrupt Handling
+Fast response to external events.
+No continuous polling required.
+Efficient CPU utilization.
+Suitable for real-time systems.
+Improves overall system performance.
