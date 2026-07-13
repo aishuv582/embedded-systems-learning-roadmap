@@ -1,0 +1,69 @@
+Day 112 of Electronics – 8085 Interrupt Handling (Advanced)
+What Happens When an Interrupt Occurs?
+
+An interrupt is a signal that temporarily stops the CPU's current task and forces it to execute a special routine called the Interrupt Service Routine (ISR).
+
+Interrupt Handling Sequence in 8085
+CPU completes the current instruction.
+Checks whether any interrupt request is pending.
+Saves the current Program Counter (PC) on the stack.
+Disables further maskable interrupts automatically.
+Jumps to the ISR address.
+Executes the ISR.
+Executes the RET instruction.
+Returns to the main program and continues execution.
+Example
+
+Suppose the processor is executing:
+
+MVI A,05H
+ADD B
+MOV C,A
+
+If an interrupt occurs after ADD B:
+
+The CPU finishes ADD B.
+Saves the address of MOV C,A.
+Executes the ISR.
+Returns and continues with MOV C,A.
+Why Is This Important?
+Enables real-time response.
+Handles keyboard input, timers, sensors, and communication devices.
+Improves CPU efficiency by avoiding continuous polling.
+Interview Question
+
+Q: Why does the 8085 complete the current instruction before servicing an interrupt?
+
+Answer:
+To maintain program integrity. Interrupting in the middle of an instruction could leave registers and memory in an inconsistent state.
+
+Quick Revision
+ISR = Interrupt Service Routine.
+PC is saved on the stack during an interrupt.
+RET returns control to the interrupted program.
+Current instruction is always completed before servicing an interrupt.
+Interrupts help the CPU respond quickly to external events.
+Practice Question
+
+An 8085 is executing a program and receives a valid interrupt request. List the steps performed by the processor before returning to the main program.
+
+Answer: Complete current instruction → Save PC → Disable maskable interrupts → Jump to ISR → Execute ISR → RET → Restore PC → Continue main program.
+
+Today's C Programming Practice
+
+Write a C program to find the largest of three numbers using if-else.
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+
+    if(a >= b && a >= c)
+        printf("Largest = %d", a);
+    else if(b >= c)
+        printf("Largest = %d", b);
+    else
+        printf("Largest = %d", c);
+
+    return 0;
