@@ -1,0 +1,138 @@
+Day 113 of Electronics – 8085 Interrupt Handling (Part 2: Priority, Masking & SIM/RIM Instructions)
+
+Since you've already covered the basics of 8085 interrupts, today we'll focus on interrupt priority, masking, and the SIM/RIM instructions, which are frequently asked in interviews.
+
+1. Interrupt Priority in 8085
+
+When multiple interrupts occur simultaneously, the 8085 services them according to priority.
+
+Priority	Interrupt	Maskable	Vector Address
+Highest	TRAP	No	0024H
+2	RST 7.5	Yes	003CH
+3	RST 6.5	Yes	0034H
+4	RST 5.5	Yes	002CH
+Lowest	INTR	Yes	External
+
+Memory Tip: T-R-7-6-5-I
+
+TRAP
+RST 7.5
+RST 6.5
+RST 5.5
+INTR
+2. Maskable vs Non-Maskable Interrupts
+Maskable Interrupts
+
+These can be disabled (masked) by software.
+
+RST 7.5
+RST 6.5
+RST 5.5
+INTR
+Non-Maskable Interrupt
+
+Only TRAP.
+
+It cannot be disabled and is used for critical situations like:
+
+Power failure
+Emergency shutdown
+Hardware failure
+3. Interrupt Masking
+
+Masking means temporarily disabling an interrupt so that it will not be serviced.
+
+Why?
+
+Protect critical program execution
+Prevent unnecessary interruptions
+Ensure data integrity
+
+Example:
+While updating memory, interrupts may be disabled until the update finishes.
+
+4. SIM (Set Interrupt Mask)
+
+Purpose: Used to control interrupt masking.
+
+Functions:
+
+Enable/disable RST 7.5
+Enable/disable RST 6.5
+Enable/disable RST 5.5
+Reset pending RST 7.5 interrupt
+Serial output control
+SIM Format
+Accumulator
+
+D7  D6  D5  D4  D3  D2  D1  D0
+
+SOD SOE X R7.5 MSE M7.5 M6.5 M5.5
+
+Meaning:
+
+SOD → Serial Output Data
+SOE → Serial Output Enable
+R7.5 → Reset RST 7.5 flip-flop
+MSE → Mask Set Enable
+M7.5 → Mask RST 7.5
+M6.5 → Mask RST 6.5
+M5.5 → Mask RST 5.5
+5. RIM (Read Interrupt Mask)
+
+Purpose: Reads the current interrupt status.
+
+It provides:
+
+Which interrupts are masked
+Pending interrupts
+Interrupt enable status
+Serial input data
+RIM Format
+Accumulator
+
+D7  D6  D5  D4  D3  D2  D1  D0
+
+SID P7.5 P6.5 P5.5 IE M7.5 M6.5 M5.5
+
+Where:
+
+SID → Serial Input Data
+P7.5 → Pending RST 7.5
+P6.5 → Pending RST 6.5
+P5.5 → Pending RST 5.5
+IE → Interrupt Enable
+M7.5 → Mask Status
+M6.5 → Mask Status
+M5.5 → Mask Status
+6. SIM vs RIM
+SIM	RIM
+Set interrupt mask	Read interrupt mask
+Controls interrupts	Checks interrupt status
+Output operation	Input operation
+Used for enabling/disabling	Used for monitoring
+7. Interview Questions
+
+Q1. Which interrupt has the highest priority in the 8085?
+Answer: TRAP.
+
+Q2. Which interrupt is non-maskable?
+Answer: TRAP.
+
+Q3. Which instruction is used to mask interrupts?
+Answer: SIM.
+
+Q4. Which instruction is used to read interrupt status?
+Answer: RIM.
+
+Q5. Why is interrupt masking required?
+Answer: To prevent interruptions during critical program execution.
+
+8. Quick Revision
+TRAP has the highest priority.
+INTR has the lowest priority.
+TRAP is non-maskable.
+RST 7.5, 6.5, 5.5, and INTR are maskable.
+SIM is used to set interrupt masks.
+RIM is used to read interrupt status.
+Interrupt masking prevents interruptions during critical tasks.
