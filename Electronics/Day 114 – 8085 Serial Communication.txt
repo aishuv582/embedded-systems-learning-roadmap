@@ -1,0 +1,113 @@
+Day 113 – 8085 Serial Communication
+Learning Objectives
+Understand serial communication in the 8085.
+Learn the SID and SOD pins.
+Study the SIM and RIM instructions.
+Learn how serial data is transmitted and received.
+Why Serial Communication?
+
+Instead of sending 8 bits simultaneously (parallel communication), serial communication sends one bit at a time.
+
+Advantages:
+
+Fewer wires
+Lower cost
+Suitable for long-distance communication
+Serial Communication Pins in 8085
+1. SID (Serial Input Data)
+Receives one bit of serial data.
+Read using the RIM instruction.
+2. SOD (Serial Output Data)
+Sends one bit of serial data.
+Controlled using the SIM instruction.
+          8085
+      ----------------
+SID --> |              |
+SOD <-- |              |
+      ----------------
+SIM Instruction (Set Interrupt Mask)
+
+SIM is used to:
+
+Mask/unmask interrupts
+Reset RST 7.5
+Send serial output through the SOD pin
+
+Example:
+
+MVI A,80H
+SIM
+
+If the SOD enable bit is set, the data bit is transmitted through the SOD pin.
+
+RIM Instruction (Read Interrupt Mask)
+
+RIM is used to:
+
+Read interrupt mask status
+Check pending interrupts
+Read the SID pin
+
+Example:
+
+RIM
+
+After execution, the accumulator contains:
+
+Interrupt status
+Mask bits
+SID input bit
+Sending Serial Data
+
+Steps:
+
+Load the accumulator.
+Set the SOD data bit.
+Enable SOD.
+Execute SIM.
+Repeat for each bit.
+Receiving Serial Data
+
+Steps:
+
+Execute RIM.
+Read the SID bit from the accumulator.
+Store the received bit.
+Repeat until all bits are received.
+Applications
+Communication with sensors
+Embedded systems
+Data logging
+Industrial automation
+Low-speed serial interfaces
+Interview Questions
+
+1. What is serial communication?
+
+Serial communication transmits data one bit at a time over a single communication line.
+
+2. Which pins are used for serial communication in the 8085?
+
+SID (Serial Input Data) and SOD (Serial Output Data).
+
+3. Which instruction is used to send serial data?
+
+SIM (Set Interrupt Mask).
+
+4. Which instruction is used to receive serial data?
+
+RIM (Read Interrupt Mask).
+
+5. What are the advantages of serial communication?
+
+Requires fewer wires
+Lower hardware cost
+Reliable over longer distances
+Simpler cabling
+Quick Revision
+Feature	Description
+SID	Serial Input Data pin
+SOD	Serial Output Data pin
+SIM	Sends serial data and controls interrupt masks
+RIM	Reads serial data and interrupt status
+Communication	One bit transmitted at a time
