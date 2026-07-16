@@ -1,0 +1,70 @@
+Day 115 of Electronics – 8253/8254 Programmable Interval Timer (PIT)
+
+The 8253/8254 Programmable Interval Timer is used to generate accurate timing delays, count external events, and create square waves. It is widely used with microprocessors such as the 8085 and 8086.
+
+1. Why do we need the 8253/8254?
+
+The 8085 cannot generate precise delays efficiently using software loops alone. The 8253/8254 provides hardware timers for:
+
+Time delay generation
+Event counting
+Frequency division
+Square wave generation
+Periodic interrupt generation
+2. Block Diagram
+
+The 8253/8254 contains:
+
+Data Bus Buffer
+Read/Write Control Logic
+Counter 0
+Counter 1
+Counter 2
+
+Each counter is 16 bits wide and operates independently.
+
+          CPU
+           |
+    Data Bus Buffer
+           |
+   Read/Write Control
+      |     |     |
+ Counter0 Counter1 Counter2
+3. Pin Description
+Pin	Function
+D0–D7	8-bit data bus
+A0, A1	Select counter/control register
+RD	Read data
+WR	Write data
+CS	Chip select
+CLK0–CLK2	Clock inputs
+GATE0–GATE2	Enable inputs
+OUT0–OUT2	Counter outputs
+4. Counter Selection
+A1	A0	Selected Register
+0	0	Counter 0
+0	1	Counter 1
+1	0	Counter 2
+1	1	Control Word Register
+5. Operating Modes
+Mode	Name	Application
+Mode 0	Interrupt on Terminal Count	Event counting
+Mode 1	Hardware Retriggerable One-Shot	Pulse generation
+Mode 2	Rate Generator	Baud rate generation
+Mode 3	Square Wave Generator	Clock generation
+Mode 4	Software Triggered Strobe	Delay generation
+Mode 5	Hardware Triggered Strobe	Hardware-triggered timing
+6. Difference Between 8253 and 8254
+8253	8254
+Maximum clock: 2.6 MHz	Maximum clock: 10 MHz
+Simpler design	Enhanced features
+No read-back command	Supports read-back command
+Older version	Improved version
+7. Applications
+Digital clocks
+Traffic light controllers
+Frequency measurement
+Industrial automation
+Motor control
+Embedded systems timing
+Real-time operating systems
