@@ -1,0 +1,165 @@
+Day 116 of Electronics – Communication Protocols: SPI (Serial Peripheral Interface)
+
+Today, you'll learn one of the most commonly used communication protocols in embedded systems.
+
+Objective
+
+Understand the SPI protocol, its architecture, signals, operation, advantages, disadvantages, and applications.
+
+1. What is SPI?
+
+SPI (Serial Peripheral Interface) is a synchronous serial communication protocol developed by Motorola for high-speed communication between a microcontroller and peripheral devices.
+
+Unlike UART, SPI does not require start and stop bits, making it much faster.
+
+Examples of SPI devices:
+
+EEPROM
+Flash Memory
+SD Card
+OLED Display
+TFT LCD
+ADC/DAC
+Sensors
+2. SPI Architecture
+
+SPI consists of:
+
+One Master
+One or Multiple Slaves
+
+The master generates the clock and controls communication.
+
+        Master
+      +-----------+
+      | MCU       |
+      +-----------+
+        | | | |
+        | | | |
+ MOSI---+ | | +---SS1
+ MISO-----+ |
+ SCLK-------+
+             \
+              \
+          +---------+
+          | Slave 1 |
+          +---------+
+
+             \
+          +---------+
+          | Slave 2 |
+          +---------+
+3. SPI Signals
+MOSI (Master Out Slave In)
+
+Data travels
+
+Master → Slave
+
+MISO (Master In Slave Out)
+
+Data travels
+
+Slave → Master
+
+SCLK (Serial Clock)
+
+Generated only by the Master.
+
+Synchronizes communication.
+
+SS / CS (Slave Select / Chip Select)
+
+Used to select which slave communicates.
+
+Usually Active LOW.
+
+4. How SPI Works
+
+Suppose the master wants to send
+
+10110010
+
+Steps:
+
+Master pulls SS LOW.
+Master generates clock.
+Master shifts one bit every clock.
+Slave reads each bit.
+Slave simultaneously sends data back.
+
+SPI is Full Duplex, meaning both devices send and receive data at the same time.
+
+5. Full Duplex Communication
+Master ---------> Slave
+      MOSI
+
+Slave ---------> Master
+      MISO
+
+Both happen simultaneously.
+
+Unlike UART and I²C, SPI supports simultaneous transmission and reception.
+
+6. SPI Data Transfer
+Clock:
+
+_|‾|_|‾|_|‾|_|‾|_
+
+Data:
+
+1 0 1 1 0 0 1 0
+
+Each clock pulse transfers one bit.
+
+7. Master and Slave Responsibilities
+Master
+Generates clock
+Selects slave
+Starts communication
+Controls transfer speed
+Slave
+Responds only when selected
+Sends requested data
+Receives incoming data
+8. SPI Modes
+
+SPI has 4 modes, determined by:
+
+Clock Polarity (CPOL)
+Clock Phase (CPHA)
+Mode	CPOL	CPHA
+0	0	0
+1	0	1
+2	1	0
+3	1	1
+
+Both master and slave must use the same mode.
+
+9. Advantages
+Very high speed
+Simple protocol
+Full duplex communication
+No addressing overhead
+Suitable for real-time applications
+10. Disadvantages
+Requires more wires than I²C
+No built-in error checking
+Separate Chip Select line needed for each slave
+Not ideal for long-distance communication
+11. SPI vs I²C vs UART
+Feature	SPI	I²C	UART
+Clock	Yes	Yes	No
+Duplex	Full	Half	Full
+Speed	Very High	Medium	Low–Medium
+Wires	4	2	2
+Multiple Devices	Yes	Yes	Limited
+Addressing	No	Yes	No
+12. Applications
+SD cards
+Flash memory
+OLED/TFT displays
+Touchscreen controllers
+ADC/DAC interfaces
+IMU sensors (accelerometer/gyroscope)
+Real-Time Clock (RTC) modules
