@@ -1,0 +1,142 @@
+Day 115 of Electronics – SPI (Serial Peripheral Interface)
+Objective
+
+Understand the SPI communication protocol, its architecture, working principle, signals, advantages, disadvantages, and applications.
+
+1. What is SPI?
+
+SPI (Serial Peripheral Interface) is a synchronous serial communication protocol developed by Motorola. It is used for high-speed communication between a master device (usually a microcontroller) and one or more slave devices.
+
+Unlike UART, SPI does not require start or stop bits, making it much faster.
+
+Examples:
+
+Microcontroller ↔ EEPROM
+Microcontroller ↔ SD Card
+Microcontroller ↔ ADC/DAC
+Microcontroller ↔ TFT Display
+Microcontroller ↔ Sensors
+2. SPI Architecture
+
+SPI consists of one Master and one or more Slave devices.
+
+           Master
+         +-----------+
+MOSI ---->|           |
+MISO <----|           |
+SCLK ---->|           |
+SS   ---->|           |
+         +-----------+
+
+               |
+
+       ---------------------
+
+      Slave 1      Slave 2
+
+The master generates the clock and selects the slave.
+
+3. SPI Signals
+
+SPI uses 4 communication lines.
+
+MOSI (Master Out Slave In)
+Carries data from Master to Slave.
+
+Example:
+
+Master -------> Slave
+MISO (Master In Slave Out)
+Carries data from Slave to Master.
+Slave --------> Master
+SCLK (Serial Clock)
+
+Generated only by the Master.
+
+Synchronizes data transmission.
+
+SS / CS (Slave Select / Chip Select)
+
+Used to select which slave should communicate.
+
+Active Low.
+
+SS = 0
+
+Slave Selected
+SS = 1
+
+Slave Disabled
+4. Working Principle
+
+Step 1
+
+Master selects slave.
+
+SS = LOW
+
+↓
+
+Step 2
+
+Master starts clock.
+
+SCLK
+
+↓
+
+Step 3
+
+Master sends data through MOSI.
+
+↓
+
+Step 4
+
+Slave simultaneously sends data through MISO.
+
+↓
+
+Step 5
+
+After communication,
+
+SS = HIGH
+
+Communication ends.
+
+5. Full Duplex Communication
+
+SPI supports Full Duplex communication.
+
+That means:
+
+Master ---> Slave
+
+AND
+
+Slave ---> Master
+
+Both happen simultaneously.
+
+This makes SPI much faster than protocols like I²C.
+
+6. SPI Data Transfer
+
+Suppose Master sends:
+
+10110010
+
+Slave sends:
+
+01001101
+
+Clock:
+
+↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
+
+After 8 clock pulses,
+
+Master receives Slave data.
+
+Slave receives Master data.
