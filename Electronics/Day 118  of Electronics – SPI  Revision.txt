@@ -1,0 +1,120 @@
+Day 116 of Electronics – SPI (Serial Peripheral Interface) Practice & Advanced Concepts
+
+1. SPI Communication Recap
+
+SPI is a synchronous serial communication protocol developed by Motorola for high-speed communication between a master and one or more slave devices.
+
+SPI Signals
+Signal	Full Form	Direction
+MOSI	Master Out Slave In	Master → Slave
+MISO	Master In Slave Out	Slave → Master
+SCLK	Serial Clock	Master → Slave
+SS/CS	Slave Select / Chip Select	Master → Slave
+2. SPI Modes (Important Interview Topic)
+
+SPI has 4 modes, determined by:
+
+CPOL (Clock Polarity)
+CPHA (Clock Phase)
+Mode	CPOL	CPHA	Clock Idle
+0	0	0	Low
+1	0	1	Low
+2	1	0	High
+3	1	1	High
+Remember
+CPOL → Idle clock level
+CPHA → Edge on which data is sampled
+3. Full Duplex Communication
+
+SPI supports full-duplex communication.
+
+This means:
+
+Master sends data.
+Slave sends data.
+Both happen simultaneously.
+
+Example:
+
+Master transmits:
+
+10110011
+
+Slave simultaneously transmits:
+
+01001110
+
+Both devices receive data at the same time.
+
+4. Daisy Chain SPI
+
+Instead of separate chip-select lines:
+
+Master
+   |
+Slave1
+   |
+Slave2
+   |
+Slave3
+
+Advantages:
+
+Fewer GPIO pins.
+Useful in LED drivers and shift registers.
+
+Disadvantages:
+
+Higher latency.
+All devices must shift data.
+5. Multi-Slave SPI
+         Slave1
+           |
+Master ----CS1
+
+         Slave2
+           |
+         CS2
+
+         Slave3
+           |
+         CS3
+
+All slaves share:
+
+MOSI
+MISO
+SCLK
+
+Each slave has its own CS line.
+
+6. Advantages of SPI
+Very high speed.
+Full duplex.
+Simple hardware.
+Low protocol overhead.
+No addressing required.
+7. Disadvantages
+More wires than I²C.
+Requires one CS line per slave (unless daisy-chained).
+No built-in acknowledgment.
+No error detection.
+8. SPI vs UART vs I²C
+Feature	SPI	UART	I²C
+Clock	Yes	No	Yes
+Duplex	Full	Full	Half
+Speed	High	Medium	Medium
+Wires	4	2	2
+Multi-device	Yes	Limited	Yes
+Addressing	No	No	Yes
+9. Common SPI Applications
+Flash memory
+SD cards
+TFT/LCD displays
+OLED displays
+ADCs
+DACs
+Sensors
+EEPROM
+Wi-Fi modules
+Bluetooth modules
