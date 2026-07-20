@@ -1,0 +1,131 @@
+Day 119 of Electronics – Pulse Width Modulation (PWM)
+Topic: Pulse Width Modulation (PWM)
+What is PWM?
+
+Pulse Width Modulation (PWM) is a technique used to control the average power delivered to a load by varying the width (ON time) of a digital pulse while keeping the frequency constant.
+
+Instead of changing the voltage directly, PWM rapidly switches the signal ON and OFF.
+
+Important Terms
+1. Period (T)
+
+The total time for one complete PWM cycle.
+
+Formula:
+
+T=T
+ON
+	​
+
++T
+OFF
+	​
+
+2. Frequency (f)
+
+Number of PWM cycles per second.
+
+Formula:
+
+f=
+T
+1
+	​
+
+
+Unit: Hertz (Hz)
+
+3. Duty Cycle
+
+The percentage of time the signal remains HIGH (ON).
+
+Formula:
+
+Duty Cycle=
+T
+T
+ON
+	​
+
+	​
+
+×100%
+
+Examples:
+
+25% Duty Cycle → Signal ON for 25% of the time.
+50% Duty Cycle → Equal ON and OFF time.
+75% Duty Cycle → Signal ON for 75% of the time.
+PWM Waveform
+100% Duty Cycle
+───────────────
+
+75% Duty Cycle
+██████____██████____
+
+50% Duty Cycle
+████____████____
+
+25% Duty Cycle
+██______██______
+
+More ON time means higher average voltage.
+
+Average Output Voltage
+
+For a PWM signal,
+
+V
+avg
+	​
+
+=V
+supply
+	​
+
+×
+100
+Duty Cycle
+	​
+
+
+Example:
+
+Supply Voltage = 5V
+
+Duty Cycle = 60%
+
+Average Voltage = 5 × 0.6 = 3V
+
+Applications of PWM
+DC motor speed control
+LED brightness control
+Servo motor control
+Switching power supplies (SMPS)
+Battery charging circuits
+Audio amplification (Class-D amplifiers)
+Inverters
+Advantages
+High efficiency (very low power loss)
+Precise speed and brightness control
+Generates less heat
+Easy to generate using microcontrollers
+Suitable for digital control systems
+Disadvantages
+May introduce electrical noise
+Requires filtering for analog outputs
+High-frequency switching can produce EMI
+PWM in Embedded Systems
+
+Most microcontrollers include built-in PWM peripherals.
+
+Examples:
+
+8051 (using timers/software PWM)
+PIC Microcontrollers
+AVR (ATmega328P)
+STM32
+ESP32
+ARM Cortex-M series
+
+PWM is commonly generated using timers/counters
