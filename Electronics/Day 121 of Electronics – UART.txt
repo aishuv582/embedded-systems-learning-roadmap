@@ -1,0 +1,93 @@
+Day 122 of Electronics – UART (Universal Asynchronous Receiver/Transmitter)
+
+Since you've already covered I²C (Day 119) and I²S (Day 120), today we'll learn UART, one of the most fundamental serial communication protocols used in embedded systems.
+
+1. What is UART?
+
+UART (Universal Asynchronous Receiver/Transmitter) is a hardware communication protocol used for serial communication between two devices. It is asynchronous, meaning no clock signal is shared between the transmitter and receiver.
+
+Examples:
+
+Microcontroller ↔ PC
+Arduino ↔ Bluetooth Module (HC-05)
+GPS Module ↔ STM32
+ESP32 ↔ Sensors
+2. UART Communication
+
+UART transfers data one bit at a time.
+
+Transmitter  -------->  Receiver
+      TX                 RX
+      RX <-------------  TX
+
+Only two data lines are required:
+
+TX (Transmit)
+RX (Receive)
+
+Ground (GND) must also be common between both devices.
+
+3. UART Frame Format
+Idle | Start | D0 D1 D2 D3 D4 D5 D6 D7 | Parity | Stop
+  1      0        Data Bits              Optional   1
+Components
+Start Bit – Indicates the beginning of transmission.
+Data Bits – Usually 8 bits.
+Parity Bit – Optional error detection.
+Stop Bit – Indicates the end of transmission.
+4. Baud Rate
+
+Baud rate is the number of signal changes per second.
+
+Common baud rates:
+
+9600
+19200
+38400
+57600
+115200
+
+Both transmitter and receiver must use the same baud rate.
+
+5. Working Principle
+Transmission
+CPU sends data to UART.
+UART converts parallel data into serial bits.
+Bits are transmitted through TX.
+Reception
+Receiver detects the start bit.
+Reads incoming bits.
+Converts serial data back into parallel.
+Sends data to CPU.
+6. UART Features
+Asynchronous communication
+Full-duplex communication
+Low hardware complexity
+Simple implementation
+Widely supported by microcontrollers
+7. Advantages
+Very easy to implement
+Requires only two communication lines
+Low cost
+Reliable for short-distance communication
+Excellent for debugging and console output
+8. Disadvantages
+Lower speed compared to SPI
+No addressing (only point-to-point)
+Limited communication distance
+Clock mismatch may cause communication errors
+9. UART vs SPI vs I²C
+Feature	UART	SPI	I²C
+Clock	No	Yes	Yes
+Wires	2	4	2
+Speed	Medium	High	Medium
+Addressing	No	No	Yes
+Communication	Point-to-point	Master-Slave	Multi-master/Multi-slave
+Duplex	Full	Full	Half
+10. Applications
+GPS modules
+Bluetooth modules
+GSM modules
+Serial debugging
+Industrial communication
+Embedded firmware updates
