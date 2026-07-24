@@ -1,0 +1,142 @@
+Day 122 of Electronics – CAN (Controller Area Network) Protocol
+
+Since you've already covered UART, I²C, I²S, and SPI, today we'll move on to CAN, one of the most important communication protocols used in automobiles and embedded systems.
+
+What is CAN?
+
+Controller Area Network (CAN) is a serial communication protocol developed by Bosch in 1986. It enables multiple Electronic Control Units (ECUs) to communicate over a shared two-wire bus without requiring a central controller.
+
+Examples of ECUs:
+
+Engine Control Unit
+Airbag Controller
+ABS Controller
+Transmission Controller
+Body Control Module
+Why is CAN Used?
+Reliable communication in noisy environments.
+Reduces wiring complexity.
+Supports real-time communication.
+Detects and handles transmission errors automatically.
+Widely used in automotive, industrial automation, and medical devices.
+CAN Bus Structure
+ ECU 1
+    |
+ ECU 2
+    |
+==========================
+ CAN_H
+ CAN_L
+==========================
+    |
+ ECU 3
+    |
+ ECU 4
+
+Every ECU is connected to the same CAN bus.
+
+CAN Physical Layer
+
+CAN uses two differential signal lines:
+
+CAN High (CAN_H)
+CAN Low (CAN_L)
+Logic Levels
+
+Dominant Bit (0):
+
+CAN_H ≈ 3.5 V
+CAN_L ≈ 1.5 V
+
+Recessive Bit (1):
+
+CAN_H ≈ 2.5 V
+CAN_L ≈ 2.5 V
+
+Differential signaling improves noise immunity.
+
+CAN Features
+Multi-master communication
+Message-based protocol
+Broadcast communication
+Priority-based arbitration
+Automatic retransmission
+Error detection and recovery
+Low wiring cost
+CAN Frame Types
+Data Frame
+Remote Frame
+Error Frame
+Overload Frame
+
+The Data Frame is the most commonly used.
+
+Standard CAN Data Frame
+SOF
+↓
+
+Identifier (11 bits)
+
+RTR
+
+IDE
+
+r0
+
+DLC (4 bits)
+
+Data (0–8 bytes)
+
+CRC
+
+ACK
+
+EOF
+Frame Fields
+SOF (Start of Frame): Indicates the beginning of transmission.
+Identifier: Determines message priority.
+RTR: Distinguishes data and remote frames.
+IDE: Selects Standard (11-bit) or Extended (29-bit) frame.
+DLC: Specifies the number of data bytes (0–8 in Classical CAN).
+Data: Actual payload.
+CRC: Error detection.
+ACK: Receiver acknowledges successful reception.
+EOF: Marks the end of the frame.
+CAN Arbitration
+
+If two ECUs transmit simultaneously:
+
+The message with the lower identifier value (higher priority) wins.
+The losing ECU stops transmitting and retries later.
+This process is non-destructive arbitration, ensuring no data corruption.
+
+Example:
+
+ECU A → ID = 0x100
+
+ECU B → ID = 0x080
+
+Winner: ECU B (lower ID, higher priority)
+
+Error Detection in CAN
+
+CAN includes multiple error-checking mechanisms:
+
+CRC Check
+Bit Monitoring
+Bit Stuffing Check
+Frame Check
+Acknowledgment Check
+
+If an error is detected:
+
+An Error Frame is transmitted.
+Faulty messages are automatically retransmitted.
+CAN vs UART
+Feature	CAN	UART
+Communication	Multi-master	Point-to-point
+Error Detection	Excellent	Basic
+Noise Immunity	High	Moderate
+Priority	Yes	No
+Bus Type	Differential	Single-ended
+Automotive Use	Extensive	Limited
