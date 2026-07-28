@@ -1,0 +1,173 @@
+Day 126 of Electronics – USB (Universal Serial Bus)
+
+Today, let's learn one of the most widely used communication protocols: USB (Universal Serial Bus).
+
+1. What is USB?
+
+USB is a serial communication protocol used to transfer data and power between devices such as computers, smartphones, printers, keyboards, flash drives, cameras, and embedded systems.
+
+It was designed to replace multiple types of connectors with a single standard.
+
+2. Objectives of USB
+High-speed data transfer
+Supply power to devices
+Plug-and-play operation
+Hot-swappable (connect/disconnect without shutting down)
+Standardized connectors
+3. USB Architecture
+
+USB follows a Host-Centric Architecture.
+
+            Host (PC/Laptop)
+                  |
+          USB Root Hub
+          /     |      \
+      Device1 Device2 Device3
+
+Only the Host controls communication.
+
+4. USB Components
+Host
+Computer or smartphone
+Controls all communication
+Supplies power
+Hub
+Expands USB ports
+Allows multiple devices
+Device
+
+Examples:
+
+Keyboard
+Mouse
+Printer
+USB Flash Drive
+Camera
+Microcontroller board
+5. USB Communication Model
+
+USB works using Master-Slave communication.
+
+Host = Master
+Devices = Slaves
+
+Devices cannot communicate directly with each other.
+
+6. USB Cable Wires
+
+A standard USB cable has four wires:
+
+Wire	Function
+VBUS	+5V Power
+GND	Ground
+D+	Data Positive
+D−	Data Negative
+
+USB uses Differential Signaling on D+ and D−, which improves noise immunity.
+
+7. USB Transfer Speeds
+USB Version	Maximum Speed
+USB 1.1	12 Mbps
+USB 2.0	480 Mbps
+USB 3.0	5 Gbps
+USB 3.1	10 Gbps
+USB 3.2	20 Gbps
+USB4	Up to 40–80 Gbps (depending on version and configuration)
+8. USB Transfer Types
+Control Transfer
+
+Used for:
+
+Device configuration
+Enumeration
+
+Example:
+PC detects a newly connected mouse.
+
+Bulk Transfer
+
+Used for:
+
+Large data transfer
+Error checking
+
+Example:
+
+Pen drive
+External hard disk
+Interrupt Transfer
+
+Used for:
+
+Small data
+Low latency
+
+Example:
+
+Keyboard
+Mouse
+Isochronous Transfer
+
+Used where continuous data is more important than retransmission.
+
+Example:
+
+Webcam
+Microphone
+Audio streaming
+9. USB Enumeration
+
+Enumeration is the process where the host identifies a newly connected USB device.
+
+Steps:
+
+Device connected
+Host detects connection
+Host resets device
+Device sends descriptors
+Host assigns address
+Driver loads
+Device becomes ready
+10. USB Connectors
+
+Common connector types include:
+
+USB Type-A
+USB Type-B
+Mini USB
+Micro USB
+USB Type-C
+
+USB Type-C is reversible and supports higher data rates and power delivery.
+
+11. Advantages
+High-speed communication
+Power and data through one cable
+Plug-and-play
+Hot-swappable
+Reliable communication
+Widely supported
+12. Limitations
+Host controls all communication
+Limited cable length for reliable operation
+More complex protocol than UART or SPI
+Requires USB controller hardware
+13. Applications
+Computers
+Smartphones
+Embedded systems
+Printers
+Cameras
+Flash drives
+External SSDs
+Medical equipment
+Industrial automation
+14. USB vs UART vs SPI vs I²C
+Feature	USB	UART	SPI	I²C
+Communication	Serial	Serial	Serial	Serial
+Synchronous	Yes	No	Yes	Yes
+Multi-device	Yes (via hubs)	No	Yes	Yes
+Speed	Very High	Low–Medium	High	Medium
+Power Supply	Yes	No	No	No
+Typical Distance	Short	Medium	Short	Very Short
+Complexity	High	Low	Medium	Medium
