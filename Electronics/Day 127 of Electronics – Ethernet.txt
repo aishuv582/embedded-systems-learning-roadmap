@@ -1,0 +1,93 @@
+Day 127 of Electronics – Ethernet (IEEE 802.3)
+
+Since you've already covered automotive communication protocols like UART, SPI, I²C, CAN, CAN FD, LIN, FlexRay, USB, and I²S, today's topic is Ethernet, which is becoming increasingly important in embedded systems and automotive electronics.
+
+What is Ethernet?
+
+Ethernet is a wired communication technology used to connect devices in a Local Area Network (LAN). It enables high-speed data transfer between computers, embedded devices, switches, and servers.
+
+Standard: IEEE 802.3
+Transmission Medium: Twisted-pair copper cables or optical fiber
+Topology: Star topology
+Communication: Full-duplex (modern Ethernet)
+Why Ethernet is Important in Embedded Systems
+
+Ethernet is widely used because it offers:
+
+High-speed communication
+Reliable data transfer
+Long communication distance
+Easy connection to the Internet
+Scalability for industrial and automotive systems
+Ethernet Frame Structure
+| Preamble | Destination MAC | Source MAC | Type | Data | CRC |
+Components
+Preamble (7 bytes): Synchronizes sender and receiver.
+Destination MAC (6 bytes): Receiver's hardware address.
+Source MAC (6 bytes): Sender's hardware address.
+EtherType (2 bytes): Identifies the upper-layer protocol (IPv4, IPv6, ARP, etc.).
+Payload (46–1500 bytes): Actual transmitted data.
+CRC (4 bytes): Error detection using Cyclic Redundancy Check.
+MAC Address
+
+A MAC (Media Access Control) Address uniquely identifies every Ethernet device.
+
+Example:
+
+00:1A:2B:3C:4D:5E
+48-bit unique address
+Assigned by the manufacturer
+Operates at the Data Link Layer (Layer 2)
+Ethernet Speeds
+Ethernet Type	Speed
+Ethernet	10 Mbps
+Fast Ethernet	100 Mbps
+Gigabit Ethernet	1 Gbps
+10 Gigabit Ethernet	10 Gbps
+Automotive Ethernet	100 Mbps to 10 Gbps
+Ethernet Layers (OSI Model)
+OSI Layer	Ethernet Role
+Physical Layer	Cable, signaling, connectors
+Data Link Layer	MAC addressing, frame transmission
+Network Layer	IP addressing
+Transport Layer	TCP/UDP
+Ethernet Devices
+Network Interface Card (NIC)
+Ethernet Switch
+Router
+Ethernet Hub (legacy)
+Embedded Ethernet Controller
+Advantages
+Very high speed
+Reliable communication
+Low error rate
+Easy expansion
+Supports Internet connectivity
+Widely used in industrial automation and automotive systems
+Disadvantages
+Requires physical cables
+Installation cost can be higher than simple serial interfaces
+Cable damage can interrupt communication
+Ethernet vs CAN
+Feature	Ethernet	CAN
+Speed	Up to 10+ Gbps	Up to 1 Mbps (Classic CAN), higher with CAN FD
+Distance	Long	Moderate
+Data Size	Large frames	Smaller frames
+Cost	Higher	Lower
+Typical Use	Networking, cameras, infotainment	Real-time control, ECUs
+Automotive Ethernet
+
+Modern vehicles use Automotive Ethernet for:
+
+ADAS (Advanced Driver Assistance Systems)
+Surround-view cameras
+Radar and LiDAR data
+Infotainment systems
+Autonomous driving
+High-speed ECU communication
+
+Common standards include:
+
+100BASE-T1
+1000BASE-T1
+10BASE-T1S
