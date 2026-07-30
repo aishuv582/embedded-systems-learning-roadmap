@@ -1,0 +1,87 @@
+Day 128 of Electronics – Ethernet Frame Structure
+
+Today, let's learn one of the most important topics in computer networking and embedded systems: Ethernet Frame Structure.
+
+What is an Ethernet Frame?
+
+An Ethernet frame is the unit of data transmitted over an Ethernet network. It contains the destination, source, data, and error-checking information required for reliable communication.
+
+Ethernet Frame Format
++----------+-------------+-------------+-----------+----------------+------+
+| Preamble | Destination | Source MAC  | Type/Len  | Payload (Data) | FCS  |
+| 7 Bytes  | MAC 6 Bytes | MAC 6 Bytes | 2 Bytes   | 46–1500 Bytes  |4 Bytes|
++----------+-------------+-------------+-----------+----------------+------+
+Fields Explained
+1. Preamble (7 Bytes)
+Synchronizes the sender and receiver clocks.
+Pattern: 10101010 repeated.
+2. Start Frame Delimiter (SFD) (1 Byte)
+Indicates the actual beginning of the frame.
+Pattern: 10101011.
+3. Destination MAC Address (6 Bytes)
+MAC address of the receiving device.
+Can be:
+Unicast
+Multicast
+Broadcast (FF:FF:FF:FF:FF:FF)
+4. Source MAC Address (6 Bytes)
+MAC address of the transmitting device.
+5. EtherType / Length (2 Bytes)
+Identifies the upper-layer protocol.
+Common EtherTypes:
+0x0800 → IPv4
+0x0806 → ARP
+0x86DD → IPv6
+6. Payload (46–1500 Bytes)
+Contains the actual user data.
+If the data is less than 46 bytes, padding is added.
+7. Frame Check Sequence (FCS) (4 Bytes)
+Uses CRC-32 for error detection.
+If the calculated CRC doesn't match the received CRC, the frame is discarded.
+Ethernet Frame Size
+Component	Size
+Header	14 Bytes
+Payload	46–1500 Bytes
+FCS	4 Bytes
+Minimum Frame Size	64 Bytes
+Maximum Frame Size	1518 Bytes (without VLAN tag)
+How an Ethernet Frame Travels
+Application creates data.
+Data is encapsulated into an Ethernet frame.
+Source MAC address is added.
+Destination MAC address is added.
+CRC is calculated and appended.
+Frame is transmitted over the network.
+Receiver verifies the CRC.
+If valid, the payload is delivered to the upper layer.
+Why Ethernet Frames Matter in Embedded Systems
+
+Ethernet frames are widely used in:
+
+Automotive Ethernet
+Industrial automation
+IoT devices
+PLC communication
+Smart sensors
+Embedded Linux systems
+Robotics
+
+Understanding frame structure is essential when working with Ethernet controllers (such as LAN8742 or W5500), packet analyzers like Wireshark, and TCP/IP stacks.
+
+Interview Questions
+What is an Ethernet frame?
+Why is the preamble required?
+What is the purpose of the Source and Destination MAC addresses?
+What is the difference between EtherType and Length?
+Why is padding added to small Ethernet frames?
+What is the purpose of the Frame Check Sequence (FCS)?
+What is the minimum and maximum Ethernet frame size?
+Which field identifies IPv4 and IPv6 packets?
+What happens if the CRC check fails?
+How is an Ethernet frame different from an IP packet?
+Key Takeaways
+Ethernet uses MAC addresses for communication within a local network.
+Every Ethernet frame includes addressing, payload, and error detection.
+CRC-32 in the FCS detects transmission errors.
+Standard Ethernet frames are 64–1518 bytes long (without VLAN tagging).
+Ethernet is a fundamental communication technology in networking and embedded systems.
