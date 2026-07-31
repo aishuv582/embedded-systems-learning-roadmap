@@ -1,0 +1,103 @@
+Day 129 of Electronics – Ethernet
+Topic: Ethernet (IEEE 802.3)
+
+Ethernet is the most widely used wired Local Area Network (LAN) technology. It enables reliable communication between devices such as computers, switches, routers, industrial controllers, and embedded systems.
+
+1. What is Ethernet?
+
+Ethernet is a networking technology that defines how data is transmitted over wired networks using frames.
+
+Standard: IEEE 802.3
+Medium: Twisted Pair (Cat5e/Cat6), Fiber Optic
+Topology: Star (using switches)
+Communication: Full-duplex (modern Ethernet)
+2. Ethernet Architecture
+Application
+Transport (TCP/UDP)
+Network (IP)
+Data Link (Ethernet)
+Physical Layer
+
+The Data Link Layer creates Ethernet frames, while the Physical Layer transmits bits over the cable.
+
+3. Ethernet Frame Format
+Field	Size
+Preamble	7 Bytes
+Start Frame Delimiter (SFD)	1 Byte
+Destination MAC	6 Bytes
+Source MAC	6 Bytes
+EtherType/Length	2 Bytes
+Payload	46–1500 Bytes
+CRC (FCS)	4 Bytes
+
+Minimum frame size: 64 Bytes
+
+Maximum frame size: 1518 Bytes (without VLAN tag)
+
+4. MAC Address
+
+A MAC (Media Access Control) address is a 48-bit unique hardware address assigned to every Ethernet device.
+
+Example:
+
+00:1A:2B:3C:4D:5E
+First 24 bits → Manufacturer (OUI)
+Last 24 bits → Device identifier
+5. Ethernet Speeds
+Ethernet Type	Speed
+Standard Ethernet	10 Mbps
+Fast Ethernet	100 Mbps
+Gigabit Ethernet	1 Gbps
+10 Gigabit Ethernet	10 Gbps
+40/100 Gigabit Ethernet	Data Centers
+6. Ethernet Cables
+Cat5
+Cat5e
+Cat6
+Cat6a
+Cat7
+Fiber Optic
+7. Devices Used
+Network Interface Card (NIC)
+Switch
+Hub (legacy)
+Router
+Ethernet Controller
+8. Advantages
+High speed
+Reliable communication
+Low cost
+Easy installation
+Scalable
+Widely supported
+9. Limitations
+Requires physical cabling
+Limited cable length (typically 100 m for copper)
+Less flexible than wireless networks
+10. Applications
+Office LANs
+Industrial automation
+Automotive Ethernet
+Embedded systems
+IoT gateways
+Robotics
+CCTV networks
+Data centers
+Embedded Systems Perspective
+
+Ethernet is increasingly used in embedded systems for high-speed communication.
+
+Common Ethernet-enabled microcontrollers include:
+
+STM32F7/H7
+NXP LPC series
+Microchip SAM E70
+TI Sitara processors
+
+Typical applications:
+
+Firmware updates over Ethernet
+Remote diagnostics
+Industrial automation
+Data logging
+Real-time monitoring
