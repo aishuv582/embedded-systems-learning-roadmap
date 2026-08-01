@@ -1,0 +1,114 @@
+Day 130 of Electronics – Ethernet Switching and VLANs
+
+Today, let's build on Ethernet by understanding how switches forward data and how VLANs improve network organization.
+
+1. What is an Ethernet Switch?
+
+An Ethernet switch is a Layer 2 networking device that connects multiple devices within a LAN and forwards frames based on MAC addresses.
+
+Functions:
+
+Learns source MAC addresses.
+Stores MAC addresses in a MAC address table.
+Forwards frames only to the correct destination port.
+Reduces unnecessary network traffic.
+Supports full-duplex communication.
+2. How Does a Switch Learn MAC Addresses?
+
+When a frame arrives:
+
+The switch reads the Source MAC Address.
+It stores the MAC address along with the incoming port.
+It checks the Destination MAC Address.
+If found, the frame is sent only to that port.
+If unknown, the frame is flooded to all ports except the incoming one.
+
+Example:
+
+PC1 ----\
+          \
+           Switch
+          /   |   \
+       PC2  PC3  PC4
+
+MAC Table:
+00:11:22:33:44:55 → Port 1
+AA:BB:CC:DD:EE:FF → Port 3
+3. Collision Domain vs Broadcast Domain
+Feature	Collision Domain	Broadcast Domain
+Definition	Area where packet collisions occur	Area where broadcasts are received
+Switch	One collision domain per port	Entire switch by default
+Router	Separates collision domains	Separates broadcast domains
+4. What is a VLAN?
+
+VLAN (Virtual Local Area Network) is a logical grouping of devices on the same physical switch.
+
+Devices in different VLANs behave as if they are on separate networks.
+
+Example:
+
+Switch
+
+Port 1 → VLAN 10 (HR)
+Port 2 → VLAN 10 (HR)
+Port 3 → VLAN 20 (Finance)
+Port 4 → VLAN 20 (Finance)
+
+Even though all devices use the same switch, HR and Finance cannot communicate directly.
+
+5. Why Use VLANs?
+Improves security.
+Reduces broadcast traffic.
+Better network management.
+Easier troubleshooting.
+Logical separation without additional hardware.
+6. Access Port vs Trunk Port
+Access Port
+Belongs to only one VLAN.
+Connects end devices like PCs, printers, and IP phones.
+Trunk Port
+Carries traffic for multiple VLANs.
+Used between switches or between a switch and a router.
+Uses IEEE 802.1Q tagging to identify VLANs.
+7. VLAN Tag (802.1Q)
+
+An IEEE 802.1Q VLAN tag is inserted into an Ethernet frame.
+
+It includes:
+
+VLAN ID (12 bits)
+Priority information
+Tag Protocol Identifier (TPID)
+
+The VLAN ID ranges from 1 to 4094.
+
+8. Advantages of Ethernet Switching
+Faster communication
+Reduced collisions
+Higher bandwidth
+Better security with VLANs
+Scalable networks
+Interview Questions
+
+Q1. What is the difference between a hub and a switch?
+A switch forwards frames based on MAC addresses, while a hub broadcasts data to all connected devices.
+
+Q2. What is a VLAN?
+A VLAN is a logical network that separates devices into different broadcast domains on the same physical switch.
+
+Q3. What is the purpose of a trunk port?
+A trunk port carries traffic from multiple VLANs using IEEE 802.1Q tagging.
+
+Q4. What happens when a switch receives a frame with an unknown destination MAC address?
+The switch floods the frame to all ports except the one on which it was received.
+
+Q5. Why are VLANs used?
+To improve security, reduce broadcast traffic, simplify network management, and logically separate networks.
+
+Key Takeaways
+Ethernet switches forward frames using MAC addresses.
+Switches learn MAC addresses dynamically.
+VLANs logically separate networks on the same switch.
+Access ports connect end devices; trunk ports carry multiple VLANs.
+IEEE 802.1Q enables VLAN tagging.
+VLANs improve network security, scalability, and performance.
