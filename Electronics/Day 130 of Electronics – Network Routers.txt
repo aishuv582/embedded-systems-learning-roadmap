@@ -1,0 +1,71 @@
+Day 130 of Electronics – Network Routers part 2
+
+Today, let's learn about Routers, one of the most important devices in computer networks.
+
+What is a Router?
+
+A router is a Layer 3 (Network Layer) device that connects two or more different networks and forwards data packets between them based on their IP addresses.
+
+Example:
+
+Your home router connects your home devices to the Internet.
+In companies, routers connect different office networks and remote branches.
+Functions of a Router
+Connects multiple networks.
+Determines the best path for data packets.
+Forwards packets using routing tables.
+Separates broadcast domains.
+Supports Network Address Translation (NAT).
+Provides security through Access Control Lists (ACLs) and firewalls.
+How a Router Works
+Receives a packet from a source device.
+Reads the destination IP address.
+Checks its routing table.
+Selects the best route.
+Forwards the packet to the next hop or destination.
+Routing Table
+
+A routing table contains:
+
+Destination network
+Subnet mask
+Next-hop IP address
+Outgoing interface
+Metric (cost)
+Types of Routing
+1. Static Routing
+Configured manually by the administrator.
+Suitable for small networks.
+Low overhead but not scalable.
+2. Dynamic Routing
+Routes are learned automatically.
+Adapts to network changes.
+Suitable for medium and large networks.
+Common Routing Protocols
+RIP (Routing Information Protocol) – Uses hop count.
+OSPF (Open Shortest Path First) – Uses shortest path algorithm.
+EIGRP (Enhanced Interior Gateway Routing Protocol) – Cisco proprietary (originally).
+BGP (Border Gateway Protocol) – Used for routing between Internet Service Providers (ISPs).
+Router vs Switch
+Feature	Router	Switch
+OSI Layer	Layer 3	Layer 2
+Uses	IP Address	MAC Address
+Connects	Different Networks	Devices within the same network
+Broadcast Domain	Separates broadcast domains	Does not separate broadcast domains (without VLANs)
+Routing	Yes	No
+Advantages
+Efficient packet routing.
+Connects LANs to WANs/Internet.
+Improves network security.
+Supports NAT and VPN.
+Reduces unnecessary network traffic.
+Disadvantages
+More expensive than switches.
+Configuration can be complex.
+Packet processing introduces some latency.
+Applications
+Home Wi-Fi routers.
+Enterprise networks.
+Data centers.
+Internet Service Providers (ISPs).
+Cloud networking.
