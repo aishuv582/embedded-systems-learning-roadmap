@@ -1,0 +1,128 @@
+Day 131 of Electronics – Network Routing Fundamentals
+
+Today, let's learn Routing, one of the most important networking concepts after switching.
+
+What is Routing?
+
+Routing is the process of forwarding data packets from one network to another using a router. While switches connect devices within the same network, routers connect different networks.
+
+Example:
+
+Laptop in your home network sends a request to a website.
+Your router forwards the packet to your Internet Service Provider (ISP).
+Multiple routers along the path deliver the packet to the destination server.
+Router
+
+A router is a Layer 3 (Network Layer) device that:
+
+Connects multiple networks.
+Determines the best path for packets.
+Uses IP addresses for forwarding decisions.
+Maintains a routing table.
+Routing Table
+
+A routing table contains:
+
+Destination network
+Subnet mask
+Next-hop IP address
+Exit interface
+Route metric (cost)
+
+Example:
+
+Destination	Subnet Mask	Next Hop	Interface
+192.168.1.0	255.255.255.0	Direct	Gig0/0
+10.0.0.0	255.0.0.0	192.168.1.1	Gig0/1
+Types of Routing
+1. Static Routing
+Routes are manually configured.
+Suitable for small networks.
+Low overhead.
+Does not adapt automatically to failures.
+
+Advantages
+
+Simple
+Secure
+Predictable
+
+Disadvantages
+
+Not scalable
+Manual updates required
+2. Dynamic Routing
+
+Routers automatically learn and update routes using routing protocols.
+
+Examples:
+
+RIP
+OSPF
+EIGRP
+BGP
+
+Advantages
+
+Automatically adapts to network changes.
+Suitable for large networks.
+
+Disadvantages
+
+More CPU and memory usage.
+More complex configuration.
+Routing Metrics
+
+Routers select the best path using metrics such as:
+
+Hop count
+Bandwidth
+Delay
+Reliability
+Cost
+
+The route with the best (lowest or most preferred) metric is chosen.
+
+Default Gateway
+
+A default gateway is the router that a device sends packets to when the destination is outside its local network.
+
+Example:
+
+PC IP: 192.168.1.10
+Subnet: 255.255.255.0
+Gateway: 192.168.1.1
+
+If the destination is 8.8.8.8, the PC forwards the packet to 192.168.1.1.
+
+Packet Routing Process
+Source device creates an IP packet.
+Destination IP is checked.
+If the destination is in the same network, the packet is sent directly.
+Otherwise, the packet is sent to the default gateway.
+The router consults its routing table.
+The router forwards the packet to the next hop.
+This continues until the destination network is reached.
+Interview Questions
+
+1. What is routing?
+
+Routing is the process of forwarding packets between different networks using routers based on IP addresses.
+
+2. What is the difference between switching and routing?
+
+Switching works within the same network using MAC addresses (Layer 2).
+Routing works between different networks using IP addresses (Layer 3).
+
+3. What is a routing table?
+
+A routing table stores information about destination networks and the best paths to reach them.
+
+4. What is a default gateway?
+
+The default gateway is the router that forwards packets to networks outside the local subnet.
+
+5. What is the difference between static and dynamic routing?
+
+Static routing is manually configured.
+Dynamic routing automatically updates routes using routing protocols.
