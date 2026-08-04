@@ -1,0 +1,54 @@
+Day 132 of Electronics – Routing Protocols: RIP (Routing Information Protocol)
+
+Today, let's begin learning one of the earliest dynamic routing protocols: RIP.
+
+What is RIP?
+
+Routing Information Protocol (RIP) is a distance-vector routing protocol that automatically exchanges routing information between routers. It helps routers determine the best path to reach a destination network.
+
+Protocol Type: Distance Vector
+Administrative Distance (AD): 120
+Metric Used: Hop Count
+Maximum Hop Count: 15 (16 means unreachable)
+Transport Protocol: UDP
+Port Number: 520 (RIPv1 & RIPv2)
+How RIP Works
+Each router learns directly connected networks.
+Every 30 seconds, routers send their routing tables to neighboring routers.
+Neighboring routers compare received routes with their own.
+The route with the lowest hop count is selected.
+The routing table is updated accordingly.
+What is Hop Count?
+
+A hop is one router that a packet passes through.
+
+Example:
+
+PC → Router A → Router B → Router C → Server
+
+Hop Count = 3
+
+RIP always chooses the route with the fewest hops.
+
+RIP Versions
+RIPv1
+Classful routing protocol
+Does not support VLSM or CIDR
+Broadcast updates
+No authentication
+RIPv2
+Classless routing protocol
+Supports VLSM and CIDR
+Uses multicast address 224.0.0.9
+Supports authentication
+More commonly used than RIPv1
+Advantages
+Easy to configure
+Low memory and CPU requirements
+Suitable for small networks
+Automatically updates routes
+Disadvantages
+Slow convergence
+Maximum network size limited to 15 hops
+Not suitable for large enterprise networks
+May temporarily create routing loops
