@@ -1,0 +1,67 @@
+Day 136 of Electronics – Interrupt Latency and Interrupt Response Time
+
+Today, let's learn two important concepts used in microcontrollers and embedded systems.
+
+What is an Interrupt?
+
+An interrupt is a signal that temporarily stops the CPU's current task so it can immediately respond to an important event.
+
+Example: Pressing a button on a washing machine interrupts the normal operation to start a new function.
+
+What is Interrupt Latency?
+
+Definition:
+Interrupt latency is the time taken from the moment an interrupt occurs until the CPU starts executing the Interrupt Service Routine (ISR).
+
+Interrupt Latency = Time from interrupt request → First instruction of ISR
+
+Factors affecting interrupt latency
+Current instruction execution time
+Interrupt priority
+CPU clock speed
+Saving CPU registers
+Whether interrupts are disabled
+Example
+
+Suppose:
+
+Interrupt occurs at 10 µs
+CPU starts executing ISR at 13 µs
+
+Interrupt Latency = 13 − 10 = 3 µs
+
+Lower interrupt latency means a faster response to external events.
+
+What is Interrupt Response Time?
+
+Definition:
+Interrupt response time is the total time from the interrupt occurrence until the ISR begins performing the required task.
+
+It includes:
+
+Interrupt latency
+ISR setup time
+
+So,
+
+Interrupt Response Time = Interrupt Latency + ISR initialization time
+
+Difference Between Interrupt Latency and Interrupt Response Time
+Interrupt Latency	Interrupt Response Time
+Time until ISR starts	Time until ISR begins handling the event
+Smaller part of interrupt handling	Includes latency and ISR overhead
+Measured from interrupt request	Measured until useful processing starts
+Real-Life Analogy
+
+Imagine a fire alarm in an office.
+
+Interrupt: Fire alarm rings.
+Interrupt Latency: Time taken for a person to hear the alarm and stand up.
+Interrupt Response Time: Time taken to hear the alarm, stand up, and begin evacuating.
+Applications
+Automotive ECUs
+Medical devices
+Industrial automation
+Robotics
+Aerospace systems
+Consumer electronics
