@@ -1,0 +1,88 @@
+Day 134 of Electronics – Memory-Mapped I/O vs Port-Mapped I/O
+
+Today, let's learn how a processor communicates with external devices like keyboards, displays, sensors, and UART modules.
+
+What is I/O?
+
+Input/Output (I/O) refers to the communication between the CPU and peripheral devices.
+
+Examples:
+
+Keyboard
+Mouse
+UART
+SPI
+I²C devices
+LCD Display
+ADC/DAC
+
+There are two common methods for accessing these devices.
+
+1. Memory-Mapped I/O (MMIO)
+
+In Memory-Mapped I/O, peripheral registers are assigned addresses within the normal memory address space.
+
+The CPU accesses them just like regular memory.
+
+Example
+#define LED_REGISTER (*(volatile unsigned int *)0x40021018)
+
+LED_REGISTER = 1;   // Turn ON LED
+
+Here, 0x40021018 is treated as a memory address.
+
+Features
+Uses normal load/store instructions.
+Same address bus for memory and peripherals.
+Easier programming.
+Common in ARM Cortex-M microcontrollers (STM32, NXP, TI, etc.).
+Advantages
+Simple programming model.
+No special I/O instructions required.
+Supports all memory operations.
+Disadvantages
+Reduces available memory address space.
+Cache management may require attention on some processors.
+2. Port-Mapped I/O (Isolated I/O)
+
+In Port-Mapped I/O, peripherals have a separate address space from memory.
+
+The CPU uses dedicated instructions to access them.
+
+Example (x86)
+IN AL, 60h
+OUT 60h, AL
+
+IN reads data from an I/O port.
+
+OUT writes data to an I/O port.
+
+Features
+Separate address space.
+Uses special instructions.
+Does not consume memory addresses.
+Advantages
+Preserves memory address space.
+Clear separation between memory and peripherals.
+Disadvantages
+Requires dedicated CPU instructions.
+Less flexible than MMIO.
+Comparison
+Feature	Memory-Mapped I/O	Port-Mapped I/O
+Address Space	Shared with memory	Separate
+Instructions	Normal load/store	IN / OUT
+Programming	Easier	Slightly complex
+Memory Usage	Uses memory addresses	Separate ports
+Used In	ARM, RISC-V, MIPS	Intel x86
+Real-World Example
+
+Suppose you press a button connected to an STM32 microcontroller.
+
+With Memory-Mapped I/O:
+
+CPU reads the GPIO input register.
+Detects button press.
+Writes to the GPIO output register.
+LED turns ON.
+
+All these registers are accessed through memory addresses.
