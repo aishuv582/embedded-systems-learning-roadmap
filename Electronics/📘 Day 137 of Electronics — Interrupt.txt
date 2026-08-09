@@ -1,0 +1,196 @@
+📘 Day 137 of Electronics — Interrupt Latency & Interrupt Response
+
+Today’s topic: Interrupt Latency, Interrupt Response Time, and Interrupt Handling — important for embedded systems and real-time applications.
+
+1. What is an Interrupt?
+
+An interrupt is a signal that temporarily stops the normal execution of a CPU so that it can handle an urgent event.
+
+Example:
+
+Main Program
+     ↓
+  Interrupt occurs
+     ↓
+Save current state
+     ↓
+Execute ISR
+     ↓
+Restore state
+     ↓
+Continue main program
+
+ISR = Interrupt Service Routine
+
+2. What is Interrupt Latency?
+
+Interrupt latency is the time between:
+
+When an interrupt occurs → when the CPU starts executing the ISR
+
+Interrupt occurs
+      │
+      │ ← Interrupt Latency →
+      │
+      ▼
+ISR starts
+Formula
+Interrupt Latency=ISR Start Time−Interrupt Occurrence Time
+	​
+
+
+For example:
+
+Interrupt occurs at 10 µs
+ISR starts at 14 µs
+
+Therefore:
+
+Latency=14−10=4 µs
+3. What Causes Interrupt Latency?
+
+Several factors contribute:
+
+1. Current instruction execution
+
+The CPU may need to finish the instruction currently being executed.
+
+2. Interrupt masking
+
+If interrupts are disabled:
+
+disable_interrupts();
+
+the CPU cannot immediately respond.
+
+3. Higher-priority interrupt
+
+A higher-priority ISR may already be executing.
+
+High Priority ISR
+       ↓
+Low Priority Interrupt waits
+
+4. Context saving
+
+The processor may need to save registers, program counter, status registers, etc.
+
+5. RTOS scheduling
+
+In an RTOS-based system, the interrupt may trigger a task switch, adding additional processing time.
+
+4. Interrupt Response Time
+
+Interrupt response time is the overall time taken by the system to respond to an interrupt and begin performing the required operation.
+
+A simplified representation:
+
+Response Time=Interrupt Detection+Latency+ISR Processing
+
+Don't confuse this with interrupt latency.
+
+Term	Meaning
+Interrupt latency	Interrupt occurs → ISR begins
+ISR execution time	Time taken by ISR
+Response time	Time until the required response is produced
+5. Why Low Interrupt Latency Matters
+
+Low latency is especially important in real-time embedded systems.
+
+Examples:
+
+Automotive airbag systems
+Motor control
+Industrial controllers
+UART communication
+CAN communication
+ADC sampling
+Medical devices
+
+For example, in motor control:
+
+Sensor event
+     ↓
+Interrupt
+     ↓
+Very low latency
+     ↓
+ISR
+     ↓
+Adjust motor control
+
+If the latency is too high, the motor may not be controlled correctly.
+
+6. Interrupt Latency vs Polling
+Polling
+
+CPU continuously checks the device:
+
+while(1)
+{
+    if(sensor_event)
+    {
+        handle_sensor();
+    }
+}
+
+CPU may waste time repeatedly checking.
+
+Interrupt
+while(1)
+{
+    do_main_task();
+}
+
+void ISR(void)
+{
+    handle_sensor();
+}
+
+The CPU can perform other work and respond when the event occurs.
+
+7. How to Reduce Interrupt Latency
+
+Important techniques:
+
+Keep ISRs short
+Avoid unnecessary calculations inside ISR
+Avoid long loops inside ISR
+Avoid blocking operations
+Use appropriate interrupt priorities
+Avoid disabling interrupts for long periods
+Move heavy processing from ISR to a task/main loop
+Use hardware peripherals/DMA where appropriate
+
+A good design is:
+
+Interrupt
+   ↓
+Short ISR
+   ↓
+Set flag / notify task
+   ↓
+Main task or RTOS task
+   ↓
+Heavy processing
+Example
+volatile int data_ready = 0;
+
+void UART_ISR(void)
+{
+    data_ready = 1;
+}
+
+int main(void)
+{
+    while(1)
+    {
+        if(data_ready)
+        {
+            data_ready = 0;
+            process_data();
+        }
+    }
+}
+
+The ISR does only the urgent work, while process_data() handles the heavier processing.
