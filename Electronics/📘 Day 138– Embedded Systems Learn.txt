@@ -1,0 +1,177 @@
+📘 Day 138 – Embedded Systems Learning
+
+Since you’ve been progressing through microcontrollers, communication protocols, Ethernet, and interrupts, today let’s move into an important embedded-systems concept:
+
+🔌 Day 138: DMA — Direct Memory Access
+1. What is DMA?
+
+DMA (Direct Memory Access) allows a peripheral to transfer data directly to or from memory without the CPU handling every individual byte/word.
+
+Normally:
+
+Peripheral → CPU → RAM
+
+With DMA:
+
+Peripheral ─────────→ RAM
+              DMA
+
+The CPU only needs to configure the DMA transfer and can then continue doing other work.
+
+2. Why do we need DMA?
+
+Imagine an ADC continuously generates samples:
+
+ADC → 1 byte
+ADC → 1 byte
+ADC → 1 byte
+ADC → 1 byte
+...
+
+Without DMA, the CPU might need to respond to an interrupt for every sample.
+
+That wastes CPU time.
+
+With DMA:
+
+ADC
+ │
+ ▼
+DMA Controller
+ │
+ ▼
+RAM Buffer
+
+The DMA controller automatically moves the data.
+
+3. Basic DMA operation
+
+Suppose we want to transfer 100 bytes from UART to RAM.
+
+The CPU configures:
+
+Source address → UART data register
+Destination address → RAM buffer
+Transfer size → 100 bytes
+Transfer direction → Peripheral → Memory
+
+Then:
+
+CPU
+ │
+ │ Configure DMA
+ ▼
+DMA Controller
+ │
+ ├── Read UART
+ ├── Write RAM
+ ├── Read UART
+ ├── Write RAM
+ │       ...
+ └── Complete 100 bytes
+          │
+          ▼
+      Interrupt CPU
+
+The CPU can perform other tasks during the transfer.
+
+4. DMA vs CPU-based transfer
+Feature	CPU Transfer	DMA Transfer
+CPU involvement	High	Low
+Speed	Lower for large transfers	Higher
+CPU available for other tasks	No	Yes
+Hardware complexity	Low	Higher
+Best for	Small transfers	Large/continuous transfers
+5. DMA and interrupts
+
+DMA doesn't necessarily eliminate interrupts.
+
+Instead of:
+
+Every byte → Interrupt CPU
+
+we can have:
+
+100 bytes transferred
+        ↓
+DMA complete interrupt
+        ↓
+CPU
+
+This dramatically reduces the interrupt load.
+
+6. Important DMA modes
+Normal mode
+
+Transfer happens once:
+
+RAM ← Peripheral
+
+After completion, DMA stops.
+
+Circular mode
+
+After reaching the end of the buffer, DMA starts again:
+
+┌───────────────┐
+│   RAM Buffer  │
+└───────▲───────┘
+        │
+        └──────── DMA repeats
+
+This is very useful for continuous ADC, UART, audio, and sensor data.
+
+7. DMA in STM32
+
+Since you're targeting STM32-based embedded roles, DMA is especially important.
+
+A common architecture is:
+
+        ┌─────────┐
+        │   CPU   │
+        └────┬────┘
+             │
+        Configure
+             │
+             ▼
+       ┌───────────┐
+       │    DMA    │
+       └─────┬─────┘
+             │
+      ┌──────┴──────┐
+      ▼             ▼
+   UART/ADC       RAM
+
+Typical STM32 applications:
+
+UART + DMA
+SPI + DMA
+I²C + DMA
+ADC + DMA
+Timer + DMA
+Audio streaming
+🧠 Interview Question
+
+Q: Why is DMA preferred for high-speed data transfer?
+
+Answer:
+
+DMA allows peripherals to transfer large amounts of data directly to or from memory with minimal CPU intervention. This reduces CPU overhead, decreases the number of interrupts, and allows the processor to perform other tasks while the transfer is taking place.
+
+💻 Mini Example
+
+Suppose an ADC samples at 10 kHz.
+
+Without DMA:
+
+10,000 samples/sec
+       ↓
+10,000 CPU interrupts/sec
+
+With DMA:
+
+ADC → DMA → 100-sample RAM buffer
+                 ↓
+          1 interrupt
+
+So the CPU handles approximately 100 times fewer interrupts.
