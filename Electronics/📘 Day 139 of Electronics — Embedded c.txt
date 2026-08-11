@@ -1,0 +1,73 @@
+📘 Day 139 of Electronics — Embedded C: Pointers
+
+Today’s topic is Pointers, one of the most important concepts for embedded programming.
+
+1. What is a pointer?
+
+A pointer is a variable that stores the memory address of another variable.
+
+int x = 10;
+int *p = &x;
+
+Here:
+
+x → stores 10
+&x → gives the address of x
+p → stores the address of x
+*p → accesses the value stored at that address
+printf("%d", *p);   // 10
+2. Important operators
+Operator	Meaning
+&	Address-of operator
+*	Dereference operator
+int *p	p is a pointer to an integer
+
+Example:
+
+int a = 25;
+int *ptr = &a;
+
+printf("%d\n", a);     // 25
+printf("%p\n", &a);   // Address of a
+printf("%p\n", ptr);  // Address stored in ptr
+printf("%d\n", *ptr); // 25
+3. Why are pointers important in embedded systems?
+
+Pointers are heavily used for:
+
+Direct memory access
+Microcontroller registers
+Arrays and buffers
+Communication protocols
+Device drivers
+Dynamic data structures
+Passing data efficiently to functions
+
+For example, a hardware register can be accessed using a memory address:
+
+volatile unsigned int *reg = (unsigned int *)0x40000000;
+
+*reg = 0x01;
+
+This concept is fundamental when working with STM32, ARM Cortex-M and other microcontrollers.
+
+4. Pointer and array relationship
+int arr[3] = {10, 20, 30};
+
+int *p = arr;
+
+printf("%d", *p);       // 10
+printf("%d", *(p + 1)); // 20
+printf("%d", *(p + 2)); // 30
+
+The array name arr generally represents the address of its first element.
+
+5. Embedded C point to remember ⭐
+
+When accessing hardware registers, you will often see:
+
+volatile uint32_t *reg;
+
+volatile tells the compiler:
+
+"This value can change unexpectedly, so don't optimize away reads/writes."
