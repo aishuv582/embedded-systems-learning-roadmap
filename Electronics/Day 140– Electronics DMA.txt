@@ -1,0 +1,115 @@
+Day 140 – Electronics: DMA (Direct Memory Access)
+
+Today’s topic: DMA — Direct Memory Access
+
+1. What is DMA?
+
+DMA allows peripherals to transfer data directly to/from memory without requiring the CPU to handle every byte of data.
+
+Normally:
+
+Peripheral → CPU → Memory
+
+With DMA:
+
+Peripheral → DMA Controller → Memory
+
+This reduces CPU workload and improves data-transfer efficiency.
+
+2. Why do we need DMA?
+
+Suppose an ADC continuously generates data.
+
+Without DMA:
+
+ADC generates data
+CPU reads the data
+CPU stores it in RAM
+CPU repeats this process again and again
+
+With DMA:
+
+ADC generates data
+DMA automatically transfers it to RAM
+CPU can perform other tasks
+3. Basic DMA operation
+             ┌─────────┐
+             │   CPU   │
+             └────┬────┘
+                  │ Configure DMA
+                  ▼
+          ┌───────────────┐
+          │ DMA Controller│
+          └───────┬───────┘
+                  │
+          ┌───────┴───────┐
+          ▼               ▼
+     ┌─────────┐      ┌─────────┐
+     │Peripheral│ ───► │  RAM    │
+     └─────────┘      └─────────┘
+4. DMA steps
+CPU configures the DMA controller.
+CPU specifies:
+Source address
+Destination address
+Transfer size
+Transfer direction
+Peripheral requests a transfer.
+DMA transfers the data.
+DMA updates the addresses/count.
+After completion, DMA can generate an interrupt to notify the CPU.
+5. Example
+
+Suppose UART receives 1000 bytes.
+
+Without DMA:
+
+UART → CPU → RAM
+       ↑
+   1000 CPU operations
+
+With DMA:
+
+UART → DMA → RAM
+       ↓
+   CPU notified after transfer
+
+The CPU can therefore concentrate on other processing.
+
+6. Common DMA applications
+UART data reception/transmission
+SPI communication
+I²C transfers
+ADC continuous sampling
+DAC waveform generation
+Audio/video streaming
+High-speed data acquisition
+7. Important DMA concepts
+Concept	Meaning
+Source	Where data comes from
+Destination	Where data goes
+Transfer size	Number of bytes/words transferred
+Transfer direction	Peripheral → Memory or Memory → Peripheral
+Circular mode	DMA automatically restarts after reaching the end
+Normal mode	DMA stops after completing the transfer
+DMA interrupt	Notifies CPU when transfer completes
+Priority	Determines which DMA request gets preference
+8. DMA in STM32
+
+In STM32, DMA is commonly used with peripherals such as:
+
+UART → DMA → RAM
+
+ADC → DMA → RAM
+
+SPI → DMA → RAM
+
+For example, an ADC can continuously sample a sensor and DMA can place the samples into an array:
+
+uint16_t adc_buffer[100];
+
+HAL_ADC_Start_DMA(&hadc1,
+                  (uint32_t *)adc_buffer,
+                  100);
+
+Now the ADC samples can be transferred into adc_buffer automatically.
