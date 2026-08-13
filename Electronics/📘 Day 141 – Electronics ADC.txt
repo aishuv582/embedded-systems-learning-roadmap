@@ -1,0 +1,131 @@
+📘 Day 141 – Electronics: ADC (Analog-to-Digital Converter)
+
+Today’s topic: ADC, one of the most important peripherals in microcontrollers.
+
+1. What is ADC?
+
+ADC = Analog-to-Digital Converter
+
+A microcontroller understands digital values (0s and 1s), but many real-world signals are analog:
+
+Temperature 🌡️
+Light intensity 💡
+Sound 🎤
+Pressure
+Battery voltage 🔋
+Sensor outputs
+
+ADC converts an analog voltage into a digital number that the CPU can process.
+
+Analog Signal
+     ↓
+    ADC
+     ↓
+Digital Value
+     ↓
+    CPU
+2. Example
+
+Suppose an ADC has 12-bit resolution and an input range of 0–3.3 V.
+
+Number of possible values:
+
+2¹² = 4096
+
+So the digital output ranges from:
+
+0 to 4095
+
+Approximately:
+
+Input Voltage	Digital Output
+0 V	0
+0.825 V	1024
+1.65 V	2048
+2.475 V	3072
+3.3 V	4095
+
+So if the ADC reads approximately 1.65 V, the digital value will be around 2048.
+
+3. ADC Resolution
+
+Resolution determines how finely the ADC can represent an analog voltage.
+
+Common resolutions:
+
+8-bit → 256 levels
+10-bit → 1024 levels
+12-bit → 4096 levels
+16-bit → 65,536 levels
+
+Higher resolution generally means smaller voltage steps can be distinguished.
+
+4. ADC Conversion Formula
+
+For an ideal ADC:
+
+Digital Value=
+V
+ref
+	​
+
+V
+in
+	​
+
+	​
+
+(2
+N
+−1)
+
+Where:
+
+V
+in
+	​
+
+ = input voltage
+V
+ref
+	​
+
+ = reference voltage
+N = ADC resolution in bits
+
+For a 12-bit ADC, 3.3 V reference and 1.65 V input:
+
+3.3
+1.65
+	​
+
+×4095≈2048
+5. ADC in an Embedded System
+
+Example: temperature sensor → STM32
+
+Temperature Sensor
+        ↓
+   Analog Voltage
+        ↓
+       ADC
+        ↓
+ Digital Value
+        ↓
+       CPU
+        ↓
+ Temperature Calculation
+
+The CPU can then convert that digital value into an actual temperature.
+
+6. Important ADC Terms
+
+Resolution → Number of digital levels.
+
+Sampling rate → How many samples are taken per second.
+
+Reference voltage (Vref) → Voltage used as the ADC's measurement reference.
+
+Conversion time → Time required to convert an analog signal into a digital value.
+
+ADC channel → An input connected to the ADC.
