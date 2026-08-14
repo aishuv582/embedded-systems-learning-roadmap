@@ -1,0 +1,154 @@
+Day 141 – Electronics: DMA (Direct Memory Access) – Advanced Concepts
+
+Since you’ve already covered the basics of DMA, today let’s move into how DMA works in a real embedded system.
+
+1. DMA Transfer Modes
+
+DMA can transfer data in different modes:
+
+1. Block Mode
+
+DMA takes control of the bus.
+Transfers an entire block of data continuously.
+CPU waits during the transfer.
+Useful for large data transfers.
+
+2. Burst Mode
+
+DMA transfers several bytes/words in one burst.
+CPU may get the bus back after the burst.
+Provides a balance between CPU access and DMA performance.
+
+3. Cycle Stealing Mode
+
+DMA transfers one data unit at a time.
+CPU gets the bus between DMA transfers.
+CPU continues working, but slightly slower.
+
+4. Demand Mode
+
+DMA continues transferring as long as the peripheral keeps requesting data.
+Transfer stops when the request is removed.
+2. DMA with Peripheral → Memory
+
+Example: ADC + DMA
+
+ADC
+ │
+ │ Digital Samples
+ ▼
+DMA Controller
+ │
+ ▼
+RAM Buffer
+
+Suppose an ADC continuously generates samples:
+
+ADC → DMA → RAM
+
+Without DMA:
+
+ADC → CPU → RAM
+
+The CPU has to handle every sample.
+
+With DMA, the CPU can perform other tasks while DMA moves the samples.
+
+3. DMA with Memory → Peripheral
+
+Example: UART transmission
+
+RAM Buffer
+    │
+    ▼
+   DMA
+    │
+    ▼
+   UART
+    │
+    ▼
+External Device
+
+If you need to transmit:
+
+"HELLO WORLD"
+
+DMA can send the bytes from RAM to UART automatically.
+
+The CPU only needs to configure the DMA transfer.
+
+4. DMA Interrupt
+
+After completing a transfer, DMA can generate an interrupt:
+
+CPU configures DMA
+       ↓
+DMA starts transfer
+       ↓
+CPU does other work
+       ↓
+DMA completes transfer
+       ↓
+DMA Interrupt
+       ↓
+CPU handles completion
+
+Typical DMA interrupts:
+
+Transfer Complete
+Half Transfer
+Transfer Error
+5. Double Buffering
+
+This is very important in embedded systems.
+
+Suppose DMA is receiving continuous ADC data.
+
+Instead of using one buffer:
+
+DMA → Buffer
+
+we use two:
+
+        ┌── Buffer A
+DMA ────┤
+        └── Buffer B
+
+While DMA fills Buffer A, the CPU processes Buffer B.
+
+Then they switch:
+
+DMA → Buffer B
+CPU → Buffer A
+
+This allows continuous data processing without losing incoming data.
+
+6. Real-World Example
+
+Consider an audio system:
+
+Microphone
+    ↓
+ADC
+    ↓
+DMA
+    ↓
+RAM Buffer
+    ↓
+CPU/DSP
+    ↓
+Audio Processing
+
+DMA continuously moves audio samples into RAM while the CPU processes previously received samples.
+
+This is why DMA is heavily used in:
+
+ADC
+DAC
+UART
+SPI
+I²C
+Audio interfaces
+Ethernet
+Camera interfaces
+SD cards
