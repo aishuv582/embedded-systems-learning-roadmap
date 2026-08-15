@@ -1,0 +1,96 @@
+Day 142 — DMA: Transfer Modes
+
+
+🔌 Day 142: DMA Controller — DMA Request & Acknowledge
+
+A DMA controller (DMAC) manages data transfer between an I/O device and memory without requiring the CPU to handle every byte.
+
+1. DMA Request (DREQ)
+
+When an I/O device wants to transfer data, it sends a DMA Request (DREQ) to the DMA controller.
+
+Example:
+
+ADC → DREQ → DMA Controller
+
+This tells the DMA controller:
+
+"I have data ready. Please transfer it."
+
+2. DMA Acknowledge (DACK)
+
+The DMA controller responds with a DMA Acknowledge (DACK) signal.
+
+DMA Controller → DACK → I/O Device
+
+This tells the device:
+
+"Okay, I'm ready to perform the DMA transfer."
+
+3. Bus Request
+
+The DMA controller needs control of the system bus to access memory.
+
+It sends a Bus Request to the CPU.
+
+DMA → Bus Request → CPU
+
+The CPU temporarily releases the bus.
+
+4. Bus Grant
+
+The CPU responds by granting bus control to the DMA controller.
+
+CPU → Bus Grant → DMA
+
+Now the DMA controller can control:
+
+Address bus
+Data bus
+Control signals
+5. Actual Transfer
+
+The DMA controller performs the transfer:
+
+I/O → DMA → Memory
+
+or
+
+Memory → DMA → I/O
+
+The CPU doesn't need to execute an instruction for every byte transferred.
+
+🔄 Complete DMA Sequence
+I/O Device
+    │
+    │ DREQ
+    ▼
+DMA Controller
+    │
+    │ Bus Request
+    ▼
+   CPU
+    │
+    │ Bus Grant
+    ▼
+DMA Controller
+    │
+    │ DACK
+    ▼
+I/O Device
+
+
+    ↓
+
+
+Data Transfer
+I/O Device ↔ Memory
+⭐ Important for Embedded Systems
+
+Remember these four signals/concepts:
+
+Signal	Purpose
+DREQ	Device requests DMA
+DACK	DMA acknowledges device
+Bus Request	DMA asks CPU for bus control
+Bus Grant	CPU gives bus control to DMA
