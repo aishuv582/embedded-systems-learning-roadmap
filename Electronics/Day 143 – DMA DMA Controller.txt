@@ -1,0 +1,138 @@
+Day 143 – DMA: DMA Controller & Its Internal Architecture
+
+Today, let’s continue with Direct Memory Access (DMA). Since you’ve already covered DMA basics and transfer modes, we’ll move to the DMA Controller (DMAC).
+
+1. What is a DMA Controller?
+
+A DMA Controller (DMAC) is a hardware unit that manages data transfers directly between:
+
+I/O Device ↔ Memory
+
+without requiring the CPU to handle every byte/word.
+
+Example:
+
+Without DMA:
+I/O Device → CPU → Memory
+
+
+With DMA:
+I/O Device → DMA Controller → Memory
+
+The CPU mainly initializes the DMA transfer and is notified when the transfer is completed.
+
+2. Why do we need a DMA Controller?
+
+Suppose an ADC continuously generates a large amount of data.
+
+If the CPU handles every transfer:
+
+CPU gets interrupted repeatedly.
+CPU spends significant time moving data.
+Application processing becomes slower.
+
+With DMA:
+
+CPU configures the DMA controller.
+DMA transfers the data.
+CPU can perform other tasks.
+DMA generates an interrupt after completion.
+3. Basic DMA Controller Architecture
+                 CPU
+                  │
+          Configuration
+                  │
+                  ▼
+        ┌─────────────────┐
+        │ DMA Controller  │
+        │                 │
+        │ Address Register│
+        │ Count Register  │
+        │ Control Register│
+        │ Status Register │
+        └────────┬────────┘
+                 │
+        ┌────────┴────────┐
+        │                 │
+        ▼                 ▼
+    I/O Device          Memory
+4. Important DMA Registers
+A. Address Register
+
+Stores the memory address where data needs to be transferred.
+
+Example:
+
+Starting address = 0x2000
+
+After transferring one byte:
+
+0x2000 → 0x2001 → 0x2002 → ...
+
+The address is automatically updated by the DMA controller.
+
+B. Count Register
+
+Stores the number of bytes/words to transfer.
+
+Example:
+
+Count = 1000 bytes
+
+After each transfer:
+
+1000 → 999 → 998 → ... → 0
+
+When the count reaches zero, the DMA transfer is complete.
+
+C. Control Register
+
+Specifies how the transfer should occur.
+
+It may contain information such as:
+
+Transfer direction
+Transfer mode
+Source/destination selection
+Data width
+Interrupt enable
+D. Status Register
+
+Indicates the current state of the DMA operation.
+
+For example:
+
+DMA Busy
+DMA Complete
+DMA Error
+DMA Request Pending
+5. DMA Transfer Sequence
+
+Consider an ADC transferring 100 samples to RAM.
+
+Step 1: CPU configures DMA.
+
+Start Address = 0x2000
+Transfer Count = 100
+Direction = ADC → Memory
+
+Step 2: ADC generates a DMA request.
+
+Step 3: DMA controller obtains control of the required bus resources.
+
+Step 4: DMA transfers the sample directly to memory.
+
+Step 5: DMA increments the address and decrements the count.
+
+Address: 0x2000 → 0x2001 → 0x2002 ...
+Count:   100   → 99    → 98    ...
+
+Step 6: When count becomes zero, DMA signals completion.
+
+Step 7: CPU receives a DMA interrupt.
+
+6. Key Point to Remember
+
+CPU configures the DMA, DMA performs the transfer, and CPU handles the completion.
+
+This is the fundamental idea behind a DMA controller.
