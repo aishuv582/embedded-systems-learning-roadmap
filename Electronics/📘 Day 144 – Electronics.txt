@@ -1,0 +1,83 @@
+📘 Day 144 – Electronics
+Topic: DMA Controller – DMA Transfer Process
+
+
+
+🔹 What is DMA?
+
+DMA allows an I/O device to transfer data directly to or from memory without the CPU handling every byte/word.
+
+Normally:
+
+I/O Device → CPU → Memory
+
+With DMA:
+
+I/O Device ↔ DMA Controller ↔ Memory
+
+The CPU mainly initializes the DMA controller and is then free to perform other tasks.
+
+🔹 DMA Transfer Process
+
+Suppose an ADC wants to transfer 100 bytes into RAM.
+
+Step 1 – CPU initializes DMA
+
+CPU provides the DMA controller with:
+
+Starting memory address
+Number of bytes to transfer
+Direction of transfer
+DMA transfer mode
+
+Step 2 – I/O device requests DMA
+
+The peripheral sends a DMA Request (DREQ) signal.
+
+Step 3 – DMA requests the bus
+
+The DMA controller asks the CPU for control of the system bus.
+
+Step 4 – CPU grants the bus
+
+CPU temporarily releases the bus and sends a DMA Acknowledge (DACK).
+
+Step 5 – DMA transfers data
+
+The DMA controller transfers data:
+
+I/O → Memory
+
+and automatically:
+
+Increments the memory address
+Decrements the transfer count
+
+Step 6 – Transfer completion
+
+When the required number of bytes has been transferred, DMA informs the CPU, often using an interrupt.
+
+🔹 Simple Example
+
+Suppose:
+
+Starting RAM address = 2000H
+Data size = 4 bytes
+
+DMA performs:
+
+Transfer	Memory Address
+1st byte	2000H
+2nd byte	2001H
+3rd byte	2002H
+4th byte	2003H
+
+The CPU doesn't need to execute a separate instruction for each byte.
+
+🔹 Important DMA Signals
+Signal	Meaning
+DREQ	DMA Request
+DACK	DMA Acknowledge
+HOLD/BR	Bus request from DMA
+HLDA/BG	Bus grant from CPU
+INT	Transfer completion interrupt
