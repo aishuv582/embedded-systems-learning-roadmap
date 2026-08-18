@@ -1,0 +1,89 @@
+📘 Day 144 of Electronics — DMA Transfer Modes
+
+
+
+1. What is a DMA Transfer Mode?
+
+A DMA controller can transfer data between I/O devices and memory without the CPU handling every byte.
+
+The DMA controller decides how long it should occupy the system bus during the transfer. This is called the DMA transfer mode.
+
+There are four important modes:
+
+Burst Mode
+Cycle Stealing Mode
+Transparent Mode
+Demand Mode
+2. Burst Mode
+
+In Burst Mode, the DMA controller takes control of the bus and transfers a block of data continuously.
+
+Example:
+
+CPU → releases bus
+       ↓
+DMA → Data 1
+      Data 2
+      Data 3
+      Data 4
+       ↓
+CPU → gets bus back
+Advantages
+Very fast data transfer
+Suitable for large blocks of data
+Disadvantage
+CPU has to wait while DMA owns the bus.
+
+Example: Transferring a large block of data from a disk to RAM.
+
+3. Cycle Stealing Mode
+
+Here, DMA transfers one data unit at a time by temporarily taking the bus from the CPU.
+
+CPU → works
+      ↓
+DMA → transfers 1 byte
+      ↓
+CPU → works
+      ↓
+DMA → transfers 1 byte
+
+The DMA controller "steals" individual bus cycles from the CPU.
+
+Advantages
+CPU is not completely stopped.
+DMA can still transfer data.
+Disadvantage
+CPU performance decreases slightly because some bus cycles are taken by DMA.
+4. Transparent Mode
+
+In Transparent Mode, DMA transfers data only when the CPU is not using the system bus.
+
+CPU using bus → DMA waits
+
+
+CPU not using bus → DMA transfers
+Advantage
+CPU operation is minimally affected.
+Disadvantage
+DMA transfer can be slow because it must wait for unused bus cycles.
+5. Demand Mode
+
+In Demand Mode, DMA continues transferring data as long as the peripheral keeps the DMA request active.
+
+Peripheral → DMA Request ON
+                  ↓
+             DMA transfers
+                  ↓
+Peripheral → DMA Request OFF
+                  ↓
+             DMA stops
+
+This is useful when the peripheral needs to transfer a variable amount of data.
+
+🔑 Quick Comparison
+Mode	DMA Bus Usage	CPU Effect	Speed
+Burst	Continuous block	CPU waits	⭐⭐⭐⭐
+Cycle Stealing	One cycle at a time	CPU slows slightly	⭐⭐⭐
+Transparent	Only when bus is free	Very low	⭐⭐
+Demand	While request is active	Depends on request duration	⭐⭐⭐⭐
