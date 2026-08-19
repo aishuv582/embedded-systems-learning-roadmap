@@ -1,0 +1,68 @@
+📘 Day 145 — DMA Bus Arbitration
+1. What is Bus Arbitration?
+
+When both the CPU and DMA controller need to use the system bus at the same time, there must be a mechanism to decide who gets control of the bus.
+
+This process is called Bus Arbitration.
+
+        CPU
+         │
+         │ Bus Request
+         ↓
+   ┌─────────────┐
+   │ Bus Arbiter │
+   └─────────────┘
+         ↑
+         │ Bus Request
+         │
+        DMA
+2. Why is it needed?
+
+The system bus cannot normally be controlled by both CPU and DMA simultaneously.
+
+So:
+
+CPU wants bus + DMA wants bus → Arbitration → One gets bus control
+
+3. DMA Bus Arbitration Process
+
+A simplified sequence is:
+
+DMA controller sends a Bus Request (BR) to the CPU.
+CPU completes its current bus operation.
+CPU releases the bus.
+CPU sends Bus Grant (BG) to DMA.
+DMA takes control of the bus.
+DMA performs the data transfer.
+DMA releases the bus.
+CPU gets control again.
+DMA → Bus Request → CPU
+                    ↓
+              CPU releases bus
+                    ↓
+CPU → Bus Grant → DMA
+                    ↓
+             DMA transfers data
+                    ↓
+              DMA releases bus
+                    ↓
+                  CPU
+4. Important Signals
+Signal	Meaning
+BR / HOLD	DMA requests control of the bus
+BG / HLDA	CPU grants/releases the bus
+Bus Request	Request to use the bus
+Bus Grant	Permission to use the bus
+5. Types of Bus Arbitration
+
+Two major approaches are:
+
+Centralized Arbitration
+
+A central arbiter decides which device gets the bus.
+Common in systems with multiple bus masters.
+
+Distributed Arbitration
+
+No single central arbiter.
+Devices participate in deciding who gets control.
