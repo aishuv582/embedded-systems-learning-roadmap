@@ -1,0 +1,122 @@
+Day 147 – Electronics ⚡
+DMA: DMA Controller Programming & Practical Example
+
+Since you’ve already covered DMA basics, transfer process, modes, and DMA controller concepts, today we’ll move to the practical side: how a DMA controller is programmed for a transfer.
+
+1. What does DMA programming mean?
+
+DMA programming means configuring the DMA controller with the information required to perform a data transfer without continuous CPU involvement.
+
+The CPU generally provides:
+
+Source address – where the data comes from
+Destination address – where the data should go
+Transfer count – how many bytes/words to transfer
+Transfer direction/mode
+Control information – enable DMA, interrupt, priority, etc.
+2. Basic DMA Programming Sequence
+CPU
+ │
+ ├── 1. Set Source Address
+ │
+ ├── 2. Set Destination Address
+ │
+ ├── 3. Set Transfer Count
+ │
+ ├── 4. Configure DMA Mode
+ │
+ └── 5. Enable DMA
+          │
+          ▼
+      DMA Controller
+          │
+          ▼
+     Data Transfer
+          │
+          ▼
+      Transfer Complete
+          │
+          ▼
+        CPU / Interrupt
+3. Example
+
+Suppose we want to transfer 100 bytes from:
+
+Memory A → Memory B
+
+The CPU configures the DMA controller:
+
+Parameter	Value
+Source address	Memory A
+Destination address	Memory B
+Transfer count	100 bytes
+Direction	Memory → Memory
+Mode	Block transfer
+DMA	Enabled
+
+After configuration, the DMA controller performs the transfer.
+
+The CPU is free to perform another task.
+
+4. What happens during transfer?
+
+For each transfer:
+
+Source Memory
+     │
+     │ Data
+     ▼
+DMA Controller
+     │
+     │ Data
+     ▼
+Destination Memory
+
+The DMA controller automatically updates the addresses:
+
+Source:      A → A+1 → A+2 → A+3 ...
+Destination: B → B+1 → B+2 → B+3 ...
+
+The transfer counter also decreases:
+
+100 → 99 → 98 → 97 → ... → 0
+
+When the count reaches 0, the DMA transfer is complete.
+
+5. Transfer Complete Interrupt
+
+After completing the transfer, the DMA controller can generate an interrupt to inform the CPU.
+
+DMA Transfer
+     ↓
+Count = 0
+     ↓
+Transfer Complete
+     ↓
+DMA Interrupt
+     ↓
+CPU handles interrupt
+
+This is useful because the CPU doesn't need to continuously check whether the transfer has finished.
+
+6. Why DMA is useful
+
+Without DMA:
+
+CPU → Read data
+CPU → Write data
+CPU → Read data
+CPU → Write data
+...
+
+The CPU spends significant time handling the transfer.
+
+With DMA:
+
+CPU → Configure DMA
+          ↓
+      DMA transfers
+          ↓
+CPU → Gets interrupt after completion
+
+So DMA reduces CPU workload and improves system efficiency, especially for large data transfers.
