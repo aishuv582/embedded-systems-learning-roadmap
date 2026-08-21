@@ -1,0 +1,91 @@
+📘 Day 148 of Electronics — DMA: Bus Arbitration
+
+Since you’ve been studying DMA for the past several days, today we’ll continue with an important concept: Bus Arbitration.
+
+1. What is Bus Arbitration?
+
+Bus arbitration is the process of deciding which device gets control of the system bus when multiple devices want to use it.
+
+In a microprocessor system, devices such as:
+
+CPU
+DMA controller
+I/O controllers
+
+may need access to the address bus, data bus, and control bus.
+
+Only one master should control the bus at a time.
+
+2. Why is it needed in DMA?
+
+Normally:
+
+CPU → controls the system bus
+
+But during DMA transfer:
+
+DMA Controller → needs to control the system bus
+
+Therefore, the DMA controller must first request the bus from the CPU.
+
+3. Basic DMA Bus Arbitration
+
+The process is:
+
+DMA Request → CPU completes current bus operation → CPU releases bus → DMA gets bus → DMA transfers data → DMA releases bus → CPU gets bus back
+
+4. Important Signals
+
+Two common signals are:
+
+HOLD – DMA controller requests control of the bus.
+
+HLDA (Hold Acknowledge) – CPU indicates that it has released the bus.
+
+Simple flow:
+
+DMA Controller
+      │
+      │ HOLD
+      ▼
+     CPU
+      │
+      │ HLDA
+      ▼
+DMA Controller gets BUS
+      │
+      │ Data Transfer
+      ▼
+   Memory / I/O
+5. Types of Bus Arbitration
+
+There are two major approaches:
+
+1. Centralized arbitration
+
+A central arbiter decides who gets the bus.
+Common in simpler systems.
+
+2. Distributed arbitration
+
+There is no single central arbiter.
+Devices participate in deciding bus ownership.
+6. Key Point for Exams ⭐
+
+Bus arbitration determines which bus master gets control of the system bus when multiple devices request it.
+
+For DMA, the important sequence to remember is:
+
+Request → Acknowledge → Bus Transfer → Release
+
+🧠 Quick Example
+
+Imagine a single road used by two vehicles:
+
+CPU = Vehicle 1
+DMA controller = Vehicle 2
+System bus = Road
+
+If both want to use the road simultaneously, there must be a mechanism to decide who gets it.
+
+That mechanism is bus arbitration.
