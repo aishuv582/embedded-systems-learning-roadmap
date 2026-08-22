@@ -1,0 +1,77 @@
+📘 Day 149 – Electronics
+Topic: Cache Memory
+
+Cache memory is an important concept for understanding CPU performance and embedded systems.
+
+1. What is Cache Memory?
+
+Cache is a small, high-speed memory located close to or inside the CPU.
+
+It stores frequently or recently used data and instructions so that the CPU can access them faster.
+
+Think of it like:
+
+Main Memory (RAM) → large but slower
+Cache → small but very fast
+CPU → needs data quickly
+
+So:
+
+CPU → Cache → RAM
+
+2. Why do we need Cache?
+
+The CPU is much faster than RAM.
+
+If the CPU had to wait for RAM every time, a lot of CPU time would be wasted.
+
+Cache reduces this waiting time.
+
+3. Cache Levels
+
+Modern processors commonly have:
+
+Cache	Size	Speed
+L1	Smallest	Fastest
+L2	Larger	Slightly slower
+L3	Largest	Slower than L1/L2
+
+Usually:
+
+CPU → L1 → L2 → L3 → RAM
+
+4. Cache Hit
+
+If the CPU requests data and it is already present in cache:
+
+👉 Cache Hit
+
+The CPU gets the data quickly.
+
+5. Cache Miss
+
+If the required data is not present in cache:
+
+👉 Cache Miss
+
+The system has to fetch the data from a lower-level cache or RAM.
+
+Therefore, a cache miss takes more time.
+
+6. Simple Example
+
+Suppose you repeatedly use:
+
+int x = 10;
+
+The processor may keep the relevant data in cache.
+
+Next time it needs x:
+
+CPU → Cache → Data found ✅
+
+Instead of:
+
+CPU → RAM → Data ❌
+
+This improves performance.
