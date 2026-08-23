@@ -1,0 +1,148 @@
+📘 Day 150 of Electronics — Microcontroller Communication: UART
+
+Since you’ve already covered DMA, interrupts, SPI, I²C and related embedded concepts, let’s move into UART communication, which is extremely important for embedded/firmware interviews.
+
+🔹 1. What is UART?
+
+UART = Universal Asynchronous Receiver/Transmitter
+
+It is a hardware communication protocol used to exchange data between two devices serially, one bit at a time.
+
+Example:
+
+Microcontroller ↔ USB-to-UART Converter ↔ PC
+
+UART is commonly used for:
+
+Debugging
+Sending sensor data
+Bootloaders
+GPS modules
+Bluetooth modules
+Communication between microcontrollers
+🔹 2. Why is UART called asynchronous?
+
+UART does not use a separate clock line.
+
+Unlike SPI:
+
+SPI → Clock + Data
+
+UART:
+
+TX + RX + GND
+
+Both devices must agree beforehand on the communication speed, called the baud rate.
+
+🔹 3. UART connection
+
+For two devices:
+
+Device A                 Device B
+
+TX  -------------------> RX
+RX  <-------------------  TX
+GND -------------------- GND
+
+⚠️ TX of one device connects to RX of the other.
+
+🔹 4. UART Frame
+
+A typical UART frame looks like:
+
+Idle | Start | Data Bits | Parity | Stop | Idle
+  1      0       10101010    P       1      1
+
+The important components are:
+
+Start bit
+Data bits
+Optional parity bit
+Stop bit
+🔹 5. Start Bit
+
+When the UART line is idle, it is normally:
+
+Logic 1
+
+To indicate that transmission is beginning, the transmitter sends:
+
+Logic 0
+
+This is the start bit.
+
+🔹 6. Data Bits
+
+UART commonly uses:
+
+5, 6, 7, 8 or 9 data bits
+
+The most common configuration is:
+
+8 data bits
+
+For example:
+
+10110010
+🔹 7. Parity Bit
+
+Parity is used for basic error detection.
+
+Two common types:
+
+Even parity
+Odd parity
+
+Example:
+
+Data:
+
+10110010
+
+Number of 1s = 4.
+
+For even parity, parity bit = 0, because the number of 1s is already even.
+
+🔹 8. Stop Bit
+
+The stop bit indicates the end of the frame.
+
+Common configurations:
+
+1 stop bit
+1.5 stop bits
+2 stop bits
+🔹 9. Baud Rate
+
+Baud rate represents the number of symbols transmitted per second.
+
+Common UART baud rates:
+
+9600
+19200
+38400
+57600
+115200
+
+A very common embedded configuration is:
+
+115200 baud, 8 data bits, no parity, 1 stop bit
+
+This is written as:
+
+115200 8N1
+
+Meaning:
+
+115200 → Baud rate
+8 → Data bits
+N → No parity
+1 → Stop bit
+🔹 10. UART vs SPI vs I²C
+Feature	UART	SPI	I²C
+Clock	No	Yes	Yes
+Communication	Asynchronous	Synchronous	Synchronous
+Lines	TX, RX	MOSI, MISO, CLK, CS	SDA, SCL
+Typical speed	Moderate	High	Moderate
+Multiple devices	Not inherently	Yes, with CS	Yes
+Complexity	Low	Medium	Medium
