@@ -1,0 +1,77 @@
+🔌 Logic Gates
+
+A logic gate is an electronic circuit that takes one or more binary inputs (0 or 1) and produces a binary output.
+
+The main logic gates are:
+
+AND gate
+OR gate
+NOT gate
+NAND gate
+NOR gate
+XOR gate
+XNOR gate
+1. AND Gate
+
+Output is 1 only when all inputs are 1.
+
+A	B	Y = A·B
+0	0	0
+0	1	0
+1	0	0
+1	1	1
+
+Example: Two switches connected in series — both must be ON.
+
+2. OR Gate
+
+Output is 1 when at least one input is 1.
+
+A	B	Y = A+B
+0	0	0
+0	1	1
+1	0	1
+1	1	1
+
+Example: Two switches in parallel — either one can turn the output ON.
+
+3. NOT Gate
+
+It inverts the input.
+
+A	Y = Ā
+0	1
+1	0
+
+0 → 1 and 1 → 0.
+
+4. NAND Gate
+
+NAND = NOT + AND
+
+Output is 0 only when both inputs are 1.
+
+5. NOR Gate
+
+NOR = NOT + OR
+
+Output is 1 only when both inputs are 0.
+
+6. XOR Gate
+
+Output is 1 when the inputs are different.
+
+7. XNOR Gate
+
+Output is 1 when the inputs are the same.
+
+⭐ Easy way to remember
+AND → All must be 1
+OR → Any one can be 1
+NOT → Opposite
+NAND → NOT AND
+NOR → NOT OR
+XOR → Different → 1
+XNOR → Same → 1
+
+These gates are the basic building blocks of digital electronics, including processors, microcontrollers, memory, and embedded systems
