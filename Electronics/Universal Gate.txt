@@ -1,0 +1,98 @@
+A universal logic gate is a logic gate that can be used to implement any Boolean function without needing any other type of gate.
+
+The two universal logic gates are:
+
+NAND (NOT-AND) gate
+NOR (NOT-OR) gate
+Why are they called universal?
+
+Using only NAND gates or only NOR gates, you can construct all the basic logic gates:
+
+Logic Gate	Using NAND	Using NOR
+NOT	✓	✓
+AND	✓	✓
+OR	✓	✓
+XOR	✓	✓
+XNOR	✓	✓
+
+Therefore, any digital circuit can be built using only NAND gates or only NOR gates.
+
+NAND Gate
+
+Boolean expression:
+
+Y=(A⋅B)
+′
+
+Truth Table:
+
+A	B	Y
+0	0	1
+0	1	1
+1	0	1
+1	1	0
+Realizing other gates using NAND
+
+NOT: Connect both inputs together.
+
+A
+′
+=A NAND A
+
+AND: NAND followed by a NAND inverter.
+
+A⋅B=(A NAND B) NAND (A NAND B)
+
+OR: Using De Morgan's theorem.
+
+A+B=(A
+′
+⋅B
+′
+)
+′
+NOR Gate
+
+Boolean expression:
+
+Y=(A+B)
+′
+
+Truth Table:
+
+A	B	Y
+0	0	1
+0	1	0
+1	0	0
+1	1	0
+Realizing other gates using NOR
+
+NOT: Connect both inputs together.
+
+A
+′
+=A NOR A
+
+OR: NOR followed by a NOR inverter.
+
+A+B=(A NOR B) NOR (A NOR B)
+
+AND: Using De Morgan's theorem.
+
+A⋅B=(A
+′
++B
+′
+)
+′
+Applications
+Designing digital circuits
+Building combinational and sequential logic
+Integrated circuit (IC) manufacturing
+Computer processors and memory systems
+Logic optimization in VLSI design
+Key points to remember
+Universal gates: NAND and NOR
+NAND = NOT of AND
+NOR = NOT of OR
+Any Boolean expression or digital circuit can be implemented using only NAND gates or only NOR gates.
