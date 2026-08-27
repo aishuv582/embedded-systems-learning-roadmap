@@ -1,0 +1,127 @@
+1. 8051 Memory is divided into two main types
+             8051 Memory
+                  │
+        ┌─────────┴─────────┐
+        │                   │
+ Program Memory         Data Memory
+   (Code/ROM)              (RAM)
+        │                   │
+   Stores program      Stores temporary
+      instructions       data/variables
+2. Program Memory
+
+The classic 8051 has 4 KB of internal program memory.
+
+It stores:
+
+Program instructions
+Constant data
+Code written in Assembly or Embedded C
+
+The Program Counter (PC) points to the address of the next instruction to execute.
+
+Example:
+
+0000H ───────────────┐
+                     │
+                     │ Program
+                     │ Memory
+                     │
+0FFFH ───────────────┘
+       4 KB
+3. Data Memory
+
+The classic 8051 has 128 bytes of internal RAM, from:
+
+00H → 7FH
+
+This RAM is divided into important sections:
+
+Address        Section
+────────────────────────────
+00H–1FH        Register Banks
+20H–2FH        Bit-addressable RAM
+30H–7FH        General-purpose RAM
+4. Register Banks
+
+The first 32 bytes contain four register banks.
+
+Each bank contains:
+
+R0, R1, R2, R3, R4, R5, R6, R7
+
+Bank 0 → 00H–07H
+Bank 1 → 08H–0FH
+Bank 2 → 10H–17H
+Bank 3 → 18H–1FH
+
+Only one bank is active at a time, selected using bits in the PSW (Program Status Word).
+
+5. Bit-Addressable RAM
+
+The address range 20H–2FH contains 16 bytes = 128 bits.
+
+Each individual bit can be directly accessed.
+
+For example:
+
+SETB 20H
+CLR  20H
+
+This is useful when working with individual flags or control bits.
+
+6. General-Purpose RAM
+
+The remaining 80 bytes (30H–7FH) can be used for:
+
+Variables
+Temporary data
+Buffers
+Stack
+7. SFR – Special Function Registers
+
+The address range 80H–FFH is used for SFRs.
+
+Important SFRs include:
+
+SFR	Purpose
+ACC	Accumulator
+B	B register
+PSW	Program Status Word
+SP	Stack Pointer
+DPTR	Data Pointer
+P0–P3	I/O ports
+TMOD	Timer mode
+TCON	Timer control
+SCON	Serial control
+IE	Interrupt enable
+⭐ Important point
+
+Don't confuse RAM and SFR:
+
+00H–7FH → Internal RAM
+
+80H–FFH → SFR space
+
+Quick memory map
+          8051 DATA MEMORY
+
+FFH ┌─────────────────────┐
+    │       SFRs          │
+80H ├─────────────────────┤
+    │                     │
+    │ General Purpose RAM │
+30H ├─────────────────────┤
+    │ Bit Addressable RAM │
+20H ├─────────────────────┤
+    │    Register Banks   │
+00H └─────────────────────┘
+🧠 Remember this
+
+00–1F → Registers
+
+20–2F → Bits
+
+30–7F → RAM
+
+80–FF → SFR
