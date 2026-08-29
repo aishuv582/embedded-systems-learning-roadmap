@@ -1,0 +1,79 @@
+STM32 is a family of 32-bit microcontrollers developed by STMicroelectronics. It is very widely used in embedded systems, automotive electronics, industrial automation, IoT, and consumer electronics.
+
+1. What does STM32 mean?
+ST → STMicroelectronics
+M → Microcontroller
+32 → 32-bit architecture
+
+Most STM32 microcontrollers are based on ARM Cortex-M processors.
+
+2. Why STM32 is important for Embedded Systems
+
+If you are moving toward Embedded Software/Firmware, STM32 is an excellent microcontroller family to learn because you can practice:
+
+Embedded C
+GPIO
+Timers & counters
+Interrupts
+ADC/DAC
+UART
+SPI
+I²C
+CAN
+PWM
+DMA
+RTOS
+Low-power programming
+Debugging
+3. Basic STM32 architecture
+
+A simplified STM32 looks like:
+
+                 STM32 MCU
+                    │
+       ┌────────────┼────────────┐
+       │            │            │
+     CPU          Memory      Peripherals
+       │            │            │
+ Cortex-M       Flash/RAM    GPIO
+                              UART
+                              SPI
+                              I²C
+                              CAN
+                              ADC
+                              Timers
+                              DMA
+4. Important STM32 families
+Family	Typical use
+STM32F0	Basic/low-cost applications
+STM32F1	General-purpose embedded systems
+STM32F4	High-performance applications
+STM32F7	High-performance systems
+STM32G0	Modern general-purpose MCUs
+STM32G4	Motor control/power applications
+STM32H7	Very high-performance embedded systems
+STM32L4/L5	Low-power applications
+
+For learning, STM32F4 or STM32G4 is a good starting point.
+
+5. Tools you should learn
+
+STM32CubeIDE is one of the main development environments.
+
+Typical workflow:
+
+STM32 MCU
+   ↓
+STM32CubeMX configuration
+   ↓
+Generate project
+   ↓
+STM32CubeIDE
+   ↓
+Write Embedded C
+   ↓
+Compile
+   ↓
+Flash to MCU
+   ↓
+Debug
