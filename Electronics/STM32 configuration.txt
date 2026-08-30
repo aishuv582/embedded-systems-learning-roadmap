@@ -1,0 +1,151 @@
+STM32 configuration means setting up the microcontroller's pins, clocks, peripherals, and software settings before writing the application code.
+
+The easiest way to configure an STM32 is using STM32CubeMX / STM32CubeIDE.
+
+1. Select the STM32 MCU
+
+First, choose the exact microcontroller or development board.
+
+Example:
+
+STM32F103C8T6
+STM32F407VG
+STM32H743ZI
+
+The selected MCU determines the available GPIO pins, timers, ADCs, UARTs, SPI, I²C, etc.
+
+2. GPIO Configuration
+
+You configure each pin according to its function.
+
+For example:
+
+Pin	Configuration	Purpose
+PA0	GPIO Input	Push button
+PA5	GPIO Output	LED
+PA9	USART1_TX	UART transmission
+PA10	USART1_RX	UART reception
+
+GPIO pins can generally be configured as:
+
+Input
+Output
+Analog
+Alternate Function
+
+Alternate Function is important because it allows a physical pin to be connected internally to peripherals such as UART, SPI, I²C, timers, etc.
+
+3. Clock Configuration
+
+The STM32 needs a clock to operate.
+
+You configure:
+
+HSI – Internal high-speed clock
+HSE – External high-speed clock
+PLL – Phase Locked Loop
+System Clock
+AHB/APB bus clocks
+
+For example:
+
+HSE → PLL → SYSCLK → AHB/APB peripherals
+
+The clock frequency affects CPU speed and peripheral timing.
+
+4. Peripheral Configuration
+
+You enable the peripherals you need.
+
+For example, for UART:
+
+Connectivity → USART1 → Asynchronous
+
+Then configure:
+
+Baud rate → 115200
+Word length → 8 bits
+Stop bits → 1
+Parity → None
+Mode → TX/RX
+
+For SPI:
+
+Master/Slave
+Clock polarity
+Clock phase
+Baud-rate prescaler
+Data size
+
+For I²C:
+
+Clock speed
+Addressing mode
+Own address
+5. NVIC / Interrupt Configuration
+
+If a peripheral needs interrupts, enable its interrupt in the NVIC.
+
+Example:
+
+UART Reception
+      ↓
+UART Interrupt
+      ↓
+NVIC
+      ↓
+Interrupt Handler
+      ↓
+Application Code
+
+You can also configure interrupt priority.
+
+6. Generate Project
+
+After configuration, CubeMX generates initialization code.
+
+Typical functions include:
+
+HAL_Init();
+SystemClock_Config();
+MX_GPIO_Init();
+MX_USART1_UART_Init();
+MX_ADC1_Init();
+
+The initialization sequence is generally:
+
+Reset
+  ↓
+HAL Initialization
+  ↓
+System Clock Configuration
+  ↓
+GPIO Configuration
+  ↓
+Peripheral Configuration
+  ↓
+Main Application
+Simple Example
+
+Suppose you want to blink an LED using STM32.
+
+Configuration:
+
+MCU
+ ↓
+Select LED pin
+ ↓
+Configure as GPIO Output
+ ↓
+Configure Clock
+ ↓
+Generate Code
+ ↓
+Write application
+
+Then the application could use:
+
+HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+HAL_Delay(500);
+
+This toggles the LED every 500 ms
