@@ -1,0 +1,98 @@
+STM32 vs 8051 Microcontroller
+
+
+
+Feature	8051	STM32
+Architecture	8-bit	32-bit ARM
+CPU	8051 core	ARM Cortex-M
+Performance	Low	High
+Clock frequency	Typically 12–40 MHz	Typically tens to hundreds of MHz
+Word size	8-bit	32-bit
+Flash	Usually small	From KB to several MB
+RAM	Very small (bytes/KB)	From KB to hundreds of KB/MB depending on family
+GPIO	Basic	Advanced and highly configurable
+ADC	Some variants have ADC	Commonly available, often 12-bit or higher depending on family
+Timers	Basic timers/counters	Multiple advanced/general-purpose timers
+UART	Available	Multiple USART/UART interfaces
+SPI	Available in many variants	Multiple SPI interfaces
+I²C	Available in many variants	Multiple I²C interfaces
+CAN	Usually external/variant-dependent	Available on many STM32 families
+USB	Usually not built-in	Available on many STM32 devices
+DMA	Basic/limited or absent depending on chip	Powerful DMA controllers
+Interrupt system	Basic	NVIC with nested/prioritized interrupts
+Power management	Basic	Multiple low-power modes
+Operating systems	Generally bare-metal	Bare-metal, FreeRTOS, RTOS, Embedded Linux on suitable STM32MP devices
+Development	Relatively simple	More complex
+Applications	Simple control systems	Automotive, IoT, industrial, consumer electronics
+Cost	Very low	Low to moderate, depending on model
+🔹 8051 — Simple way to understand
+
+The 8051 is an 8-bit microcontroller designed for relatively simple embedded applications.
+
+Example:
+
+8051 → Read sensor → Process data → Turn ON/OFF motor
+
+It is excellent for learning:
+
+Microcontroller fundamentals
+Registers
+GPIO
+Timers/counters
+Interrupts
+UART
+Embedded C
+🔹 STM32 — Simple way to understand
+
+STM32 is a family of 32-bit ARM Cortex-M microcontrollers developed by STMicroelectronics.
+
+It provides much more powerful peripherals and processing capability.
+
+Example:
+
+STM32 → Read multiple sensors → Process data → DMA → Communication → Control motor
+
+You can work with:
+
+GPIO
+ADC/DAC
+PWM
+Timers
+UART/USART
+SPI
+I²C
+CAN
+USB
+DMA
+RTC
+Watchdog
+RTOS
+⭐ Biggest difference
+
+Think of it like this:
+
+8051 = Basic 8-bit embedded controller
+
+STM32 = Powerful 32-bit embedded controller
+
+For example:
+
+8051
+   ↓
+8-bit CPU
+   ↓
+Simple peripherals
+   ↓
+Small embedded applications
+
+Whereas:
+
+STM32
+   ↓
+32-bit ARM Cortex-M
+   ↓
+Advanced peripherals
+   ↓
+DMA + ADC + Timers + CAN + USB + SPI + I²C
+   ↓
+Complex embedded applications
