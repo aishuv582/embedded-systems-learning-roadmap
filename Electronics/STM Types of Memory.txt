@@ -1,0 +1,243 @@
+1. Main Types of Memory
+
+An STM32 microcontroller mainly contains:
+
+Flash Memory
+SRAM
+System Memory
+Option Bytes
+Peripheral Address Space
+Basic memory organization
+STM32 Memory
+│
+├── Flash Memory
+│     ├── Program code
+│     ├── Constants
+│     └── Read-only data
+│
+├── SRAM
+│     ├── Variables
+│     ├── Stack
+│     └── Heap
+│
+├── System Memory
+│     └── Factory-programmed Bootloader
+│
+└── Peripheral Registers
+      ├── GPIO
+      ├── UART
+      ├── SPI
+      ├── I²C
+      ├── ADC
+      └── Timers
+2. Flash Memory
+
+Flash is non-volatile memory.
+
+That means it retains data even when power is removed.
+
+Your program is normally stored here.
+
+For example:
+
+Flash
+┌─────────────────────────┐
+│ Vector Table             │
+├─────────────────────────┤
+│ Program Code             │
+├─────────────────────────┤
+│ Read-only constants      │
+├─────────────────────────┤
+│ Constant data            │
+└─────────────────────────┘
+
+When you compile an STM32 program and flash it into the MCU, the machine code is stored in Flash.
+
+Example:
+
+const int value = 100;
+
+The constant may be placed in Flash.
+
+3. SRAM
+
+SRAM is volatile memory.
+
+It loses its contents when power is removed.
+
+It is mainly used while the program is running.
+
+SRAM
+┌─────────────────────────┐
+│ Stack                    │
+├─────────────────────────┤
+│                         │
+│ Free RAM                 │
+│                         │
+├─────────────────────────┤
+│ Heap                     │
+├─────────────────────────┤
+│ Global/Static variables  │
+└─────────────────────────┘
+
+For example:
+
+int count = 10;
+
+The variable count normally resides in RAM while the program executes.
+
+4. Stack
+
+The stack is part of SRAM.
+
+It is used for:
+
+Local variables
+Function calls
+Function parameters
+Return addresses
+Interrupt context
+
+Example:
+
+void function(void)
+{
+    int x = 10;
+}
+
+x is typically stored on the stack.
+
+5. Heap
+
+The heap is also located in SRAM.
+
+It is used for dynamic memory allocation.
+
+Example:
+
+int *ptr;
+
+ptr = malloc(sizeof(int));
+
+The memory allocated using malloc() comes from the heap.
+
+In embedded systems, however, dynamic allocation is often used carefully because excessive fragmentation can cause problems.
+
+6. System Memory
+
+STM32 devices generally contain a special System Memory region programmed by ST.
+
+It commonly contains the factory bootloader.
+
+The bootloader can allow programming through interfaces such as:
+
+UART
+USB
+I²C
+SPI
+CAN
+
+The exact interfaces depend on the particular STM32 device.
+
+7. Peripheral Memory
+
+This is an important concept in STM32.
+
+Peripheral registers are memory-mapped.
+
+That means the CPU accesses peripherals using addresses, just like memory.
+
+For example:
+
+CPU
+ │
+ ├── Flash
+ ├── SRAM
+ │
+ └── Peripheral Registers
+        │
+        ├── GPIO
+        ├── UART
+        ├── SPI
+        ├── I²C
+        └── Timer
+
+So when you write:
+
+GPIOA->ODR = 0x01;
+
+the processor is actually writing to a specific memory-mapped GPIO register address.
+
+8. STM32 Memory Map
+
+For a typical ARM Cortex-M STM32, the address space is divided into regions.
+
+A simplified view is:
+
+0x0000 0000
+     │
+     │  Code / Flash region
+     │
+0x2000 0000
+     │
+     │  SRAM
+     │
+0x4000 0000
+     │
+     │  Peripheral region
+     │
+0x6000 0000
+     │
+     │  External memory (device dependent)
+     │
+0xE000 0000
+     │
+     │  Cortex-M System Control Space
+     │
+0xFFFF FFFF
+
+Important: The exact physical memory locations and sizes vary between STM32 families and individual MCUs.
+
+9. What happens when STM32 starts?
+
+This is particularly important for embedded programming.
+
+When STM32 resets:
+
+Power ON / Reset
+       ↓
+Read Vector Table
+       ↓
+Get Initial Stack Pointer
+       ↓
+Get Reset Handler Address
+       ↓
+Execute startup code
+       ↓
+Initialize RAM/data
+       ↓
+main()
+
+The first value in the vector table is the initial Stack Pointer.
+
+The second value is the address of the Reset Handler.
+
+Then execution eventually reaches:
+
+int main(void)
+{
+    // Application code
+}
+⭐ 8051 vs STM32 Memory
+
+Since you just learned the difference between 8051 and STM32:
+
+Memory	8051	STM32
+Architecture	8-bit	32-bit ARM Cortex-M
+Program memory	Flash/ROM depending on variant	Flash
+RAM	Very small	Much larger
+Stack	Internal RAM	SRAM
+Peripheral access	SFRs	Memory-mapped registers
+Address space	Much simpler	Large, structured memory map
+DMA	Limited/variant dependent	Common and powerful
+External memory	Possible	Available on selected families
