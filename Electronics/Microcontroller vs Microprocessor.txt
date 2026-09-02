@@ -1,0 +1,48 @@
+Microcontroller vs Microprocessor
+
+Both are processors used in electronic systems, but they are designed for different purposes.
+
+Feature	Microcontroller (MCU)	Microprocessor (MPU)
+Definition	A complete small computer on a single chip	Mainly a CPU on a chip
+CPU	Present	Present
+RAM	Built-in	Usually external
+ROM/Flash	Built-in	Usually external
+I/O ports	Built-in	Usually external
+Timers/Counters	Built-in	Usually external
+Communication peripherals	UART, SPI, I²C, CAN, etc. often built-in	Usually requires external controllers/peripherals
+Operating system	Often runs without an OS or with an RTOS	Commonly runs an OS such as Linux
+Power consumption	Low	Relatively high
+Cost	Lower	Higher system cost
+Size	Small	Larger overall system
+Processing power	Moderate	Generally higher
+Real-time applications	Excellent	Possible, but depends on OS/system
+Typical applications	Embedded/control systems	Computers and high-performance systems
+Examples	8051, STM32, PIC, AVR	Intel Core, AMD Ryzen, ARM Cortex-A processors
+Simple block diagram
+
+Microcontroller:
+
+       ┌──────────────────────────┐
+       │      MICROCONTROLLER     │
+       │                          │
+       │  ┌───────┐   ┌────────┐ │
+       │  │  CPU  │   │  RAM   │ │
+       │  └───────┘   └────────┘ │
+       │  Flash   Timers         │
+       │  GPIO    UART/SPI/I²C   │
+       │                          │
+       └──────────────────────────┘
+
+Everything is mostly integrated into one chip.
+
+Microprocessor:
+
+        ┌────────────────┐
+        │ MICROPROCESSOR  │
+        │      CPU        │
+        └───────┬────────┘
+                │
+       ┌────────┼─────────┐
+       ↓        ↓         ↓
+     RAM      ROM       I/O
+   (External) (External) (External)
