@@ -1,0 +1,43 @@
+1. Binary → Decimal
+
+Binary uses only 0 and 1. Each position has a power of 2.
+
+Loading
+
+For example, convert 1011₂ to decimal:
+
+Binary digit	1	0	1	1
+Power of 2	2³	2²	2¹	2⁰
+Value	8	4	2	1
+
+So:
+
+1011₂ = (1×8) + (0×4) + (1×2) + (1×1)
+= 8 + 0 + 2 + 1
+= 11₁₀
+
+✅ 1011₂ = 11₁₀
+
+2. Decimal → Binary
+
+Use repeated division by 2 and record the remainders.
+
+Example: Convert 13₁₀ to binary
+
+Division	Quotient	Remainder
+13 ÷ 2	6	1
+6 ÷ 2	3	0
+3 ÷ 2	1	1
+1 ÷ 2	0	1
+
+Now read the remainders from bottom to top:
+
+1101
+
+✅ 13₁₀ = 1101₂
+
+Easy trick to remember
+
+Binary → Decimal: Multiply each bit by its power of 2 and add.
+
+Decimal → Binary: Divide by 2 repeatedly → write remainders → read bottom to top
