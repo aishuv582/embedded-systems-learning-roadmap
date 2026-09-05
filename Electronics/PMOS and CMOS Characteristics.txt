@@ -1,0 +1,42 @@
+PMOS and CMOS Characteristics
+1. PMOS Characteristics
+
+PMOS (P-channel MOSFET) uses a P-type channel. It conducts when the gate voltage is lower than the source voltage.
+
+
+
+Main characteristics:
+
+Carrier: Holes
+Channel: P-type
+Turns ON when: VGS is sufficiently negative
+Turns OFF when: VGS ≈ 0
+Slower than NMOS because holes have lower mobility.
+Higher resistance compared with NMOS for the same dimensions.
+Mainly used as the pull-up transistor in CMOS circuits.
+2. CMOS Characteristics
+
+CMOS (Complementary MOS) uses both NMOS and PMOS transistors together.
+
+
+
+Main characteristics:
+
+Uses complementary NMOS + PMOS.
+Very low static power consumption.
+High noise immunity.
+High input impedance.
+High packing density → suitable for VLSI/ICs.
+Low power dissipation compared with older logic families.
+Good switching performance.
+Widely used in microprocessors, microcontrollers, memory, and digital ICs.
+PMOS vs CMOS
+Characteristic	PMOS	CMOS
+Transistors used	PMOS	PMOS + NMOS
+Carrier	Holes	Holes + electrons
+Speed	Low	High
+Power consumption	Higher	Very low static power
+Noise immunity	Lower	High
+Input impedance	High	Very high
+Main use	Pull-up circuits	Digital ICs/VLSI
+Density	Lower	Higher
