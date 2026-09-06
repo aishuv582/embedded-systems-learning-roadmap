@@ -1,0 +1,35 @@
+1. DAC – Digital to Analog Converter
+
+A DAC converts digital data into an analog signal.
+
+Digital → Analog
+
+Example: A microcontroller gives a digital value such as 1010, and the DAC converts it into a corresponding voltage.
+
+Applications:
+
+Audio output
+Signal generation
+Motor control
+Function generators
+2. ADC – Analog to Digital Converter
+
+An ADC converts an analog signal into digital data.
+
+Analog → Digital
+
+Example: A temperature sensor produces an analog voltage. The ADC converts that voltage into a digital value that a microcontroller can process.
+
+Applications:
+
+Temperature measurement
+Sensors
+Battery monitoring
+Data acquisition
+DAC vs ADC
+Feature	DAC	ADC
+Full form	Digital to Analog Converter	Analog to Digital Converter
+Conversion	Digital → Analog	Analog → Digital
+Input	Digital data	Analog voltage/current
+Output	Analog signal	Digital data
+Example	Audio amplifier output	Temperature sensor reading
