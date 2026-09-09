@@ -1,0 +1,48 @@
+A transistor is a semiconductor device that can work as either a switch or an amplifier, depending on how it is biased.
+
+1. Transistor as a Switch
+
+When used as a switch, the transistor operates in two states:
+
+Cut-off Region (OFF State):
+Base current (\(I_B\)) = 0
+Collector current (\(I_C\)) = 0
+Transistor behaves like an open switch.
+Saturation Region (ON State):
+Base current is sufficient.
+Collector-emitter voltage (\(V_{CE}\)) is very low (about 0.2 V for silicon BJTs).
+Transistor behaves like a closed switch.
+Applications
+LED switching
+Relay control
+Motor control
+Digital circuits
+Microcontroller outputs
+
+Example: When a small current flows into the base of an NPN transistor, it allows a much larger current to flow from collector to emitter, turning on an LED.
+
+2. Transistor as an Amplifier
+
+When used as an amplifier, the transistor operates in the active region.
+
+Working Principle
+A small AC signal is applied to the base.
+A larger current flows through the collector.
+The output signal is an amplified version of the input signal.
+Types of Amplifiers
+Voltage amplifier – increases voltage.
+Current amplifier – increases current.
+Power amplifier – increases power.
+Applications
+Audio amplifiers
+Radio receivers
+Television circuits
+Communication systems
+Sensor signal amplification
+Difference Between Transistor as a Switch and as an Amplifier
+Transistor as a Switch	Transistor as an Amplifier
+Operates in cut-off and saturation regions	Operates in active region
+Output is either ON or OFF	Output varies continuously
+Used in digital circuits	Used in analog circuits
+No signal amplification	Amplifies weak signals
+Acts like an open/closed switch	Acts like a signal amplifier
