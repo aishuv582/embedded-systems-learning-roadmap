@@ -1,0 +1,74 @@
+Resistance, Capacitance and Inductance
+
+These are the three basic passive electrical components used in electronic circuits.
+
+Component	Symbol	Unit	Main function
+Resistance (R)	R	Ohm (Ω)	Opposes current
+Capacitance (C)	C	Farad (F)	Stores electrical charge
+Inductance (L)	L	Henry (H)	Stores energy in a magnetic field
+1. Resistance (R)
+
+A resistor opposes the flow of electric current.
+
+Formula:
+
+$$ V = IR $$
+
+Where:
+
+V = Voltage
+I = Current
+R = Resistance
+
+Example:
+If \(V=10V\) and \(R=5Ω\):
+
+$$ I=\frac{V}{R}=\frac{10}{5}=2A $$
+
+Key point: Resistor converts electrical energy mainly into heat.
+
+2. Capacitance (C)
+
+A capacitor stores electrical energy in an electric field.
+
+Formula:
+
+$$ Q=CV $$
+
+Where:
+
+Q = Charge
+C = Capacitance
+V = Voltage
+
+For a capacitor:
+
+$$ i=C\frac{dv}{dt} $$
+
+Important behavior:
+
+Allows AC to pass depending on frequency.
+Blocks steady-state DC after it becomes fully charged.
+Used for filtering, coupling, decoupling and energy storage.
+
+Example: A capacitor in a power supply can reduce voltage fluctuations.
+
+3. Inductance (L)
+
+An inductor stores energy in a magnetic field when current flows through it.
+
+Formula:
+
+$$ V=L\frac{di}{dt} $$
+
+Where:
+
+V = Voltage
+L = Inductance
+\(di/dt\) = Rate of change of current
+
+Important behavior:
+
+Opposes sudden changes in current.
+At steady-state DC, an ideal inductor behaves approximately like a short circuit.
+Used in filters, transformers, oscillators and power converters.
